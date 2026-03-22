@@ -1,0 +1,35 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Tema e Delimitação}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problema}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Justificativa}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Objetivo geral}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Objetivos específicos}{7}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Organização do trabalho}{8}{section.1.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fundamentação Teórica}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Trabalhos Relacionados}{9}{section.2.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}O Ciclo DSR}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Procedimentos Metodológicos}{10}{section.3.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Desenvolvimento e Experimento}}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Arquitetura da Solução}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}O Experimento}{11}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Métricas de Avaliação: O que vai ser medido?}{11}{section.4.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativas de Conclusão e Resultados Esperados}}{13}{chapter.5}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{14}{chapter.6}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{15}{section*.12}%
+\vspace {\cftbeforechapterskip }
