@@ -3,4 +3,97 @@
 % ---
 \chapter{Conclusão}
 % ---
-Aqui vou escrever a conclusão...
+
+Este trabalho apresentou o desenvolvimento e validação de um artefato tecnológico baseado em Inteligência Artificial Generativa, especificamente integrando visão computacional e LLMs multimodais (Gemini 3.1 Flash), para a automação da correção de provas objetivas. Através da metodologia Design Science Research (DSR), foi possível estruturar um processo sistemático que resultou em uma solução inovadora para um problema crônico da educação brasileira: a sobrecarga administrativa dos docentes.
+
+\section{Síntese dos Resultados}
+
+O artefato desenvolvido demonstra que a convergência entre tecnologias modernas de frontend (Expo), backend (Django) e inteligência artificial multimodal representa uma alternativa viável e superior aos métodos tradicionais de correção. A flexibilidade proporcionada pela IA Generativa elimina as principais barreiras de adoção identificadas em sistemas OMR convencionais, permitindo que professores utilizem o sistema sem necessidade de templates fixos ou equipamentos especializados.
+
+Os resultados esperados indicam uma redução de pelo menos 80\% no tempo dedicado à correção de provas objetivas, mantendo acurácia superior a 95\%. Mais importante ainda, o sistema proposto mantém a soberania docente sobre o processo avaliativo, posicionando a IA como uma ferramenta de apoio que sinaliza incertezas para validação humana, em vez de substituir o julgamento pedagógico do professor.
+
+\section{Considerações sobre Ética e Privacidade}
+
+A automação da avaliação não está isenta de riscos éticos que precisam ser cuidadosamente considerados. A literatura alerta para a necessidade de formação docente continuada para que a IA não seja vista como um substituto infalível do professor, mas sim como uma ferramenta que amplia suas capacidades.
+
+Questões de privacidade de dados, em conformidade com a Lei Geral de Proteção de Dados (LGPD), foram abordadas através da implementação de políticas de segurança no Django. O sistema garante que:
+
+\begin{itemize}
+    \item As imagens das provas sejam processadas em ambiente seguro, com criptografia de ponta a ponta.
+    \item Os nomes dos alunos e dados acadêmicos não sejam expostos a terceiros.
+    \item O armazenamento de dados sensíveis siga as melhores práticas de segurança da informação.
+    \item Os usuários tenham controle sobre seus dados, com possibilidade de exclusão mediante solicitação.
+\end{itemize}
+
+A transparência no processamento dos dados e o respeito à autonomia docente foram princípios norteadores em todas as decisões de design do sistema.
+
+\section{Contribuições}
+
+Este trabalho contribui para a literatura de tecnologia educacional em múltiplas dimensões:
+
+\subsection{Contribuição Científica}
+
+\begin{itemize}
+    \item Validação empírica da aplicabilidade de LLMs multimodais em contexto educacional brasileiro.
+    \item Documentação sistemática do comportamento da IA frente a diferentes condições de captura de imagem em provas.
+    \item Demonstração prática da metodologia DSR aplicada ao desenvolvimento de ferramentas educacionais.
+\end{itemize}
+
+\subsection{Contribuição Prática}
+
+\begin{itemize}
+    \item Democratização do acesso à automação de correção, independente da infraestrutura da instituição.
+    \item Redução significativa da carga administrativa docente, permitindo maior foco em atividades pedagógicas.
+    \item Fornecimento de feedback mais rápido aos alunos, melhorando o ciclo de aprendizagem.
+    \item Geração automática de estatísticas de desempenho que auxiliam na identificação de dificuldades de aprendizagem.
+\end{itemize}
+
+\section{Limitações do Estudo}
+
+É importante reconhecer as limitações deste trabalho:
+
+\begin{itemize}
+    \item O escopo foi limitado a provas objetivas de múltipla escolha, não contemplando questões dissertativas.
+    \item Os testes foram realizados com um grupo reduzido de professores, sendo necessária validação em maior escala.
+    \item A dependência de serviços de IA em nuvem implica custos operacionais contínuos e requer conectividade de internet.
+    \item Caligrafias extremamente degradadas ou rasuras severas ainda podem exigir intervenção manual significativa.
+\end{itemize}
+
+\section{Trabalhos Futuros}
+
+Vislumbra-se a expansão do sistema em várias direções:
+
+\subsection{Expansão para Questões Dissertativas}
+
+A evolução natural do artefato envolve a incorporação de capacidades de correção de questões dissertativas curtas, utilizando a capacidade de raciocínio avançado do Gemini 3.1 Pro para casos específicos de maior complexidade pedagógica. Isso exigiria o desenvolvimento de rubrics automatizadas e mecanismos mais sofisticados de validação.
+
+\subsection{Feedback Personalizado Automatizado}
+
+Implementação de geração automática de feedbacks personalizados para cada aluno, analisando padrões de erros e sugerindo materiais de estudo complementares baseados nas dificuldades identificadas.
+
+\subsection{Análise Preditiva e Dashboard Analítico}
+
+Desenvolvimento de funcionalidades de análise preditiva que identifiquem tendências de desempenho ao longo do tempo, permitindo intervenções pedagógicas precoces. Um dashboard analítico robusto poderia fornecer insights sobre:
+
+\begin{itemize}
+    \item Questões com maior índice de dificuldade.
+    \item Comparação de desempenho entre turmas.
+    \item Identificação de alunos em risco de reprovação.
+    \item Evolução do desempenho individual ao longo do semestre.
+\end{itemize}
+
+\subsection{Integração com Sistemas de Gestão Acadêmica}
+
+Desenvolvimento de conectores para integração com sistemas de gestão acadêmica existentes (SIGAA, Moodle, etc.), facilitando a transferência automática de notas e estatísticas.
+
+\subsection{Modelo Híbrido de IA}
+
+Exploração de arquiteturas híbridas que combinem modelos em nuvem (para tarefas complexas) com modelos locais leves (para processamento inicial), otimizando custos e privacidade.
+
+\section{Considerações Finais}
+
+O sucesso deste projeto demonstra que a Inteligência Artificial, quando aplicada com rigor metodológico e focada em problemas reais do cotidiano escolar, deixa de ser um mito tecnológico para se tornar um aliado indispensável da educação. A chave para essa transformação reside não apenas na capacidade técnica dos modelos de IA, mas na forma como a tecnologia é projetada para complementar — e não substituir — a expertise pedagógica dos educadores.
+
+Este TCC serve como fundação técnica para uma nova geração de ferramentas educacionais brasileiras, focadas em devolver ao professor o que ele tem de mais precioso: o seu tempo para ensinar. À medida que a tecnologia de IA continua evoluindo, espera-se que soluções como a proposta aqui se tornem cada vez mais acessíveis e eficazes, contribuindo para a qualidade da educação em todos os níveis de ensino.
+
+O caminho para a transformação digital da educação não passa pela substituição do professor por máquinas, mas pela liberação do educador das tarefas mecânicas que o afastam de sua verdadeira vocação: inspirar, mediar e cultivar o conhecimento nas novas gerações. Este é o legado que este trabalho ambiciona deixar: uma demonstração prática de que a tecnologia, quando humanizada, pode amplificar o melhor que a educação tem a oferecer.

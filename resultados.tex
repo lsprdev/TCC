@@ -3,38 +3,185 @@
 % ---
 \chapter{Metodologia}
 % ---
-\lipsum[24]
+
+A condução deste trabalho segue rigorosamente a metodologia Design Science Research (DSR). A DSR é um paradigma de resolução de problemas que busca criar inovações que definam ideias, práticas e produtos técnicos através dos quais a análise e o uso de sistemas de informação possam ser efetivamente realizados. Diferente da pesquisa básica que busca entender a realidade, a DSR busca transformar a realidade através da criação de um artefato útil.
 
 % ---
 \section{O Ciclo DSR}
 % ---
 
-\lipsum[24]
+O ciclo iterativo da DSR para este projeto foi estruturado em cinco fases distintas, cada uma contribuindo para o desenvolvimento sistemático do artefato tecnológico:
+
+\subsection{Identificação do Problema e Motivação}
+
+A partir da análise estatística do tempo gasto por professores brasileiros (21,4 milhões de horas/ano), define-se a necessidade clara de automação. O problema é delimitado à ineficiência da correção manual e à rigidez dos sistemas OMR atuais. Esta fase envolveu revisão bibliográfica extensiva e entrevistas exploratórias com educadores para compreender as dores reais do processo de correção.
+
+\subsection{Definição dos Objetivos da Solução}
+
+A proposta é a criação de um aplicativo móvel multimodal. A abstração inicial baseia-se na teoria de que LLMs modernos podem atuar como extratores de dados estruturados a partir de entradas não estruturadas (fotos), eliminando a necessidade de templates fixos. Os objetivos foram definidos considerando tanto aspectos técnicos (acurácia, performance) quanto aspectos de usabilidade (facilidade de uso, adoção docente).
+
+\subsection{Design e Desenvolvimento}
+
+O artefato foi construído utilizando o framework Django para o backend, garantindo segurança e escalabilidade, e o Expo para o frontend, permitindo uma experiência fluida no smartphone do professor. O núcleo de processamento é a API do Gemini 3.1 Flash, configurada para responder com esquemas JSON estritos. Esta fase incluiu múltiplas iterações de prototipagem e refinamento baseado em testes preliminares.
+
+\subsection{Demonstração e Avaliação}
+
+O protótipo foi submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Foram realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utiliza o Framework for Evaluation in Design Science (FEDS), alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
+
+\subsection{Comunicação}
+
+Finalização do artefato e comunicação dos resultados. Nesta fase, consolidam-se as lições aprendidas sobre o comportamento da IA frente a diferentes caligrafias e condições de imagem, contribuindo para a literatura de tecnologia educacional com dados reais de performance.
 
 \section{Procedimentos Metodológicos}
 % ---
 
-\lipsum[24]
+Os procedimentos metodológicos adotados incluem:
+
+\begin{itemize}
+    \item \textbf{Revisão Bibliográfica}: Análise sistemática da literatura sobre IA na educação, processamento de documentos e modelos multimodais.
+    \item \textbf{Prototipagem Iterativa}: Desenvolvimento incremental do artefato com ciclos de teste e refinamento.
+    \item \textbf{Experimentação Controlada}: Testes comparativos entre correção manual e automatizada para validação quantitativa.
+    \item \textbf{Avaliação de Usabilidade}: Aplicação de questionários SUS (System Usability Scale) com professores.
+    \item \textbf{Análise de Métricas}: Coleta e análise de dados de acurácia, tempo, custo e satisfação do usuário.
+\end{itemize}
 
 % ---
 \chapter{Desenvolvimento e Experimento}
 % ---
 
-\lipsum[24]
+Este capítulo descreve o desenvolvimento do artefato tecnológico e o desenho experimental utilizado para validar sua eficácia no contexto de correção de provas objetivas.
 
 % ---
 \section{Arquitetura da Solução}
 
-\lipsum[24]
+A solução proposta rompe com a tradição dos "formulários de bolinha". O professor segue um fluxo de trabalho intuitivo, desenhado para minimizar o esforço de configuração inicial.
+
+\subsection{Arquitetura de Software e Hardware}
+
+O sistema opera em um modelo de cliente-servidor em nuvem, conforme ilustrado na arquitetura:
+
+\begin{itemize}
+    \item \textbf{Hardware}: Smartphones convencionais com câmera mínima de 8MP e acesso à internet. O processamento pesado de IA ocorre nos servidores da Google via API, não exigindo hardware caro do usuário final.
+
+    \item \textbf{Backend (Django)}: Gerencia o ciclo de vida do exame. Uma funcionalidade central é o "Compilador Semântico", que trata a entrada do professor (gabarito mestre) para garantir que a IA compreenda exatamente quais são as chaves de resposta. O Django também gerencia autenticação, autorização e persistência de dados.
+
+    \item \textbf{Frontend (Expo)}: Focado na experiência de captura. Implementa guias visuais para ajudar o professor a enquadrar a prova, embora o Gemini 3.1 Flash possua alta tolerância a inclinações. A interface foi projetada seguindo princípios de design centrado no usuário, priorizando simplicidade e eficiência.
+\end{itemize}
+
+\subsection{O Fluxo da Inteligência Artificial}
+
+A integração com o Gemini 3.1 Flash utiliza técnicas avançadas de engenharia de prompt e configuração de modelo:
+
+\begin{enumerate}
+    \item \textbf{Leitura do Gabarito Mestre}: O professor sobe um PDF ou tira foto da prova gabaritada. A IA extrai as respostas e gera um "Gabarito Digital" em JSON.
+
+    \item \textbf{Processamento Multimodal}: Para cada prova de aluno, a imagem é enviada com um prompt que contém o Gabarito Digital. A IA é instruída a:
+    \begin{itemize}
+        \item Identificar o nome no topo da folha (usando OCR de manuscrito).
+        \item Mapear as alternativas marcadas para cada número de questão.
+        \item Comparar as marcações com o gabarito.
+    \end{itemize}
+
+    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de "Controlled Generation" do Gemini, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"q": 1, "m": "A", "c": true\}, ... ], "confianca": 0.98 \}}.
+
+    \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas, tornando a interface de correção manual um componente crítico do artefato.
+\end{enumerate}
+
+\subsection{Engenharia de Prompts e Resolução de Imagem}
+
+Para otimizar o custo e a precisão, o sistema permite configurar o nível de resolução enviado à API. O Gemini permite níveis como MEDIA\_RESOLUTION\_HIGH (1120 tokens) para extrações detalhadas e LOW (280 tokens) para economizar recursos em provas com tipografia clara. O uso de "Few-Shot Prompting" — fornecendo exemplos de provas corrigidas no prompt do sistema — é utilizado para aumentar a robustez do reconhecimento inicial.
 
 \section{O Experimento}
 
-\lipsum[24]
+O coração deste TCC é o experimento prático. Não basta a teoria de que a IA funciona; é preciso medir seu desempenho em condições reais.
+
+\subsection{Desenho Experimental}
+
+O experimento foi realizado em duas fases:
+
+\begin{enumerate}
+    \item \textbf{Laboratório}: Utilização de datasets de provas sintéticas com diferentes tipos de rasuras e qualidades de impressão para estressar o modelo Gemini e ajustar os prompts.
+
+    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizaram o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processou um lote de no mínimo 50 provas de turmas de graduação.
+\end{enumerate}
+
+\subsection{Hardware e Software do Teste}
+
+\begin{itemize}
+    \item \textbf{Hardware}: Smartphones (1 iPhone, 1 Android de gama média).
+    \item \textbf{Software}: Versão beta do aplicativo instalada via Expo Go.
+    \item \textbf{Padrão de Comparação}: As mesmas provas foram corrigidas manualmente pelos professores para servir como base de comparação de tempo e acerto.
+\end{itemize}
+
+\subsection{Cronograma de Execução}
+
+O experimento foi planejado para ocorrer no penúltimo bimestre do projeto de TCC:
+
+\begin{itemize}
+    \item \textbf{Semana 1}: Coleta do material (provas físicas) e correção manual (estabelecimento do benchmark).
+    \item \textbf{Semana 2}: Processamento das provas via aplicativo e registro dos tempos e erros de extração da IA.
+    \item \textbf{Semana 3}: Entrevistas de usabilidade com os orientadores e aplicação do questionário SUS.
+    \item \textbf{Semana 4}: Consolidação estatística dos dados e geração das tabelas comparativas.
+\end{itemize}
 
 \section{Métricas de Avaliação: O que vai ser medido?}
 
-\lipsum[24]
+A avaliação do artefato é quantitativa e qualitativa, focando em quatro dimensões principais:
+
+\subsection{Acurácia e Precisão}
+
+Acurácia da correção (número de questões classificadas corretamente vs. padrão-ouro manual) e precisão no reconhecimento de nomes manuscritos. Esta métrica é fundamental para validar a confiabilidade do sistema em contexto real de uso.
+
+\subsection{Eficiência Temporal}
+
+Tempo total para corrigir um lote de 50 provas via aplicativo vs. tempo manual cronometrado. Esta comparação demonstra o ganho de produtividade proporcionado pela automação.
+
+\subsection{Usabilidade}
+
+Utilizando a escala SUS para medir se os professores consideram o sistema fácil de operar. A escala SUS (System Usability Scale) é um questionário padronizado amplamente utilizado para avaliação de usabilidade de sistemas.
+
+\subsection{Viabilidade Econômica}
+
+Análise do custo das chamadas de API em relação ao volume de provas, garantindo que o sistema seja sustentável financeiramente para uma escola ou professor autônomo.
 
 \chapter{Expectativas de Conclusão e Resultados Esperados}
 
-\lipsum[24]
+Ao final deste trabalho, espera-se entregar um artefato funcional e um relatório detalhado que comprove a viabilidade da IA Generativa como substituta superior aos métodos tradicionais de correção.
+
+\section{Contribuição Científica e Prática}
+
+A principal conclusão esperada é que o uso do Gemini 3.1 Flash permite uma economia de tempo de pelo menos 80\% em relação à correção manual, mantendo uma acurácia global superior a 95\%. Espera-se demonstrar que a flexibilidade da IA para ler diferentes layouts de prova elimina a maior barreira de adoção de tecnologias de automação nas escolas brasileiras.
+
+\section{Tabela Comparativa Projetada}
+
+Um dos resultados centrais será a tabela de desempenho, comparando o novo artefato com as alternativas existentes:
+
+\begin{table}[htb]
+\centering
+\caption{Comparação de Métodos de Correção de Provas}
+\label{tab:comparacao-metodos}
+\small
+\begin{tabular}{|p{3.5cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Métrica} & \textbf{Correção Manual} & \textbf{OMR Tradicional} & \textbf{Aplicativo IA} \\
+\hline
+Tempo (50 provas) & 150-200 min & 15-20 min & 10-15 min \\
+\hline
+Flexibilidade de Layout & Alta & Nula (Template) & Alta (Qualquer) \\
+\hline
+Custo de Hardware & R\$ 0,00 & Alto (Scanner) & R\$ 0,00 (Celular) \\
+\hline
+Reconhecimento de Nomes & Manual & Não realiza & Automático (OCR) \\
+\hline
+Tratamento de Rasuras & Julgamento Humano & Frequentemente Erra & Sinalização p/ Validação \\
+\hline
+Feedback ao Aluno & Dias/Semanas & Horas & Instantâneo \\
+\hline
+\end{tabular}
+\end{table}
+
+Além dos ganhos de produtividade, o projeto visa concluir que a "Soberania Docente" é mantida e até fortalecida, pois o professor deixa de ser um "conferidor de gabaritos" para se tornar um "validador de resultados", tendo acesso imediato a estatísticas de desempenho da turma (ex: quais questões tiveram maior índice de erro), o que permite uma intervenção pedagógica imediata.
+
+\section{Impacto Esperado}
+
+Espera-se que o artefato desenvolvido demonstre que a Inteligência Artificial, quando aplicada com rigor metodológico (DSR) e focada em problemas reais do cotidiano escolar, deixa de ser um mito tecnológico para se tornar um aliado indispensável da educação pública e privada no Brasil. A democratização do acesso à automação de alta performance pode transformar significativamente a rotina de milhares de educadores brasileiros, devolvendo-lhes o que têm de mais precioso: o tempo para ensinar.

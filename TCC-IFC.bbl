@@ -5,32 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Araujo 2015]{abntex2classe}
-\abntrefinfo{Araujo}{ARAUJO}{2015a}
-{ARAUJO, L.~C. \emph{A classe abntex2: Modelo can{\^o}nico de trabalhos
-  acad{\^e}micos brasileiros compat{\'\i}vel com as normas ABNT NBR 14724:2011,
-  ABNT NBR 6024:2012 e outras}.
-[S.l.], 2015. Dispon{\'\i}vel em: \url{http://www.abntex.net.br/}.}
-
 \bibitem[Araujo 2015]{abntex2modelo}
-\abntrefinfo{Araujo}{ARAUJO}{2015b}
+\abntrefinfo{Araujo}{ARAUJO}{2015}
 {ARAUJO, L.~C. \emph{Modelo Can{\^o}nico de Trabalho Acad{\^e}mico com
   abnTeX2}.
 [S.l.], 2015. Dispon{\'\i}vel em: \url{http://www.abntex.net.br/}.}
-
-\bibitem[Araujo 2015]{abntex2cite-alf}
-\abntrefinfo{Araujo}{ARAUJO}{2015c}
-{ARAUJO, L.~C. \emph{O pacote abntex2cite: t{\'o}picos espec{\'\i}ficos da ABNT
-  NBR 10520:2002 e o estilo bibliogr{\'a}fico alfab{\'e}tico (sistema
-  autor-data)}.
-[S.l.], 2015. Dispon{\'\i}vel em: \url{http://www.abntex.net.br/}.}
-
-\bibitem[Associa{\c c}\~ao Brasileira de Normas T\'ecnicas 2002]{NBR10520:2002}
-\abntrefinfo{ABNT}{ABNT}{2002}
-{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. \emph{{NBR} 10520}:
-  Informa{\c c}\~ao e documenta{\c c}\~ao --- apresenta{\c c}\~ao de cita{\c
-  c}\~oes em documentos.
-Rio de Janeiro, 2002. 7~p.}
 
 \bibitem[Associa{\c c}\~ao Brasileira de Normas T\'ecnicas 2005]{NBR14724:2005}
 \abntrefinfo{ABNT}{ABNT}{2005}
@@ -45,22 +24,5 @@ Rio de Janeiro, 2005. 9~p.}
   Informa{\c c}\~ao e documenta{\c c}\~ao --- trabalhos acad\^emicos ---
   apresenta{\c c}\~ao.
 Rio de Janeiro, 2011. 15~p. Substitui a Ref.~\citeonline{NBR14724:2005}.}
-
-\bibitem[Boulic e Renault 1991]{boulic:91}
-\abntrefinfo{Boulic e Renault}{BOULIC; RENAULT}{1991}
-{BOULIC, R.; RENAULT, O. 3d hierarchies for animation. In:  MAGNENAT-THALMANN,
-  N.; THALMANN, D. (Ed.). \emph{New Trends in Animation and Visualization}.
-  [S.l.]: John Wiley {\&} Sons ltd., 1991.}
-
-\bibitem[Knuth 1984]{knuth:84}
-\abntrefinfo{Knuth}{KNUTH}{1984}
-{KNUTH, D.~E. \emph{The {\TeX} Book}. 15th. ed. New York, NY, USA:
-  Addison-Wesley, 1984.}
-
-\bibitem[Smith e Jones 1999]{smith:99}
-\abntrefinfo{Smith e Jones}{SMITH; JONES}{1999}
-{SMITH, A.; JONES, B. On the complexity of computing. In:  SMITH-JONES, A.~B.
-  (Ed.). \emph{Advances in Computer Science}. [S.l.]: Publishing Press, 1999.
-  p. 555--566.}
 
 \end{thebibliography}
