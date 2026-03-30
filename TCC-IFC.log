@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  29 MAR 2026 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  30 MAR 2026 20:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1084,10 +1084,10 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20092 strings out of 469006
- 326370 string characters out of 5454813
- 902324 words of memory out of 5000000
- 48165 multiletter control sequences out of 15000+600000
+ 20097 strings out of 469006
+ 326436 string characters out of 5454813
+ 902542 words of memory out of 5000000
+ 48169 multiletter control sequences out of 15000+600000
  718352 words of font info for 187 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  99i,12n,107p,1050b,734s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1102,10 +1102,10 @@ texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026basic/texmf
 /fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2026basic/texmf-dist/font
 s/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/t
 ype1/public/lm/lmtt12.pfb>
-Output written on TCC-IFC.pdf (29 pages, 360181 bytes).
+Output written on TCC-IFC.pdf (29 pages, 361670 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 519 compressed objects within 6 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 587 PDF objects out of 1000 (max. 8388607)
+ 527 compressed objects within 6 object streams
+ 122 named destinations out of 1000 (max. 500000)
  54289 words of extra memory for PDF output out of 61914 (max. 10000000)
 
