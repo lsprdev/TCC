@@ -5,6 +5,16 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Almeida et al. 2025]{almeida2025estudo}
+\abntrefinfo{Almeida et al.}{ALMEIDA et al.}{2025}
+{ALMEIDA, D. et al. Estudo e desenvolvimento de um sistema para
+  gera{\c{c}}{\~a}o e corre{\c{c}}{\~a}o autom{\'a}tica de provas utilizando
+  intelig{\^e}ncia artificial.
+\emph{Anais do Semin{\'a}rio de Inicia{\c{c}}{\~a}o Cient{\'\i}fica e
+  Tecnol{\'o}gica do IFG}, v.~18, n.~1, 2025.
+Dispon{\'\i}vel em:
+  \url{https://periodicos.ifg.edu.br/sicti/article/view/3257}.}
+
 \bibitem[Araujo 2015]{abntex2modelo}
 \abntrefinfo{Araujo}{ARAUJO}{2015}
 {ARAUJO, L.~C. \emph{Modelo Can{\^o}nico de Trabalho Acad{\^e}mico com
@@ -28,48 +38,18 @@ Rio de Janeiro, 2011. 15~p. Substitui a Ref.~\citeonline{NBR14724:2005}.}
 \bibitem[{Centro do Professorado Paulista} 2014]{cpp2014}
 \abntrefinfo{{Centro do Professorado Paulista}}{{Centro do Professorado
   Paulista}}{2014}
-{{Centro do Professorado Paulista}. \emph{Professores gastam 894 mil dias
-  s{\'o} com corre{\c c}{\~o}es de provas}. 2014. CPP - Centro do Professorado
-  Paulista.
+{{Centro do Professorado Paulista}. \emph{Professores gastam 894 mil dias só
+  com correções de provas}. 2014. CPP - Centro do Professorado Paulista.
 Dispon{\'\i}vel em:
   \url{https://cpp.org.br/professores-brasileiros-gastam-894-mil-dias-so-com-correcoes-de-provas/}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[Design Science Approach in Developing Usable Mobile Learning
-  Applications: Lesson from Prototype Evaluation 2026]{dsrmobilelearning2026}
-\abntrefinfo{Design\ldots}{DESIGN\ldots}{2026a}
-{DESIGN Science Approach in Developing Usable Mobile Learning Applications:
-  Lesson from Prototype Evaluation.
-\emph{ResearchGate}, 2026.
-Dispon{\'\i}vel em:
-  \url{https://www.researchgate.net/publication/396520218\_Design\_Science\_Approach\_in\_Developing\_Usable\_Mobile\_Learning\_Applications\_Lesson\_from\_Prototype\_Evaluation}.
-  Acesso em: 21 mar. 2026.}
-
-\bibitem[Design Science Research ({DSR}) 2026]{emergentmind_dsr2026}
-\abntrefinfo{Design\ldots}{DESIGN\ldots}{2026b}
-{DESIGN Science Research ({DSR}). 2026. Emergent Mind.
-Dispon{\'\i}vel em:
-  \url{https://www.emergentmind.com/topics/design-science-research-dsr}. Acesso
-  em: 21 mar. 2026.}
-
-\bibitem[Estudo e Desenvolvimento de um Sistema para Geração e Correção
-  Automática 2026]{ifg_sistema_geracao2026}
-\abntrefinfo{Estudo\ldots}{ESTUDO\ldots}{2026}
-{ESTUDO e Desenvolvimento de um Sistema para Geração e Correção
-  Automática.
-\emph{SICTI - IFG}, 2026.
-Dispon{\'\i}vel em:
-  \url{https://periodicos.ifg.edu.br/sicti/article/view/3257}. Acesso em: 21
-  mar. 2026.}
-
-\bibitem[{FEDS}: a Framework for Evaluation in Design Science Research
-  2026]{feds_framework2026}
-\abntrefinfo{{FEDS}\ldots}{{FEDS}\ldots}{2026}
-{{FEDS}: a Framework for Evaluation in Design Science Research.
-\emph{SciSpace}, 2026.
-Dispon{\'\i}vel em:
-  \url{https://scispace.com/papers/feds-a-framework-for-evaluation-in-design-science-research-1z3rfjsfhc}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[{Dwivedi, Shrish} 2026]{nanonets_idp_leaderboard2026}
+\abntrefinfo{{Dwivedi, Shrish}}{{Dwivedi, Shrish}}{2026}
+{{Dwivedi, Shrish}. \emph{We ran 16 AI Models on 9,000+ Real Documents. Here's
+  What We Found}. 2026.
+Dispon{\'\i}vel em: \url{https://nanonets.com/blog/idp-leaderboard-1-5/}.
+  Acesso em: 31 mar. 2026.}
 
 \bibitem[Filho 2026]{aprendizadomaquina2026}
 \abntrefinfo{Filho}{FILHO}{2026}
@@ -91,56 +71,56 @@ Dispon{\'\i}vel em:
   \url{https://periodicorease.pro.br/rease/article/view/18011}. Acesso em: 31
   mar. 2026.}
 
-\bibitem[{Gemini} (language model) 2026]{wikipedia_gemini2026}
-\abntrefinfo{{Gemini}\ldots}{{Gemini}\ldots}{2026}
-{{Gemini} (language model). 2026. Wikipedia.
-Dispon{\'\i}vel em:
-  \url{https://en.wikipedia.org/wiki/Gemini\_(language\_model)}. Acesso em: 21
-  mar. 2026.}
-
-\bibitem[{Google} 2026]{google_structured_outputs2026}
-\abntrefinfo{{Google}}{{Google}}{2026}
-{{Google}. \emph{Improving Structured Outputs in the {Gemini API}}. 2026.
-  Google Blog.
+\bibitem[{Gemini API Team} 2026]{google_structured_outputs2026}
+\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026a}
+{{Gemini API Team}. \emph{Improving Structured Outputs in the {Gemini API}}.
+  2026. Google Blog.
 Dispon{\'\i}vel em:
   \url{https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-structured-outputs/}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google AI for Developers} 2026]{geminiapi_releasenotes2026}
-\abntrefinfo{{Google AI for Developers}}{{Google AI for Developers}}{2026}
-{{Google AI for Developers}. \emph{Release notes | {Gemini API}}. 2026. Google
-  AI for Developers.
+\bibitem[{Gemini API Team} 2026]{geminiapi_releasenotes2026}
+\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026b}
+{{Gemini API Team}. \emph{Release notes | {Gemini API}}. 2026. Google AI for
+  Developers.
 Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs/changelog}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google Cloud} 2026]{googlecloud_gemini2_2026}
-\abntrefinfo{{Google Cloud}}{{Google Cloud}}{2026a}
-{{Google Cloud}. \emph{Use {Gemini} 2.0 to speed up data processing}. 2026.
-  Google Cloud Blog.
+\bibitem[{Google Cloud Team} 2026]{googlecloud_gemini2026}
+\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026a}
+{{Google Cloud Team}. \emph{Modelos de linguagem grandes com a tecnologia de
+  ponta da IA do Google}. 2026. Google Cloud.
+Dispon{\'\i}vel em: \url{https://cloud.google.com/ai/llms?hl=pt-BR}. Acesso em:
+  31 mar. 2026.}
+
+\bibitem[{Google Cloud Team} 2026]{googlecloud_gemini2_2026}
+\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026b}
+{{Google Cloud Team}. \emph{Use {Gemini} 2.0 to speed up data processing}.
+  2026. Google Cloud Blog.
 Dispon{\'\i}vel em:
   \url{https://cloud.google.com/blog/products/ai-machine-learning/use-gemini-2-0-to-speed-up-data-processing}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google Cloud} 2026]{googlecloudgenai2026}
-\abntrefinfo{{Google Cloud}}{{Google Cloud}}{2026b}
-{{Google Cloud}. \emph{When to use generative {AI} or traditional {AI}}. 2026.
-  Google Cloud Documentation.
+\bibitem[{Google Cloud Team} 2026]{googlecloudgenai2026}
+\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026c}
+{{Google Cloud Team}. \emph{When to use generative {AI} or traditional {AI}}.
+  2026. Google Cloud Documentation.
 Dispon{\'\i}vel em:
   \url{https://docs.cloud.google.com/docs/ai-ml/generative-ai/generative-ai-or-traditional-ai}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google Developers} 2026]{google_ml_classification2026}
-\abntrefinfo{{Google Developers}}{{Google Developers}}{2026}
-{{Google Developers}. \emph{Classification: Accuracy, recall, precision, and
-  related metrics}. 2026. Machine Learning Crash Course.
+\bibitem[{Google Developers Team} 2026]{google_ml_classification2026}
+\abntrefinfo{{Google Developers Team}}{{Google Developers Team}}{2026}
+{{Google Developers Team}. \emph{Classification: Accuracy, recall, precision,
+  and related metrics}. 2026. Machine Learning Crash Course.
 Dispon{\'\i}vel em:
   \url{https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall}.
-  Acesso em: 21 mar. 2026.}
+  Acesso em: 31 mar. 2026.}
 
-\bibitem[{Google Firebase} 2026]{firebase_structured_output2026}
-\abntrefinfo{{Google Firebase}}{{Google Firebase}}{2026}
-{{Google Firebase}. \emph{Generate structured output (like {JSON} and enums)
-  using the {Gemini API}}. 2026. Firebase AI Logic Documentation.
+\bibitem[{Google Firebase Team} 2026]{firebase_structured_output2026}
+\abntrefinfo{{Google Firebase Team}}{{Google Firebase Team}}{2026}
+{{Google Firebase Team}. \emph{Generate structured output (like {JSON} and
+  enums) using the {Gemini API}}. 2026. Firebase AI Logic Documentation.
 Dispon{\'\i}vel em:
   \url{https://firebase.google.com/docs/ai-logic/generate-structured-output}.
   Acesso em: 21 mar. 2026.}
@@ -153,6 +133,21 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://ojs.studiespublicacoes.com.br/ojs/index.php/cadped/article/view/18773}.
   Acesso em: 31 mar. 2026.}
+
+\bibitem[{Silva, Túlio de Souza} 2018]{silva_minhaprova_2018}
+\abntrefinfo{{Silva, Túlio de Souza}}{{Silva, Túlio de Souza}}{2018}
+{{Silva, Túlio de Souza}. Minha prova: Automatizando o processo avaliativo nas
+  escolas.
+2018.
+Dispon{\'\i}vel em:
+  \url{https://repository.ufrpe.br/bitstream/123456789/1926/1/tcc\_tuliodesouzasilva.pdf}.
+  Acesso em: 31 mar. 2026.}
+
+\bibitem[Sposito et al. 2024]{sposito2024design}
+\abntrefinfo{Sposito et al.}{SPOSITO et al.}{2024}
+{SPOSITO, L. et al. Design science research: um estudo sobre o ensino do
+  m{\'e}todo.
+\emph{Revista Ci{\^e}ncias Administrativas}, v.~30, p. 1--18, 2024.}
 
 \bibitem[{SS\&C Blue Prism} 2026]{blueprismgenai2026}
 \abntrefinfo{{SS\&C Blue Prism}}{{SS\&C Blue Prism}}{2026}
@@ -168,6 +163,14 @@ Dispon{\'\i}vel em:
   Outcomes}. 2026. The Case HQ Online.
 Dispon{\'\i}vel em:
   \url{https://thecasehq.com/incorporating-ai-into-exam-design-for-better-outcomes/}.
-  Acesso em: 21 mar. 2026.}
+  Acesso em: 31 mar. 2026.}
+
+\bibitem[Venable, Pries-Heje e Baskerville 2016]{feds_framework2026}
+\abntrefinfo{Venable, Pries-Heje e Baskerville}{VENABLE; PRIES-HEJE;
+  BASKERVILLE}{2016}
+{VENABLE, J.; PRIES-HEJE, J.; BASKERVILLE, R. Feds: a framework for evaluation
+  in design science research.
+\emph{European journal of information systems}, Taylor \& Francis, v.~25, n.~1,
+  p. 77--89, 2016.}
 
 \end{thebibliography}

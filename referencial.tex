@@ -16,13 +16,11 @@ Diversos trabalhos têm sido desenvolvidos na área de automação de correção
 
 \subsection{Sistemas Comerciais e Acadêmicos}
 
-\textbf{Minha Prova:} Um sistema de automatização que foca na correção de gabaritos padrão. A limitação de muitos sistemas desse tipo é a exigência de um formato fixo de folha de respostas, o que restringe a flexibilidade do professor na elaboração das avaliações.
+\textbf{Minha Prova:} Um sistema de automatização que foca na correção de gabaritos padrão. A limitação de muitos sistemas desse tipo é a exigência de um formato fixo de folha de respostas, o que restringe a flexibilidade do professor na elaboração das avaliações \cite{silva_minhaprova_2018}.
 
-\textbf{Aprendizado de Máquina para Gabaritos (Unicamp, 2021):} Estudos realizados na Unicamp exploraram o uso de técnicas de visão computacional clássica para automatizar a correção, validando que a IA é uma solução viável para o segmento acadêmico. No entanto, esses estudos identificaram que a robustez contra diferentes condições de captura de imagem ainda era um desafio significativo.
+\textbf{Aprendizado de Máquina para Gabaritos (Unicamp, 2021):} Estudos realizados na Unicamp exploraram o uso de técnicas de visão computacional clássica para automatizar a correção, validando que a IA é uma solução viável para o segmento acadêmico. No entanto, esses estudos identificaram que a robustez contra diferentes condições de captura de imagem ainda era um desafio significativo \cite{aprendizadomaquina2026}.
 
-\textbf{Sistema de Geração e Correção via Ollama (IFG):} Um trabalho recente no IFG detalha uma arquitetura que utiliza o Ollama para execução local de modelos de linguagem, integrando RAG (Retrieval-Augmented Generation) para garantir que as questões sejam ancoradas em conteúdos de referência \cite{ifg_sistema_geracao2026}. Esta abordagem é robusta para a geração de provas, mas a execução local pode exigir hardware de servidor que muitos professores não possuem, justificando a escolha por uma API em nuvem como a do Gemini neste projeto.
-
-\textbf{Magister Labs / Corretor de Prova IA:} Ferramentas comerciais emergentes já demonstram a possibilidade de corrigir provas via foto sem gabarito prévio, utilizando a IA para "descobrir" a resposta correta através do conteúdo da questão. A inovação deste TCC em relação a essas ferramentas comerciais é o foco na transparência acadêmica, permitindo que o professor submeta o seu próprio gabarito mestre em PDF, garantindo que a correção siga exatamente o que foi ensinado em sala de aula, além de integrar a gestão completa de turmas dentro do mesmo ambiente.
+\textbf{Sistema de Geração e Correção via Ollama (IFG):} Um trabalho recente no IFG detalha uma arquitetura que utiliza o Ollama para execução local de modelos de linguagem, integrando RAG (Retrieval-Augmented Generation) para garantir que as questões sejam ancoradas em conteúdos de referência \cite{almeida2025estudo}. Esta abordagem é robusta para a geração de provas, mas a execução local pode exigir hardware de servidor que muitos professores não possuem, justificando a escolha por uma API em nuvem como a do Gemini neste projeto.
 
 \section{O Papel do Gemini 3.1 Flash no Estado da Arte}
 
@@ -51,13 +49,13 @@ GPT-4 & \#2 & 78.0 & 87.2 & Variável \\
 \end{tabular}
 \end{table}
 
-A escolha pelo Gemini 3.1 Flash justifica-se pela análise do custo-benefício: embora o modelo Pro lidere em raciocínio visual complexo (Visual QA), o modelo Flash apresenta a maior pontuação em extração de documentos (OmniDoc Score: 90.1), custando uma fração do preço (\$0.10 vs \$1.25 por milhão de tokens). Isso torna a solução economicamente viável para o uso diário em escolas, permitindo que professores processem centenas de provas sem custos proibitivos.
+A escolha pelo Gemini 3.1 Flash justifica-se pela análise do custo-benefício: embora o modelo Pro lidere em raciocínio visual complexo (Visual QA), o modelo Flash apresenta a maior pontuação em extração de documentos (OmniDoc Score: 90.1), custando uma fração do preço (\$0.10 vs \$1.25 por milhão de tokens). Isso torna a solução economicamente viável para o uso diário em escolas, permitindo que professores processem centenas de provas sem custos proibitivos \cite{nanonets_idp_leaderboard2026}.
 
 \section{IA Generativa vs. IA Tradicional}
 
 A diferença fundamental entre IA Generativa e IA Tradicional reside na capacidade de lidar com dados não estruturados \cite{googlecloudgenai2026}. Sistemas OMR tradicionais requerem templates rígidos e marcações precisas, enquanto modelos de IA Generativa podem interpretar imagens em diversos formatos, ângulos e condições de iluminação \cite{blueprismgenai2026}. Esta flexibilidade é especialmente relevante no contexto educacional, onde professores muitas vezes não têm acesso a equipamentos especializados de digitalização.
 
-Os LLMs multimodais, como o Gemini 3.1 Flash, combinam capacidades de processamento de linguagem natural com visão computacional, permitindo não apenas extrair dados de imagens, mas também compreender o contexto e a semântica das informações apresentadas \cite{wikipedia_gemini2026}. Essa característica possibilita o reconhecimento de alternativas marcadas mesmo em provas com caligrafias variadas, rasuras ou formatações não padronizadas.
+Os LLMs multimodais, como o Gemini 3.1 Flash, combinam capacidades de processamento de linguagem natural com visão computacional, permitindo não apenas extrair dados de imagens, mas também compreender o contexto e a semântica das informações apresentadas \cite{googlecloud_gemini2026}. Essa característica possibilita o reconhecimento de alternativas marcadas mesmo em provas com caligrafias variadas, rasuras ou formatações não padronizadas.
 
 \section{Síntese do Referencial}
 
