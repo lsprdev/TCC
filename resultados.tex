@@ -4,7 +4,7 @@
 \chapter{Metodologia}
 % ---
 
-A condução deste trabalho segue rigorosamente a metodologia Design Science Research (DSR). A DSR é um paradigma de resolução de problemas que busca criar inovações que definam ideias, práticas e produtos técnicos através dos quais a análise e o uso de sistemas de informação possam ser efetivamente realizados. Diferente da pesquisa básica que busca entender a realidade, a DSR busca transformar a realidade através da criação de um artefato útil.
+A condução deste trabalho segue rigorosamente a metodologia Design Science Research (DSR) \cite{dsrmobilelearning2026}. A DSR é um paradigma de resolução de problemas que busca criar inovações que definam ideias, práticas e produtos técnicos através dos quais a análise e o uso de sistemas de informação possam ser efetivamente realizados. Diferente da pesquisa básica que busca entender a realidade, a DSR busca transformar a realidade através da criação de um artefato útil \cite{emergentmind_dsr2026}.
 
 % ---
 \section{O Ciclo DSR}
@@ -26,7 +26,7 @@ O artefato será construído utilizando o framework Django para o backend, garan
 
 \subsection{Demonstração e Avaliação}
 
-O protótipo será submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Serão realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utilizará o Framework for Evaluation in Design Science (FEDS), alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
+O protótipo será submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Serão realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utilizará o Framework for Evaluation in Design Science (FEDS) \cite{feds_framework2026}, alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
 
 \subsection{Comunicação}
 
@@ -82,9 +82,9 @@ A integração com o Gemini 3.1 Flash utiliza técnicas avançadas de engenharia
         \item Comparar as marcações com o gabarito.
     \end{itemize}
 
-    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de "Controlled Generation" do Gemini, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"q": 1, "m": "A", "c": true\}, ... ], "confianca": 0.98 \}}.
+    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de "Controlled Generation" do Gemini \cite{firebase_structured_output2026}, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"q": 1, "m": "A", "c": true\}, ... ], "confianca": 0.98 \}}.
 
-    \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas, tornando a interface de correção manual um componente crítico do artefato.
+    \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas \cite{iaeducacao2026}, tornando a interface de correção manual um componente crítico do artefato.
 \end{enumerate}
 
 \section{O Experimento}
@@ -126,7 +126,7 @@ A avaliação do artefato é quantitativa e qualitativa, focando em quatro dimen
 
 \subsection{Acurácia e Precisão}
 
-Acurácia da correção (número de questões classificadas corretamente vs. padrão-ouro manual) e precisão no reconhecimento de nomes manuscritos. Esta métrica é fundamental para validar a confiabilidade do sistema em contexto real de uso.
+Acurácia da correção (número de questões classificadas corretamente vs. padrão-ouro manual) e precisão no reconhecimento de nomes manuscritos \cite{google_ml_classification2026}. Esta métrica é fundamental para validar a confiabilidade do sistema em contexto real de uso.
 
 \subsection{Eficiência Temporal}
 
