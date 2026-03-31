@@ -64,19 +64,27 @@ Dispon{\'\i}vel em:
   \url{https://periodicorease.pro.br/rease/article/view/18011}. Acesso em: 31
   mar. 2026.}
 
-\bibitem[{Gemini API Team} 2026]{google_structured_outputs2026b}
-\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026a}
+\bibitem[{Gemini API Team} 2025]{google_structured_outputs2026b}
+\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2025}
 {{Gemini API Team}. \emph{Improving Structured Outputs in the {Gemini API}}.
-  2026. Google Blog.
+  2025. Google Blog.
 Dispon{\'\i}vel em:
   \url{https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-structured-outputs/}.
   Acesso em: 21 mar. 2026.}
 
 \bibitem[{Gemini API Team} 2026]{geminiapi_releasenotes2026a}
-\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026b}
+\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026}
 {{Gemini API Team}. \emph{Release notes | {Gemini API}}. 2026. Google AI for
   Developers.
 Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs/changelog}.
+  Acesso em: 21 mar. 2026.}
+
+\bibitem[{Google Cloud Team} 2025]{googlecloud_gemini2_2026b}
+\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2025}
+{{Google Cloud Team}. \emph{Use {Gemini} 2.0 to speed up data processing}.
+  2025. Google Cloud Blog.
+Dispon{\'\i}vel em:
+  \url{https://cloud.google.com/blog/products/ai-machine-learning/use-gemini-2-0-to-speed-up-data-processing}.
   Acesso em: 21 mar. 2026.}
 
 \bibitem[{Google Cloud Team} 2026]{googlecloud_gemini2026d}
@@ -86,16 +94,8 @@ Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs/changelog}.
 Dispon{\'\i}vel em: \url{https://cloud.google.com/ai/llms?hl=pt-BR}. Acesso em:
   31 mar. 2026.}
 
-\bibitem[{Google Cloud Team} 2026]{googlecloud_gemini2_2026b}
-\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026b}
-{{Google Cloud Team}. \emph{Use {Gemini} 2.0 to speed up data processing}.
-  2026. Google Cloud Blog.
-Dispon{\'\i}vel em:
-  \url{https://cloud.google.com/blog/products/ai-machine-learning/use-gemini-2-0-to-speed-up-data-processing}.
-  Acesso em: 21 mar. 2026.}
-
 \bibitem[{Google Cloud Team} 2026]{googlecloudgenai2026a}
-\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026c}
+\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026b}
 {{Google Cloud Team}. \emph{When to use generative {AI} or traditional {AI}}.
   2026. Google Cloud Documentation.
 Dispon{\'\i}vel em:

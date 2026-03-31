@@ -10,11 +10,11 @@ A condução deste trabalho segue rigorosamente a metodologia Design Science Res
 \section{O Ciclo DSR}
 % ---
 
-O ciclo iterativo da DSR para este projeto foi estruturado em cinco fases distintas, cada uma contribuindo para o desenvolvimento sistemático do artefato tecnológico:
+O ciclo iterativo da DSR para este projeto será estruturado em cinco fases distintas, cada uma contribuindo para o desenvolvimento sistemático do artefato tecnológico:
 
 \subsection{Identificação do Problema e Motivação}
 
-A partir da análise estatística do tempo gasto por professores brasileiros (21,4 milhões de horas/ano), define-se a necessidade clara de automação. O problema é delimitado à ineficiência da correção manual e à rigidez dos sistemas OMR atuais. Esta fase envolveu revisão bibliográfica extensiva e entrevistas exploratórias com educadores para compreender as dores reais do processo de correção.
+A partir da análise estatística do tempo gasto por professores brasileiros (21,4 milhões de horas/ano), define-se a necessidade clara de automação. O problema é delimitado à ineficiência da correção manual e à rigidez dos sistemas OMR atuais. Esta fase envolverá revisão bibliográfica extensiva e entrevistas exploratórias com educadores para compreender as dores reais do processo de correção.
 
 \subsection{Definição dos Objetivos da Solução}
 
@@ -58,14 +58,14 @@ A solução proposta rompe com a tradição dos "formulários de bolinha". O pro
 
 \subsection{Arquitetura de Software e Hardware}
 
-O sistema opera em um modelo de cliente-servidor em nuvem, conforme ilustrado na arquitetura:
+O sistema operará em um modelo de cliente-servidor em nuvem, conforme ilustrado na arquitetura:
 
 \begin{itemize}
     \item \textbf{Hardware}: Smartphones convencionais com câmera mínima de 8MP e acesso à internet. O processamento pesado de IA ocorre nos servidores da Google via API, não exigindo hardware caro do usuário final.
 
     \item \textbf{Backend (Django)}: Gerencia o ciclo de vida do exame. Uma funcionalidade central é o "Compilador Semântico", que trata a entrada do professor (gabarito mestre) para garantir que a IA compreenda exatamente quais são as chaves de resposta. O Django também gerencia autenticação, autorização e persistência de dados.
 
-    \item \textbf{Frontend (Expo)}: Focado na experiência de captura. Implementa guias visuais para ajudar o professor a enquadrar a prova, embora o Gemini 3.1 Flash possua alta tolerância a inclinações. A interface foi projetada seguindo princípios de design centrado no usuário, priorizando simplicidade e eficiência.
+    \item \textbf{Frontend (Expo)}: Focado na experiência de captura. Implementa guias visuais para ajudar o professor a enquadrar a prova, embora o Gemini 3.1 Flash possua alta tolerância a inclinações. A interface será projetada seguindo princípios de design centrado no usuário, priorizando simplicidade e eficiência.
 \end{itemize}
 
 \subsection{O Fluxo da Inteligência Artificial}
@@ -82,7 +82,7 @@ A integração com o Gemini 3.1 Flash utiliza técnicas avançadas de engenharia
         \item Comparar as marcações com o gabarito.
     \end{itemize}
 
-    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de ``Controlled Generation'' do Gemini \cite{firebase_structured_output2026}, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"q": 1, "m": "A", "c": true\}, ... ], "confianca": 0.98 \}}.
+    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de ``Controlled Generation'' do Gemini \cite{firebase_structured_output2026}, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"a": 1, "b": "3", "c": "2"\}, ... ], "confianca": 0.98 \}}.
 
     \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas \cite{iaeducacao2026}, tornando a interface de correção manual um componente crítico do artefato.
 \end{enumerate}
@@ -98,7 +98,7 @@ O experimento será realizado em duas fases:
 \begin{enumerate}
     \item \textbf{Laboratório}: Utilização de datasets de provas sintéticas com diferentes tipos de rasuras e qualidades de impressão para estressar o modelo Gemini e ajustar os prompts.
 
-    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizaram o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processou um lote de no mínimo 50 provas de turmas de graduação e técnico.
+    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizarão o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processará um lote de no mínimo 50 provas de turmas de graduação e técnico.
 \end{enumerate}
 
 \subsection{Hardware e Software do Teste}
@@ -111,7 +111,7 @@ O experimento será realizado em duas fases:
 
 \subsection{Cronograma de Execução}
 
-O experimento foi planejado para ocorrer no penúltimo bimestre do projeto de TCC:
+O experimento será planejado para ocorrer no penúltimo bimestre do projeto de TCC:
 
 \begin{itemize}
     \item \textbf{Semana 1}: Coleta do material (provas físicas) e correção manual (estabelecimento do benchmark).
