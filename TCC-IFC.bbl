@@ -28,10 +28,10 @@ Dispon{\'\i}vel em:
   apresenta{\c c}\~ao.
 Rio de Janeiro, 2011. 15~p.}
 
-\bibitem[{Centro do Professorado Paulista} 2014]{cpp2014}
-\abntrefinfo{{Centro do Professorado Paulista}}{{Centro do Professorado
-  Paulista}}{2014}
-{{Centro do Professorado Paulista}. \emph{Professores gastam 894 mil dias só
+\bibitem[{CENTRO DO PROFESSORADO PAULISTA} 2014]{cpp2014}
+\abntrefinfo{{CENTRO DO PROFESSORADO PAULISTA}}{{CENTRO DO PROFESSORADO
+  PAULISTA}}{2014}
+{{CENTRO DO PROFESSORADO PAULISTA}. \emph{Professores gastam 894 mil dias só
   com correções de provas}. 2014. CPP - Centro do Professorado Paulista.
 Dispon{\'\i}vel em:
   \url{https://cpp.org.br/professores-brasileiros-gastam-894-mil-dias-so-com-correcoes-de-provas/}.
@@ -64,39 +64,39 @@ Dispon{\'\i}vel em:
   \url{https://periodicorease.pro.br/rease/article/view/18011}. Acesso em: 31
   mar. 2026.}
 
-\bibitem[{Gemini API Team} 2025]{google_structured_outputs2026b}
-\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2025}
-{{Gemini API Team}. \emph{Improving Structured Outputs in the {Gemini API}}.
+\bibitem[{GEMINI API TEAM} 2025]{google_structured_outputs2026b}
+\abntrefinfo{{GEMINI API TEAM}}{{GEMINI API TEAM}}{2025}
+{{GEMINI API TEAM}. \emph{Improving Structured Outputs in the {Gemini API}}.
   2025. Google Blog.
 Dispon{\'\i}vel em:
   \url{https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-structured-outputs/}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Gemini API Team} 2026]{geminiapi_releasenotes2026a}
-\abntrefinfo{{Gemini API Team}}{{Gemini API Team}}{2026}
-{{Gemini API Team}. \emph{Release notes | {Gemini API}}. 2026. Google AI for
+\bibitem[{GEMINI API TEAM} 2026]{geminiapi_releasenotes2026a}
+\abntrefinfo{{GEMINI API TEAM}}{{GEMINI API TEAM}}{2026}
+{{GEMINI API TEAM}. \emph{Release notes | {Gemini API}}. 2026. Google AI for
   Developers.
 Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs/changelog}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google Cloud Team} 2025]{googlecloud_gemini2_2026b}
-\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2025}
-{{Google Cloud Team}. \emph{Use {Gemini} 2.0 to speed up data processing}.
+\bibitem[{GOOGLE CLOUD TEAM} 2025]{googlecloud_gemini2_2026b}
+\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2025}
+{{GOOGLE CLOUD TEAM}. \emph{Use {Gemini} 2.0 to speed up data processing}.
   2025. Google Cloud Blog.
 Dispon{\'\i}vel em:
   \url{https://cloud.google.com/blog/products/ai-machine-learning/use-gemini-2-0-to-speed-up-data-processing}.
   Acesso em: 21 mar. 2026.}
 
-\bibitem[{Google Cloud Team} 2026]{googlecloud_gemini2026d}
-\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026a}
-{{Google Cloud Team}. \emph{Modelos de linguagem grandes com a tecnologia de
+\bibitem[{GOOGLE CLOUD TEAM} 2026]{googlecloud_gemini2026d}
+\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2026a}
+{{GOOGLE CLOUD TEAM}. \emph{Modelos de linguagem grandes com a tecnologia de
   ponta da IA do Google}. 2026. Google Cloud.
 Dispon{\'\i}vel em: \url{https://cloud.google.com/ai/llms?hl=pt-BR}. Acesso em:
   31 mar. 2026.}
 
-\bibitem[{Google Cloud Team} 2026]{googlecloudgenai2026a}
-\abntrefinfo{{Google Cloud Team}}{{Google Cloud Team}}{2026b}
-{{Google Cloud Team}. \emph{When to use generative {AI} or traditional {AI}}.
+\bibitem[{GOOGLE CLOUD TEAM} 2026]{googlecloudgenai2026a}
+\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2026b}
+{{GOOGLE CLOUD TEAM}. \emph{When to use generative {AI} or traditional {AI}}.
   2026. Google Cloud Documentation.
 Dispon{\'\i}vel em:
   \url{https://docs.cloud.google.com/docs/ai-ml/generative-ai/generative-ai-or-traditional-ai}.
@@ -110,9 +110,9 @@ Dispon{\'\i}vel em:
   \url{https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall}.
   Acesso em: 31 mar. 2026.}
 
-\bibitem[{Google Firebase Team} 2026]{firebase_structured_output2026}
-\abntrefinfo{{Google Firebase Team}}{{Google Firebase Team}}{2026}
-{{Google Firebase Team}. \emph{Generate structured output (like {JSON} and
+\bibitem[{GOOGLE FIREBASE TEAM} 2026]{firebase_structured_output2026}
+\abntrefinfo{{GOOGLE FIREBASE TEAM}}{{GOOGLE FIREBASE TEAM}}{2026}
+{{GOOGLE FIREBASE TEAM}. \emph{Generate structured output (like {JSON} and
   enums) using the {Gemini API}}. 2026. Firebase AI Logic Documentation.
 Dispon{\'\i}vel em:
   \url{https://firebase.google.com/docs/ai-logic/generate-structured-output}.
