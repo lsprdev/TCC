@@ -56,9 +56,9 @@
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos Resultados}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.1}Síntese dos Resultados Esperados}{25}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Considerações sobre Ética e Privacidade}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contribuições}{26}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Contribuições Esperadas}{26}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Contribuição Científica}{26}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Contribuição Prática}{26}{subsection.6.3.2}%
 \contentsline {section}{\numberline {6.4}Limitações do Estudo}{27}{section.6.4}%

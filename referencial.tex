@@ -6,7 +6,7 @@ Este capítulo apresenta os principais conceitos e referências que fundamentam 
 
 A utilização de IA na educação não é um conceito novo, mas a transição para a IA Generativa Multimodal representa uma mudança de paradigma \cite{iaeducacao2026}. Trabalhos anteriores focaram em sistemas de tutoria inteligente e avaliações automatizadas baseadas em regras. No entanto, a literatura recente começa a explorar o impacto da IA especificamente na transformação dos métodos tradicionais no ensino superior e básico \cite{impactoiaavaliacao2025}.
 
-A Inteligência Artificial Generativa difere das abordagens tradicionais de IA por sua capacidade de criar conteúdo novo e interpretar dados não estruturados \cite{blueprismgenai2026}. Enquanto sistemas de IA tradicional dependem de regras predefinidas e templates fixos, a IA Generativa pode adaptar-se a diferentes contextos e formatos, tornando-a especialmente adequada para aplicações educacionais onde a variabilidade é uma constante \cite{googlecloudgenai2026}.
+A Inteligência Artificial Generativa difere das abordagens tradicionais de IA por sua capacidade de criar conteúdo novo e interpretar dados não estruturados \cite{blueprismgenai2026}. Enquanto sistemas de IA tradicional dependem de regras predefinidas e templates fixos, a IA Generativa pode adaptar-se a diferentes contextos e formatos, tornando-a especialmente adequada para aplicações educacionais onde a variabilidade é uma constante \cite{googlecloudgenai2026a}.
 
 O impacto da IA na avaliação educacional tem sido objeto de estudos recentes, que apontam tanto as oportunidades quanto os desafios desta tecnologia \cite{impactoiaavaliacao2025}. A possibilidade de automatizar tarefas repetitivas permite que os educadores dediquem mais tempo às atividades pedagógicas de maior valor, como o desenvolvimento de estratégias de ensino personalizadas e o atendimento individualizado aos alunos \cite{iaeducacao2026}. No entanto, é importante ressaltar que a IA na avaliação educacional não substitui o professor, mas sim o auxilia em suas tarefas, sendo fundamental considerar a formação continuada dos professores no uso dessas ferramentas \cite{iaeducacao2026}.
 
@@ -18,7 +18,7 @@ Diversos trabalhos têm sido desenvolvidos na área de automação de correção
 
 \textbf{Minha Prova:} Um sistema de automatização que foca na correção de gabaritos padrão. A limitação de muitos sistemas desse tipo é a exigência de um formato fixo de folha de respostas, o que restringe a flexibilidade do professor na elaboração das avaliações \cite{silva_minhaprova_2018}.
 
-\textbf{Aprendizado de Máquina para Gabaritos (Unicamp, 2021):} Estudos realizados na Unicamp exploraram o uso de técnicas de visão computacional clássica para automatizar a correção, validando que a IA é uma solução viável para o segmento acadêmico. No entanto, esses estudos identificaram que a robustez contra diferentes condições de captura de imagem ainda era um desafio significativo \cite{aprendizadomaquina2026}.
+\textbf{Aprendizado de Máquina para Gabaritos:} Estudos realizados na Unicamp exploraram o uso de técnicas de visão computacional clássica para automatizar a correção, validando que a IA é uma solução viável para o segmento acadêmico. No entanto, esses estudos identificaram que a robustez contra diferentes condições de captura de imagem ainda era um desafio significativo \cite{aprendizadomaquina2026}.
 
 \textbf{Avalia: sistema de corre{\c{c}}{\~a}o automatizada de atividades escolares utilizando reconhecimento {\'o}ptico de caracteres e intelig{\^e}ncia artificial (Unesp, 2024):} Este trabalho propõe um sistema de correção automatizada utilizando OCR e IA, focado em atividades escolares. Embora seja uma contribuição importante para a área, o sistema ainda depende de uma estrutura de prova relativamente rígida e não aborda completamente a variabilidade das condições de captura de imagem em ambientes escolares \cite{oliveira2024avalia}.
 
@@ -26,9 +26,9 @@ Diversos trabalhos têm sido desenvolvidos na área de automação de correção
 
 \section{O Papel do Gemini 3.1 Flash no Estado da Arte}
 
-O lançamento da série Gemini 3 em meados de 2025 e sua atualização para a versão 3.1 em fevereiro de 2026 marcaram um ponto de inflexão na capacidade de processamento de documentos \cite{geminiapi_releasenotes2026}. O modelo Gemini 3.1 Flash, especificamente a arquitetura otimizada, foi projetado para velocidade e volume, suportando até 1 milhão de tokens de contexto e apresentando uma latência de "Time to First Token" significativamente menor que seus predecessores \cite{googlecloud_gemini2_2026}.
+O lançamento da série Gemini 3 em meados de 2025 e sua atualização para a versão 3.1 em fevereiro de 2026 marcaram um ponto de inflexão na capacidade de processamento de documentos \cite{geminiapi_releasenotes2026a}. O modelo Gemini 3.1 Flash, especificamente a arquitetura otimizada, foi projetado para velocidade e volume, suportando até 1 milhão de tokens de contexto e apresentando uma latência de ``Time to First Token'' significativamente menor que seus predecessores \cite{googlecloud_gemini2_2026b}.
 
-Em benchmarks especializados em Inteligência de Documentos (IDP), como o OmniDoc e o IDP Leaderboard, o Gemini 3.1 Flash demonstrou ser um dos modelos mais eficientes para a extração de texto em layouts "messy" (desorganizados ou degradados), superando em muitos casos modelos mais caros na extração pura de dados de tabelas e formulários \cite{googlecloud_gemini2_2026}. Essa capacidade é crucial para o sucesso deste projeto, pois as provas capturadas em ambiente escolar raramente possuem iluminação perfeita ou alinhamento impecável.
+Em benchmarks especializados em Inteligência de Documentos (IDP), como o OmniDoc e o IDP Leaderboard, o Gemini 3.1 Flash demonstrou ser um dos modelos mais eficientes para a extração de texto em layouts ``messy'' (desorganizados ou degradados), superando em muitos casos modelos mais caros na extração pura de dados de tabelas e formulários \cite{googlecloud_gemini2_2026b}. Essa capacidade é crucial para o sucesso deste projeto, pois as provas capturadas em ambiente escolar raramente possuem iluminação perfeita ou alinhamento impecável.
 
 \subsection{Comparação de Modelos}
 
@@ -55,9 +55,9 @@ A escolha pelo Gemini 3.1 Flash justifica-se pela análise do custo-benefício: 
 
 \section{IA Generativa vs. IA Tradicional}
 
-A diferença fundamental entre IA Generativa e IA Tradicional reside na capacidade de lidar com dados não estruturados \cite{googlecloudgenai2026}. Sistemas OMR tradicionais requerem templates rígidos e marcações precisas, enquanto modelos de IA Generativa podem interpretar imagens em diversos formatos, ângulos e condições de iluminação \cite{blueprismgenai2026}. Esta flexibilidade é especialmente relevante no contexto educacional, onde professores muitas vezes não têm acesso a equipamentos especializados de digitalização.
+A diferença fundamental entre IA Generativa e IA Tradicional reside na capacidade de lidar com dados não estruturados \cite{googlecloudgenai2026a}. Sistemas OMR tradicionais requerem templates rígidos e marcações precisas, enquanto modelos de IA Generativa podem interpretar imagens em diversos formatos, ângulos e condições de iluminação \cite{blueprismgenai2026}. Esta flexibilidade é especialmente relevante no contexto educacional, onde professores muitas vezes não têm acesso a equipamentos especializados de digitalização.
 
-Os LLMs multimodais, como o Gemini 3.1 Flash, combinam capacidades de processamento de linguagem natural com visão computacional, permitindo não apenas extrair dados de imagens, mas também compreender o contexto e a semântica das informações apresentadas \cite{googlecloud_gemini2026}. Essa característica possibilita o reconhecimento de alternativas marcadas mesmo em provas com caligrafias variadas, rasuras ou formatações não padronizadas.
+Os LLMs multimodais, como o Gemini 3.1 Flash, combinam capacidades de processamento de linguagem natural com visão computacional, permitindo não apenas extrair dados de imagens, mas também compreender o contexto e a semântica das informações apresentadas \cite{googlecloud_gemini2026d}. Essa característica possibilita o reconhecimento de alternativas marcadas mesmo em provas com caligrafias variadas, rasuras ou formatações não padronizadas.
 
 \section{Síntese do Referencial}
 
