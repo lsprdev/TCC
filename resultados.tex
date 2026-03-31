@@ -22,15 +22,15 @@ A proposta é a criação de um aplicativo móvel multimodal. A abstração inic
 
 \subsection{Design e Desenvolvimento}
 
-O artefato foi construído utilizando o framework Django para o backend, garantindo segurança e escalabilidade, e o Expo para o frontend, permitindo uma experiência fluida no smartphone do professor. O núcleo de processamento é a API do Gemini 3.1 Flash, configurada para responder com esquemas JSON estritos. Esta fase incluiu múltiplas iterações de prototipagem e refinamento baseado em testes preliminares.
+O artefato será construído utilizando o framework Django para o backend, garantindo segurança e escalabilidade, e o Expo para o frontend, permitindo uma experiência fluida no smartphone do professor. O núcleo de processamento é a API do Gemini 3.1 Flash, configurada para responder com esquemas JSON estritos. Esta fase incluirá múltiplas iterações de prototipagem e refinamento baseado em testes preliminares.
 
 \subsection{Demonstração e Avaliação}
 
-O protótipo foi submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Foram realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utiliza o Framework for Evaluation in Design Science (FEDS), alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
+O protótipo será submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Serão realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utilizará o Framework for Evaluation in Design Science (FEDS), alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
 
 \subsection{Comunicação}
 
-Finalização do artefato e comunicação dos resultados. Nesta fase, consolidam-se as lições aprendidas sobre o comportamento da IA frente a diferentes caligrafias e condições de imagem, contribuindo para a literatura de tecnologia educacional com dados reais de performance.
+Finalização do artefato e comunicação dos resultados. Nesta fase, consolidar-se-ão as lições aprendidas sobre o comportamento da IA frente a diferentes caligrafias e condições de imagem, contribuindo para a literatura de tecnologia educacional com dados reais de performance.
 
 \section{Procedimentos Metodológicos}
 % ---
@@ -87,22 +87,18 @@ A integração com o Gemini 3.1 Flash utiliza técnicas avançadas de engenharia
     \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas, tornando a interface de correção manual um componente crítico do artefato.
 \end{enumerate}
 
-\subsection{Engenharia de Prompts e Resolução de Imagem}
-
-Para otimizar o custo e a precisão, o sistema permite configurar o nível de resolução enviado à API. O Gemini permite níveis como MEDIA\_RESOLUTION\_HIGH (1120 tokens) para extrações detalhadas e LOW (280 tokens) para economizar recursos em provas com tipografia clara. O uso de "Few-Shot Prompting" — fornecendo exemplos de provas corrigidas no prompt do sistema — é utilizado para aumentar a robustez do reconhecimento inicial.
-
 \section{O Experimento}
 
 O coração deste TCC é o experimento prático. Não basta a teoria de que a IA funciona; é preciso medir seu desempenho em condições reais.
 
 \subsection{Desenho Experimental}
 
-O experimento foi realizado em duas fases:
+O experimento será realizado em duas fases:
 
 \begin{enumerate}
     \item \textbf{Laboratório}: Utilização de datasets de provas sintéticas com diferentes tipos de rasuras e qualidades de impressão para estressar o modelo Gemini e ajustar os prompts.
 
-    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizaram o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processou um lote de no mínimo 50 provas de turmas de graduação.
+    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizaram o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processou um lote de no mínimo 50 provas de turmas de graduação e técnico.
 \end{enumerate}
 
 \subsection{Hardware e Software do Teste}
@@ -110,7 +106,7 @@ O experimento foi realizado em duas fases:
 \begin{itemize}
     \item \textbf{Hardware}: Smartphones (1 iPhone, 1 Android de gama média).
     \item \textbf{Software}: Versão beta do aplicativo instalada via Expo Go.
-    \item \textbf{Padrão de Comparação}: As mesmas provas foram corrigidas manualmente pelos professores para servir como base de comparação de tempo e acerto.
+    \item \textbf{Padrão de Comparação}: As mesmas provas serão corrigidas manualmente pelos professores para servir como base de comparação de tempo e acerto.
 \end{itemize}
 
 \subsection{Cronograma de Execução}

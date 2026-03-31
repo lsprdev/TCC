@@ -39,38 +39,37 @@
 \contentsline {section}{\numberline {4.1}Arquitetura da Solução}{18}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Arquitetura de Software e Hardware}{18}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}O Fluxo da Inteligência Artificial}{18}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Engenharia de Prompts e Resolução de Imagem}{19}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}O Experimento}{19}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Desenho Experimental}{19}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Hardware e Software do Teste}{20}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.2}Hardware e Software do Teste}{19}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Cronograma de Execução}{20}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Métricas de Avaliação: O que vai ser medido?}{20}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Acurácia e Precisão}{20}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Eficiência Temporal}{20}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Usabilidade}{21}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Viabilidade Econômica}{21}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.3}Usabilidade}{20}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Viabilidade Econômica}{20}{subsection.4.3.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativas de Conclusão e Resultados Esperados}}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Contribuição Científica e Prática}{22}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tabela Comparativa Projetada}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Impacto Esperado}{23}{section.5.3}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativas de Conclusão e Resultados Esperados}}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Contribuição Científica e Prática}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tabela Comparativa Projetada}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Impacto Esperado}{22}{section.5.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos Resultados}{24}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Considerações sobre Ética e Privacidade}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contribuições}{25}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Contribuição Científica}{25}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Contribuição Prática}{25}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Limitações do Estudo}{25}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Trabalhos Futuros}{26}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Expansão para Questões Dissertativas}{26}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Feedback Personalizado Automatizado}{26}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Análise Preditiva e Dashboard Analítico}{26}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Integração com Sistemas de Gestão Acadêmica}{27}{subsection.6.5.4}%
-\contentsline {subsection}{\numberline {6.5.5}Modelo Híbrido de IA}{27}{subsection.6.5.5}%
-\contentsline {section}{\numberline {6.6}Considerações Finais}{27}{section.6.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese dos Resultados}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Considerações sobre Ética e Privacidade}{23}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contribuições}{24}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Contribuição Científica}{24}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Contribuição Prática}{24}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Limitações do Estudo}{24}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Trabalhos Futuros}{25}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Expansão para Questões Dissertativas}{25}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Feedback Personalizado Automatizado}{25}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Análise Preditiva e Dashboard Analítico}{25}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Integração com Sistemas de Gestão Acadêmica}{26}{subsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.5.5}Modelo Híbrido de IA}{26}{subsection.6.5.5}%
+\contentsline {section}{\numberline {6.6}Considerações Finais}{26}{section.6.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{28}{section*.12}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{27}{section*.12}%
 \vspace {\cftbeforechapterskip }

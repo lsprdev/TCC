@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  30 MAR 2026 20:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  31 MAR 2026 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1026,49 +1026,49 @@ Overfull \hbox (59.11243pt too wide) in paragraph at lines 85--86
  ], "confianca":
  []
 
-[19] [20] [21]
+[19] [20]
 Cap\'{\i }tulo 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 164.
+(Font)              <10.95> on input line 160.
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 []|\T1/lmr/bx/n/10.95 (+20) Correção Ma-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
 []|\T1/lmr/m/n/10.95 (+20) Flexibilidade de
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 174--174
+Underfull \hbox (badness 2717) in paragraph at lines 170--170
 []|\T1/lmr/m/n/10.95 (+20) Reconhecimento de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 []|\T1/lmr/m/n/10.95 (+20) Automático
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--176
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []|\T1/lmr/m/n/10.95 (+20) Julgamento Hu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--176
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []|\T1/lmr/m/n/10.95 (+20) Frequentemente
  []
 
-) [22
+) [21
 
-] (./conclusao.tex [23]
+] (./conclusao.tex [22]
 Cap\'{\i }tulo 6.
-[24
+[23
 
-] [25] [26]) (./TCC-IFC.bbl [27]
+] [24] [25]) (./TCC-IFC.bbl [26]
 bibitemlist
-) (./TCC-IFC.ind) [28
+) (./TCC-IFC.ind) [27
 
 ]
 \tf@toc=\write5
@@ -1084,10 +1084,10 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20097 strings out of 469006
- 326436 string characters out of 5454813
+ 20093 strings out of 469006
+ 326391 string characters out of 5454813
  902542 words of memory out of 5000000
- 48169 multiletter control sequences out of 15000+600000
+ 48167 multiletter control sequences out of 15000+600000
  718352 words of font info for 187 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  99i,12n,107p,1050b,734s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1102,10 +1102,10 @@ texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026basic/texmf
 /fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2026basic/texmf-dist/font
 s/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/t
 ype1/public/lm/lmtt12.pfb>
-Output written on TCC-IFC.pdf (29 pages, 362174 bytes).
+Output written on TCC-IFC.pdf (28 pages, 360952 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 122 named destinations out of 1000 (max. 500000)
- 54289 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 54281 words of extra memory for PDF output out of 61914 (max. 10000000)
 
