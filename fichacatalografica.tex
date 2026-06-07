@@ -3,30 +3,33 @@
 	\vspace*{\fill}					% Posição vertical
 	\begin{center}					% Minipage Centralizado
 	\fbox{\begin{minipage}[c][8cm]{13.5cm}		% Largura
-	\small
-	\imprimirautor
-	%Sobrenome, Nome do autor
-	
-	\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
-	\imprimirlocal, \imprimirdata-
+		\small\sloppy
+		\imprimirautor
+		%Sobrenome, Nome do autor
+		
+		\hspace{0.5cm}
+		\parbox[t]{12.5cm}{\imprimirtitulo  / \imprimirautor. --
+		\imprimirlocal, \imprimirdata-}
 	
 	\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
 	
 	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
 	
 	\hspace{0.5cm}
-	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
-	\imprimirdata.}\\
-	
-	\hspace{0.5cm}
-		1. Inteligência Artificial.
-		2. Correção Automatizada.
-		3. Gemini.
-		4. Educação.
-		I. Gabriel Pereira.
-		II. Instituto Federal Catarinense.
-		III. Câmpus Araquari.
-		IV. Desenvolvimento e Validação de um Artefato para Correção de Provas Objetivas: Integrando Visão Computacional e LLMs Multimodais. 			
+		\parbox[t]{12.5cm}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+		\imprimirdata.}\\
+		
+		\hspace{0.5cm}
+		\parbox[t]{12.5cm}{
+			1. Inteligência Artificial.
+			2. Modelos Multimodais.
+			3. Sistemas de Informação.
+			4. Processamento de Documentos.
+			I. Gabriel Pereira.
+			II. Instituto Federal Catarinense.
+			III. Câmpus Araquari.
+			IV. Avaliação Comparativa de Modelos Multimodais Abertos e Proprietários para Extração de Respostas em Provas Objetivas Manuscritas.
+		}
 	\end{minipage}}
 	\end{center}
 \end{fichacatalografica}

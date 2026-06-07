@@ -4,48 +4,51 @@
 \chapter{Conclusão}
 % ---
 
-Este trabalho propõe o desenvolvimento e a validação de um artefato tecnológico baseado em Inteligência Artificial Generativa, especificamente integrando visão computacional e LLMs multimodais (Gemini 3.1 Flash), para a automação da correção de provas objetivas. Através da metodologia Design Science Research (DSR), busca-se estruturar um processo sistemático que resulte em uma solução inovadora para um problema crônico da educação brasileira: a sobrecarga administrativa dos docentes.
+Este trabalho propõe o desenvolvimento e a avaliação de uma arquitetura plugável para extração estruturada de informações em provas objetivas manuscritas. O foco da pesquisa está na comparação entre dois arranjos técnicos de uso de modelos multimodais: um modelo aberto hospedado em servidor próprio e exposto como API, e um modelo proprietário acessado por API externa. O aplicativo móvel é tratado como interface de captura e visualização, não como ambiente de execução dos modelos.
 
 \section{Síntese dos Resultados Esperados}
 
-O artefato em desenvolvimento demonstra que a convergência entre tecnologias modernas de frontend (Expo), backend (Django) e inteligência artificial multimodal representa uma alternativa viável e potencialmente superior aos métodos tradicionais de correção \cite{impactoiaavaliacao2025}. A flexibilidade proporcionada pela IA Generativa busca eliminar as principais barreiras de adoção identificadas em sistemas OMR convencionais, permitindo que professores utilizem o sistema sem necessidade de templates fixos ou equipamentos especializados \cite{blueprismgenai2026}.
+Espera-se que o artefato permita comparar os provedores sob o mesmo fluxo de entrada, processamento, validação e saída. A análise deverá considerar acurácia de identificação de questões, alternativas, respostas marcadas e identificação manuscrita do respondente, além de taxa de JSON válido, latência, custo operacional, robustez, taxa de intervenção humana, estabilidade da integração e implicações arquiteturais. Assim, a conclusão esperada não será apenas a afirmação de que o sistema foi construído, mas a identificação fundamentada da abordagem técnica mais adequada ao cenário estudado.
 
-Os resultados esperados indicam uma redução de pelo menos 80\% no tempo dedicado à correção de provas objetivas, mantendo acurácia superior a 95\%. Mais importante ainda, o sistema proposto mantém a soberania docente sobre o processo avaliativo, posicionando a IA como uma ferramenta de apoio que sinaliza incertezas para validação humana, em vez de substituir o julgamento pedagógico do professor.
+O resultado poderá favorecer o modelo aberto, o modelo proprietário ou uma estratégia híbrida. Essa decisão dependerá dos dados coletados no experimento. Por exemplo, um modelo aberto pode ser mais adequado quando controle de infraestrutura, custo recorrente e privacidade forem prioritários. Um modelo proprietário pode ser mais adequado quando estabilidade operacional, menor esforço de manutenção ou maior acurácia forem predominantes. Os critérios de avaliação serão definidos considerando gestão de riscos em IA, qualidade de sistemas e princípios de avaliação de artefatos em Design Science Research \cite{nist2023airmf,iso25010,hevner2004designscience,peffers2007dsrm}.
 
-\section{Considerações sobre Ética e Privacidade}
+\section{Considerações sobre Ética, Privacidade e Controle}
 
-A automação da avaliação não está isenta de riscos éticos que precisam ser cuidadosamente considerados \cite{impactoiaavaliacao2025}. A literatura alerta para a necessidade de formação docente continuada para que a IA não seja vista como um substituto infalível do professor, mas sim como uma ferramenta que amplia suas capacidades \cite{iaeducacao2026}.
+A extração automatizada de informações em provas objetivas manuscritas envolve dados pessoais e registros acadêmicos. Por isso, a arquitetura deverá considerar privacidade, segurança, rastreabilidade e controle humano. O uso de um provedor proprietário via API externa exige atenção ao envio de imagens e metadados para terceiros. O uso de um modelo aberto em servidor próprio reduz parte dessa dependência, mas transfere para o mantenedor do sistema a responsabilidade pela segurança da infraestrutura.
 
-Questões de privacidade de dados, em conformidade com a Lei Geral de Proteção de Dados (LGPD), serão abordadas através da implementação de políticas de segurança no Django. O sistema deverá garantir que:
+O sistema deverá garantir que:
 
 \begin{itemize}
-    \item As imagens das provas sejam processadas em ambiente seguro, com criptografia de ponta a ponta.
-    \item Os nomes dos alunos e dados acadêmicos não sejam expostos a terceiros.
-    \item O armazenamento de dados sensíveis siga as melhores práticas de segurança da informação.
-    \item Os usuários tenham controle sobre seus dados, com possibilidade de exclusão mediante solicitação.
+    \item imagens e resultados sejam armazenados com controle de acesso;
+    \item respostas brutas dos modelos sejam registradas para auditoria;
+    \item dados pessoais sejam tratados conforme princípios da LGPD;
+    \item casos ambíguos sejam encaminhados para validação humana;
+    \item a decisão final validada possa ser rastreada em relação à saída original do modelo.
 \end{itemize}
 
-A transparência no processamento dos dados e o respeito à autonomia docente foram princípios norteadores em todas as decisões de design do sistema.
+Essas preocupações estão relacionadas à proteção de dados pessoais, aos papéis dos agentes de tratamento, à gestão de riscos em IA e à auditoria de sistemas algorítmicos \cite{brasil2018lgpd,anpd2024agentes,nist2023airmf,raji2020audit}.
 
 \section{Contribuições Esperadas}
 
-Este trabalho pretende contribuir para a literatura de tecnologia educacional em múltiplas dimensões:
+Este trabalho pretende contribuir para Sistemas de Informação em múltiplas dimensões:
 
 \subsection{Contribuição Científica}
 
 \begin{itemize}
-    \item Validação empírica da aplicabilidade de LLMs multimodais em contexto educacional brasileiro.
-    \item Documentação sistemática do comportamento da IA frente a diferentes condições de captura de imagem em provas.
-    \item Demonstração prática da metodologia DSR aplicada ao desenvolvimento de ferramentas educacionais.
+    \item avaliação empírica de modelos multimodais em uma tarefa de extração de dados visuais estruturados a partir de provas objetivas manuscritas;
+    \item comparação entre modelo aberto hospedado em servidor próprio e modelo proprietário via API externa;
+    \item análise do papel de contratos de saída JSON, validação estrutural e semântica e validação humana em sistemas com IA;
+    \item aplicação da DSR no desenvolvimento e avaliação de um artefato de integração entre aplicativo, backend e provedores de IA.
 \end{itemize}
 
-\subsection{Contribuição Prática}
+\subsection{Contribuição Técnica}
 
 \begin{itemize}
-    \item Democratização do acesso à automação de correção, independente da infraestrutura da instituição.
-    \item Redução significativa da carga administrativa docente, permitindo maior foco em atividades pedagógicas.
-    \item Fornecimento de feedback mais rápido aos alunos, melhorando o ciclo de aprendizagem.
-    \item Geração automática de estatísticas de desempenho que auxiliam na identificação de dificuldades de aprendizagem.
+    \item arquitetura plugável com \textit{ModelAdapter}, \textit{OpenModelProvider} e \textit{ClosedModelProvider};
+    \item pipeline de extração estruturada de documento manuscrito com normalização de resposta e validação de esquema;
+    \item tela de validação humana integrada ao fluxo de persistência;
+    \item conjunto de métricas para comparar acurácia, latência, custo, robustez e intervenção humana entre provedores multimodais;
+    \item base para substituição futura de modelos sem reescrever o aplicativo móvel ou o backend.
 \end{itemize}
 
 \section{Limitações do Estudo}
@@ -53,47 +56,44 @@ Este trabalho pretende contribuir para a literatura de tecnologia educacional em
 É importante reconhecer as limitações previstas para este trabalho:
 
 \begin{itemize}
-    \item O escopo é limitado a provas objetivas de múltipla escolha, não contemplando questões dissertativas.
-    \item Os testes serão realizados com um grupo reduzido de professores, sendo necessária validação em maior escala futuramente.
-    \item A dependência de serviços de IA em nuvem implica custos operacionais contínuos e requer conectividade de internet.
-    \item Caligrafias extremamente degradadas ou rasuras severas ainda podem exigir intervenção manual significativa.
+    \item O escopo é limitado a provas objetivas manuscritas, não contemplando correção semântica de questões dissertativas.
+    \item O conjunto de provas utilizado no experimento poderá não representar todos os formatos e condições de captura existentes.
+    \item A comparação dependerá dos modelos selecionados e de suas versões no momento do experimento.
+    \item O modelo aberto exigirá infraestrutura própria, o que pode influenciar latência, custo e disponibilidade.
+    \item O modelo proprietário estará sujeito às condições, limites e custos definidos pelo fornecedor da API.
+    \item Casos com caligrafia ilegível, marcações extremamente ambíguas, imagens degradadas ou campos ausentes ainda poderão exigir intervenção humana.
 \end{itemize}
 
 \section{Trabalhos Futuros}
 
 Vislumbra-se a expansão do sistema em várias direções:
 
-\subsection{Expansão para Questões Dissertativas}
+\subsection{Ampliação dos Modelos Avaliados}
 
-A evolução natural do artefato envolve a incorporação de capacidades de correção de questões dissertativas curtas, utilizando a capacidade de raciocínio avançado do Gemini 3.1 Pro para casos específicos de maior complexidade pedagógica \cite{casehq_ai_exam2026}. Isso exigiria o desenvolvimento de rubrics automatizadas e mecanismos mais sofisticados de validação.
+Trabalhos futuros podem incluir mais modelos abertos e proprietários, bem como diferentes versões do mesmo modelo. Essa ampliação permitiria verificar se os resultados observados decorrem da categoria do provedor ou de características específicas dos modelos escolhidos.
 
-\subsection{Feedback Personalizado Automatizado}
+\subsection{Avaliação com Diferentes Formatos de Documento}
 
-Implementação de geração automática de feedbacks personalizados para cada aluno, analisando padrões de erros e sugerindo materiais de estudo complementares baseados nas dificuldades identificadas.
+Outra possibilidade é aplicar o mesmo pipeline a outros documentos manuscritos, como formulários administrativos, listas de presença ou questionários de pesquisa. Isso ajudaria a avaliar a generalidade da arquitetura fora do contexto de provas objetivas manuscritas.
 
-\subsection{Análise Preditiva e Dashboard Analítico}
+\subsection{Otimização do Pipeline}
 
-Desenvolvimento de funcionalidades de análise preditiva que identifiquem tendências de desempenho ao longo do tempo, permitindo intervenções pedagógicas precoces. Um dashboard analítico robusto poderia fornecer insights sobre:
+O pipeline poderá ser otimizado com pré-processamento de imagem, compressão controlada, detecção automática de baixa qualidade, filas assíncronas e estratégias de repetição quando o provedor retornar erro ou JSON inválido.
 
-\begin{itemize}
-    \item Questões com maior índice de dificuldade.
-    \item Comparação de desempenho entre turmas.
-    \item Identificação de alunos em risco de reprovação.
-    \item Evolução do desempenho individual ao longo do semestre.
-\end{itemize}
+\subsection{Expansão da Validação Humana}
 
-\subsection{Integração com Sistemas de Gestão Acadêmica}
+A tela de validação humana poderá evoluir para registrar motivos de correção, comparar sugestões de diferentes modelos e permitir que o usuário visualize a região da imagem associada a cada resposta extraída.
 
-Desenvolvimento de conectores para integração com sistemas de gestão acadêmica existentes (SIGAA, Moodle, etc.), facilitando a transferência automática de notas e estatísticas.
+\subsection{Integração com Sistemas Externos}
 
-\subsection{Modelo Híbrido de IA}
+O sistema poderá ser integrado a ambientes acadêmicos ou administrativos já existentes, desde que o contrato de saída e as regras de privacidade sejam preservados. Essa etapa exigiria conectores específicos e avaliação adicional de segurança.
 
-Exploração de arquiteturas híbridas que combinem modelos em nuvem (para tarefas complexas) com modelos locais leves (para processamento inicial), otimizando custos e privacidade.
+\subsection{Modelo Híbrido de Provedores}
+
+Uma extensão natural é investigar uma estratégia híbrida, usando o modelo aberto para casos simples e o modelo proprietário para casos ambíguos, ou o inverso. Essa abordagem permitiria otimizar custo, latência e acurácia conforme o tipo de entrada.
 
 \section{Considerações Finais}
 
-O sucesso deste projeto poderá demonstrar que a Inteligência Artificial, quando aplicada com rigor metodológico e focada em problemas reais do cotidiano escolar, deixa de ser um mito tecnológico para se tornar um aliado indispensável da educação. A chave para essa transformação reside não apenas na capacidade técnica dos modelos de IA, mas na forma como a tecnologia é projetada para complementar a expertise pedagógica dos educadores.
+Este TCC busca contribuir tecnicamente para a integração de modelos multimodais em Sistemas de Informação, tratando a IA como componente substituível, mensurável e sujeito a validação. A avaliação comparativa proposta deverá permitir uma conclusão mais precisa sobre quando utilizar infraestrutura própria com modelo aberto e quando utilizar uma API proprietária externa em tarefas de extração estruturada de documentos manuscritos.
 
-Este TCC busca servir como fundação técnica para uma nova geração de ferramentas educacionais brasileiras, focadas em devolver ao professor o que ele tem de mais precioso: o seu tempo para ensinar. À medida que a tecnologia de IA continua evoluindo, espera-se que soluções como a proposta aqui se tornem cada vez mais acessíveis e eficazes, contribuindo para a qualidade da educação em todos os níveis de ensino.
-
-O caminho para a transformação digital da educação não passa pela substituição do professor por máquinas, mas pela liberação do educador das tarefas mecânicas que o afastam de sua verdadeira vocação: inspirar, mediar e cultivar o conhecimento nas novas gerações. Este é o legado que este trabalho ambiciona deixar: uma demonstração prática de que a tecnologia, quando humanizada, pode amplificar o melhor que a educação tem a oferecer.
+A relevância do trabalho está em deslocar a discussão do simples desenvolvimento de um aplicativo para a análise de uma arquitetura capaz de receber documentos físicos manuscritos, acionar diferentes provedores de IA, validar saídas estruturadas, registrar decisões e apoiar uma comparação experimental. Com isso, espera-se produzir uma contribuição técnica alinhada à área de Sistemas de Informação e útil para projetos que dependam da transformação de imagens de documentos manuscritos em dados operacionais.

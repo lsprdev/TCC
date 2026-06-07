@@ -5,15 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Almeida et al. 2025]{almeida2025estudo}
-\abntrefinfo{Almeida et al.}{ALMEIDA et al.}{2025}
-{ALMEIDA, D. et al. Estudo e desenvolvimento de um sistema para
-  gera{\c{c}}{\~a}o e corre{\c{c}}{\~a}o autom{\'a}tica de provas utilizando
-  intelig{\^e}ncia artificial.
-\emph{Anais do Semin{\'a}rio de Inicia{\c{c}}{\~a}o Cient{\'\i}fica e
-  Tecnol{\'o}gica do IFG}, v.~18, n.~1, 2025.
-Dispon{\'\i}vel em:
-  \url{https://periodicos.ifg.edu.br/sicti/article/view/3257}.}
+\bibitem[Amershi et al. 2019]{amershi2019humanai}
+\abntrefinfo{Amershi et al.}{AMERSHI et al.}{2019}
+{AMERSHI, S. et al. Guidelines for human-ai interaction. In:  \emph{Proceedings
+  of the 2019 CHI Conference on Human Factors in Computing Systems}. [S.l.:
+  s.n.], 2019. p. 1--13.}
 
 \bibitem[Araujo 2015]{abntex2modelo}
 \abntrefinfo{Araujo}{ARAUJO}{2015}
@@ -28,143 +24,140 @@ Dispon{\'\i}vel em:
   apresenta{\c c}\~ao.
 Rio de Janeiro, 2011. 15~p.}
 
-\bibitem[{CENTRO DO PROFESSORADO PAULISTA} 2014]{cpp2014}
-\abntrefinfo{{CENTRO DO PROFESSORADO PAULISTA}}{{CENTRO DO PROFESSORADO
-  PAULISTA}}{2014}
-{{CENTRO DO PROFESSORADO PAULISTA}. \emph{Professores gastam 894 mil dias só
-  com correções de provas}. 2014. CPP - Centro do Professorado Paulista.
+\bibitem[{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}
+  2024]{anpd2024agentes}
+\abntrefinfo{{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}}{{Autoridade
+  Nacional de Prote{\c c}{\~a}o de Dados}}{2024}
+{{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}. \emph{Guia orientativo
+  para defini{\c c}{\~o}es dos agentes de tratamento de dados pessoais e do
+  encarregado}. 2024.
+Acesso em: 7 jun. 2026.
+Dispon{\'\i}vel em: \url{https://www.gov.br/anpd/}.}
+
+\bibitem[Bommasani et al. 2023]{bommasani2023transparency}
+\abntrefinfo{Bommasani et al.}{BOMMASANI et al.}{2023}
+{BOMMASANI, R. et al. The foundation model transparency index.
+\emph{arXiv preprint arXiv:2310.12941}, 2023.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2310.12941}.}
+
+\bibitem[{Brasil} 2018]{brasil2018lgpd}
+\abntrefinfo{{Brasil}}{{Brasil}}{2018}
+{{Brasil}. \emph{Lei n{\textordmasculine} 13.709, de 14 de agosto de 2018: Lei
+  Geral de Prote{\c c}{\~a}o de Dados Pessoais}. 2018.
+Acesso em: 7 jun. 2026.
 Dispon{\'\i}vel em:
-  \url{https://cpp.org.br/professores-brasileiros-gastam-894-mil-dias-so-com-correcoes-de-provas/}.
-  Acesso em: 21 mar. 2026.}
+  \url{https://www.planalto.gov.br/ccivil\_03/\_ato2015-2018/2018/lei/L13709compilado.htm}.}
 
-\bibitem[DWIVEDI 2026]{nanonets_idp_leaderboard2026}
-\abntrefinfo{DWIVEDI}{DWIVEDI}{2026}
-{DWIVEDI, S. \emph{We ran 16 AI Models on 9,000+ Real Documents. Here's What We
-  Found}. 2026.
-Dispon{\'\i}vel em: \url{https://nanonets.com/blog/idp-leaderboard-1-5/}.
-  Acesso em: 31 mar. 2026.}
+\bibitem[Hafeez et al. 2024]{hafeez2024omrsmartphone}
+\abntrefinfo{Hafeez et al.}{HAFEEZ et al.}{2024}
+{HAFEEZ, Q. et al. An enhanced fault tolerance algorithm for optical mark
+  recognition using smartphone cameras.
+\emph{IEEE Access}, v.~12, p. 121305--121319, 2024.}
 
-\bibitem[Filho 2026]{aprendizadomaquina2026}
-\abntrefinfo{Filho}{FILHO}{2026}
-{FILHO, A.~A. B.
-\emph{Aprendizado de máquina para ferramenta automática de correção}.
-Disserta\c{c}\~{a}o (Mestrado) --- Universidade Estadual de Campinas, 2026.
-Dispon{\'\i}vel em:
-  \url{https://repositorio.unicamp.br/acervo/detalhe/1162150}. Acesso em: 31
-  mar. 2026.}
+\bibitem[Hevner et al. 2004]{hevner2004designscience}
+\abntrefinfo{Hevner et al.}{HEVNER et al.}{2004}
+{HEVNER, A.~R. et al. Design science in information systems research.
+\emph{MIS Quarterly}, v.~28, n.~1, p. 75--105, 2004.}
 
-\bibitem[Freitas et al. 2025]{impactoiaavaliacao2025}
-\abntrefinfo{Freitas et al.}{FREITAS et al.}{2025}
-{FREITAS, C. A.~d. et al. Impacto da inteligência artificial na avaliação
-  acadêmica: Transformando métodos tradicionais de avaliação no ensino
-  superior.
-\emph{Revista Ibero-Americana de Humanidades, Ciências e Educação}, v.~11,
-  n.~1, p. 2736--2752, 2025.
-Dispon{\'\i}vel em:
-  \url{https://periodicorease.pro.br/rease/article/view/18011}. Acesso em: 31
-  mar. 2026.}
+\bibitem[{International Organization for Standardization} 2011]{iso25010}
+\abntrefinfo{{International Organization for Standardization}}{{International
+  Organization for Standardization}}{2011}
+{{International Organization for Standardization}. \emph{ISO/IEC 25010:2011
+  Systems and software engineering -- Systems and software Quality Requirements
+  and Evaluation (SQuaRE) -- System and software quality models}. 2011.
+Acesso em: 7 jun. 2026.
+Dispon{\'\i}vel em: \url{https://www.iso.org/standard/35733.html}.}
 
-\bibitem[{GEMINI API TEAM} 2025]{google_structured_outputs2026b}
-\abntrefinfo{{GEMINI API TEAM}}{{GEMINI API TEAM}}{2025}
-{{GEMINI API TEAM}. \emph{Improving Structured Outputs in the {Gemini API}}.
-  2025. Google Blog.
-Dispon{\'\i}vel em:
-  \url{https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-structured-outputs/}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[Kim et al. 2022]{kim2022donut}
+\abntrefinfo{Kim et al.}{KIM et al.}{2022}
+{KIM, G. et al. Ocr-free document understanding transformer. In:
+  \emph{European Conference on Computer Vision}. [S.l.: s.n.], 2022. p.
+  498--517.}
 
-\bibitem[{GEMINI API TEAM} 2026]{geminiapi_releasenotes2026a}
-\abntrefinfo{{GEMINI API TEAM}}{{GEMINI API TEAM}}{2026}
-{{GEMINI API TEAM}. \emph{Release notes | {Gemini API}}. 2026. Google AI for
-  Developers.
-Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs/changelog}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[Mathew, Karatzas e Jawahar 2021]{mathew2021docvqa}
+\abntrefinfo{Mathew, Karatzas e Jawahar}{MATHEW; KARATZAS; JAWAHAR}{2021}
+{MATHEW, M.; KARATZAS, D.; JAWAHAR, C.~V. Docvqa: A dataset for vqa on document
+  images. In:  \emph{Proceedings of the IEEE/CVF Winter Conference on
+  Applications of Computer Vision}. [s.n.], 2021. p. 2200--2209.
+  Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2007.00398}.}
 
-\bibitem[{GOOGLE CLOUD TEAM} 2025]{googlecloud_gemini2_2026b}
-\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2025}
-{{GOOGLE CLOUD TEAM}. \emph{Use {Gemini} 2.0 to speed up data processing}.
-  2025. Google Cloud Blog.
-Dispon{\'\i}vel em:
-  \url{https://cloud.google.com/blog/products/ai-machine-learning/use-gemini-2-0-to-speed-up-data-processing}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[Mitchell et al. 2019]{mitchell2019modelcards}
+\abntrefinfo{Mitchell et al.}{MITCHELL et al.}{2019}
+{MITCHELL, M. et al. Model cards for model reporting. In:  \emph{Proceedings of
+  the Conference on Fairness, Accountability, and Transparency}. [S.l.: s.n.],
+  2019. p. 220--229.}
 
-\bibitem[{GOOGLE CLOUD TEAM} 2026]{googlecloud_gemini2026d}
-\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2026a}
-{{GOOGLE CLOUD TEAM}. \emph{Modelos de linguagem grandes com a tecnologia de
-  ponta da IA do Google}. 2026. Google Cloud.
-Dispon{\'\i}vel em: \url{https://cloud.google.com/ai/llms?hl=pt-BR}. Acesso em:
-  31 mar. 2026.}
+\bibitem[Mondal et al. 2024]{mondal2023omrnet}
+\abntrefinfo{Mondal et al.}{MONDAL et al.}{2024}
+{MONDAL, S. et al. Omrnet: A lightweight deep learning model for optical mark
+  recognition.
+\emph{Multimedia Tools and Applications}, v.~83, p. 14011--14045, 2024.}
 
-\bibitem[{GOOGLE CLOUD TEAM} 2026]{googlecloudgenai2026a}
-\abntrefinfo{{GOOGLE CLOUD TEAM}}{{GOOGLE CLOUD TEAM}}{2026b}
-{{GOOGLE CLOUD TEAM}. \emph{When to use generative {AI} or traditional {AI}}.
-  2026. Google Cloud Documentation.
-Dispon{\'\i}vel em:
-  \url{https://docs.cloud.google.com/docs/ai-ml/generative-ai/generative-ai-or-traditional-ai}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[{National Institute of Standards and Technology} 2023]{nist2023airmf}
+\abntrefinfo{{National Institute of Standards and Technology}}{{National
+  Institute of Standards and Technology}}{2023}
+{{National Institute of Standards and Technology}. \emph{Artificial
+  Intelligence Risk Management Framework (AI RMF 1.0)}.
+[S.l.], 2023. Dispon{\'\i}vel em:
+  \url{https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf}.}
 
-\bibitem[{Google Developers Team} 2026]{google_ml_classification2026}
-\abntrefinfo{{Google Developers Team}}{{Google Developers Team}}{2026}
-{{Google Developers Team}. \emph{Classification: Accuracy, recall, precision,
-  and related metrics}. 2026. Machine Learning Crash Course.
-Dispon{\'\i}vel em:
-  \url{https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall}.
-  Acesso em: 31 mar. 2026.}
+\bibitem[{National Telecommunications and Information Administration}
+  2024]{ntia2024openweights}
+\abntrefinfo{{National Telecommunications and Information
+  Administration}}{{National Telecommunications and Information
+  Administration}}{2024}
+{{National Telecommunications and Information Administration}. \emph{Dual-Use
+  Foundation Models with Widely Available Model Weights: Report to the
+  President}.
+[S.l.], 2024. Dispon{\'\i}vel em:
+  \url{https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf}.}
 
-\bibitem[{GOOGLE FIREBASE TEAM} 2026]{firebase_structured_output2026}
-\abntrefinfo{{GOOGLE FIREBASE TEAM}}{{GOOGLE FIREBASE TEAM}}{2026}
-{{GOOGLE FIREBASE TEAM}. \emph{Generate structured output (like {JSON} and
-  enums) using the {Gemini API}}. 2026. Firebase AI Logic Documentation.
-Dispon{\'\i}vel em:
-  \url{https://firebase.google.com/docs/ai-logic/generate-structured-output}.
-  Acesso em: 21 mar. 2026.}
+\bibitem[Peffers et al. 2007]{peffers2007dsrm}
+\abntrefinfo{Peffers et al.}{PEFFERS et al.}{2007}
+{PEFFERS, K. et al. A design science research methodology for information
+  systems research.
+\emph{Journal of Management Information Systems}, v.~24, n.~3, p. 45--77,
+  2007.}
 
-\bibitem[Oliveira e Silva 2024]{oliveira2024avalia}
-\abntrefinfo{Oliveira e Silva}{OLIVEIRA; SILVA}{2024}
-{OLIVEIRA, A. P.~d.; SILVA, G. S. V.~d. Avalia: sistema de corre{\c{c}}{\~a}o
-  automatizada de atividades escolares utilizando reconhecimento {\'o}ptico de
-  caracteres e intelig{\^e}ncia artificial.
-Universidade Estadual Paulista (Unesp), 2024.
-Dispon{\'\i}vel em:
-  \url{https://repositorio.unesp.br/server/api/core/bitstreams/45e3e419-5bd7-4b02-9f93-580883012154/content}.}
+\bibitem[Plamondon e Srihari 2000]{plamondon2000handwriting}
+\abntrefinfo{Plamondon e Srihari}{PLAMONDON; SRIHARI}{2000}
+{PLAMONDON, R.; SRIHARI, S.~N. On-line and off-line handwriting recognition: a
+  comprehensive survey.
+\emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, v.~22,
+  n.~1, p. 63--84, 2000.}
 
-\bibitem[Poly, Santo e Pereira 2026]{iaeducacao2026}
-\abntrefinfo{Poly, Santo e Pereira}{POLY; SANTO; PEREIRA}{2026}
-{POLY, M.~d.; SANTO, A. C.~d. E.; PEREIRA, C. M. d. N.~A. A inteligência
-  artificial na educação: uma análise das ferramentas e aplicações.
-\emph{Cadernos Pedag{\'o}gicos}, v.~22, n.~10, 2026.
-Dispon{\'\i}vel em:
-  \url{https://ojs.studiespublicacoes.com.br/ojs/index.php/cadped/article/view/18773}.
-  Acesso em: 31 mar. 2026.}
+\bibitem[Raji et al. 2020]{raji2020audit}
+\abntrefinfo{Raji et al.}{RAJI et al.}{2020}
+{RAJI, I.~D. et al. Closing the ai accountability gap: Defining an end-to-end
+  framework for internal algorithmic auditing. In:  \emph{Proceedings of the
+  2020 Conference on Fairness, Accountability, and Transparency}. [S.l.: s.n.],
+  2020. p. 33--44.}
 
-\bibitem[SILVA 2018]{silva_minhaprova_2018}
-\abntrefinfo{SILVA}{SILVA}{2018}
-{SILVA, T. d.~S. Minha prova: Automatizando o processo avaliativo nas escolas.
-2018.
-Dispon{\'\i}vel em:
-  \url{https://repository.ufrpe.br/bitstream/123456789/1926/1/tcc\_tuliodesouzasilva.pdf}.
-  Acesso em: 31 mar. 2026.}
+\bibitem[Rassul et al. 2025]{rassul2025handwritten}
+\abntrefinfo{Rassul et al.}{RASSUL et al.}{2025}
+{RASSUL, Y.~H. et al. Advancing offline handwritten text recognition: A
+  systematic review of data augmentation and generation techniques.
+\emph{arXiv preprint arXiv:2507.06275}, 2025.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2507.06275}.}
+
+\bibitem[Smith 2007]{smith2007tesseract}
+\abntrefinfo{Smith}{SMITH}{2007}
+{SMITH, R. An overview of the tesseract ocr engine. In:  \emph{Proceedings of
+  the Ninth International Conference on Document Analysis and Recognition}.
+  [S.l.: s.n.], 2007. v.~2, p. 629--633.}
+
+\bibitem[Solaiman 2023]{solaiman2023gradient}
+\abntrefinfo{Solaiman}{SOLAIMAN}{2023}
+{SOLAIMAN, I. The gradient of generative ai release: Methods and
+  considerations. In:  \emph{Proceedings of the 2023 ACM Conference on
+  Fairness, Accountability, and Transparency}. [s.n.], 2023. Dispon{\'\i}vel
+  em: \url{https://arxiv.org/abs/2302.04844}.}
 
 \bibitem[Sposito et al. 2024]{sposito2024design}
 \abntrefinfo{Sposito et al.}{SPOSITO et al.}{2024}
 {SPOSITO, L. et al. Design science research: um estudo sobre o ensino do
   m{\'e}todo.
 \emph{Revista Ci{\^e}ncias Administrativas}, v.~30, p. 1--18, 2024.}
-
-\bibitem[{SS\&C Blue Prism} 2026]{blueprismgenai2026}
-\abntrefinfo{{SS\&C Blue Prism}}{{SS\&C Blue Prism}}{2026}
-{{SS\&C Blue Prism}. \emph{Generative {AI} vs. Traditional {AI}: What's the
-  Difference?} 2026. SS\&C Blue Prism Blog.
-Dispon{\'\i}vel em:
-  \url{https://www.blueprism.com/resources/blog/generative-ai-vs-traditional-ai/}.
-  Acesso em: 21 mar. 2026.}
-
-\bibitem[{The Case HQ Online} 2026]{casehq_ai_exam2026}
-\abntrefinfo{{The Case HQ Online}}{{The Case HQ Online}}{2026}
-{{The Case HQ Online}. \emph{Incorporating {AI} into Exam Design for Better
-  Outcomes}. 2026. The Case HQ Online.
-Dispon{\'\i}vel em:
-  \url{https://thecasehq.com/incorporating-ai-into-exam-design-for-better-outcomes/}.
-  Acesso em: 31 mar. 2026.}
 
 \bibitem[Venable, Pries-Heje e Baskerville 2016]{feds_framework2026}
 \abntrefinfo{Venable, Pries-Heje e Baskerville}{VENABLE; PRIES-HEJE;
@@ -173,5 +166,12 @@ Dispon{\'\i}vel em:
   in design science research.
 \emph{European journal of information systems}, Taylor \& Francis, v.~25, n.~1,
   p. 77--89, 2016.}
+
+\bibitem[Xu et al. 2020]{xu2020layoutlm}
+\abntrefinfo{Xu et al.}{XU et al.}{2020}
+{XU, Y. et al. Layoutlm: Pre-training of text and layout for document image
+  understanding. In:  \emph{Proceedings of the 26th ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}. [S.l.: s.n.], 2020. p.
+  1192--1200.}
 
 \end{thebibliography}

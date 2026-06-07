@@ -4,33 +4,33 @@
 \chapter{Metodologia}
 % ---
 
-A condução deste trabalho segue rigorosamente a metodologia Design Science Research (DSR) \cite{sposito2024design}. A DSR é um paradigma de resolução de problemas que busca criar inovações que definam ideias, práticas e produtos técnicos através dos quais a análise e o uso de sistemas de informação possam ser efetivamente realizados. Diferente da pesquisa básica que busca entender a realidade, a DSR busca transformar a realidade através da criação de um artefato útil \cite{sposito2024design}.
+A condução deste trabalho segue a metodologia Design Science Research (DSR), pois o estudo envolve a construção e avaliação de um artefato técnico para um problema de Sistemas de Informação \cite{sposito2024design}. O artefato será avaliado por meio de um experimento comparativo entre dois arranjos de provisão de IA: um modelo multimodal aberto hospedado em infraestrutura própria e um modelo multimodal proprietário acessado por API externa.
 
 % ---
 \section{O Ciclo DSR}
 % ---
 
-O ciclo iterativo da DSR para este projeto será estruturado em cinco fases distintas, cada uma contribuindo para o desenvolvimento sistemático do artefato tecnológico:
+O ciclo iterativo da DSR para este projeto será estruturado em cinco fases:
 
 \subsection{Identificação do Problema e Motivação}
 
-A partir da análise estatística do tempo gasto por professores brasileiros (21,4 milhões de horas/ano), define-se a necessidade clara de automação. O problema é delimitado à ineficiência da correção manual e à rigidez dos sistemas OMR atuais. Esta fase envolverá revisão bibliográfica extensiva e entrevistas exploratórias com educadores para compreender as dores reais do processo de correção.
+O problema é definido como a extração confiável de respostas em provas objetivas manuscritas a partir de imagens capturadas por dispositivo móvel. A motivação técnica está na necessidade de comparar provedores multimodais diferentes sob uma mesma arquitetura, evitando que o sistema fique dependente de um único modelo ou fornecedor.
 
 \subsection{Definição dos Objetivos da Solução}
 
-A proposta é a criação de um aplicativo móvel multimodal. A abstração inicial baseia-se na teoria de que LLMs modernos podem atuar como extratores de dados estruturados a partir de entradas não estruturadas (fotos), eliminando a necessidade de templates fixos. Os objetivos foram definidos considerando tanto aspectos técnicos (acurácia, performance) quanto aspectos de usabilidade (facilidade de uso, adoção docente).
+A solução deverá permitir captura da imagem, envio ao backend, seleção do provedor de IA, extração multimodal, validação de JSON, persistência e revisão humana. O objetivo da avaliação será comparar as abordagens técnica e operacionalmente, usando o mesmo conjunto de provas e o mesmo esquema de saída.
 
 \subsection{Design e Desenvolvimento}
 
-O artefato será construído utilizando o framework Django para o backend, garantindo segurança e escalabilidade, e o Expo para o frontend, permitindo uma experiência fluida no smartphone do professor. O núcleo de processamento é a API do Gemini 3.1 Flash, configurada para responder com esquemas JSON estritos. Esta fase incluirá múltiplas iterações de prototipagem e refinamento baseado em testes preliminares.
+O artefato será composto por aplicativo móvel, backend, banco de dados, \textit{ModelAdapter}, \textit{OpenModelProvider}, \textit{ClosedModelProvider}, validador de JSON e tela de validação humana. O aplicativo móvel não executará modelos localmente; ele apenas capturará imagens e exibirá resultados. O backend será responsável por orquestrar o pipeline e registrar métricas de execução.
 
 \subsection{Demonstração e Avaliação}
 
-O protótipo será submetido a testes de campo com os orientadores do projeto, que atuam como usuários especialistas. Serão realizados experimentos de processamento de lotes de provas para medir a precisão técnica e a utilidade percebida. Esta fase utilizará o Framework for Evaluation in Design Science (FEDS) \cite{feds_framework2026}, alternando entre avaliações formativas (durante o desenvolvimento) e sumativas (ao final do ciclo).
+O protótipo será avaliado com lotes de provas objetivas manuscritas. Cada imagem será processada pelos dois provedores, preservando as mesmas condições de entrada. O resultado de cada modelo será comparado com um padrão-ouro definido por validação manual. A avaliação seguirá uma abordagem formativa durante o desenvolvimento e uma avaliação somativa ao final, alinhada ao FEDS \cite{feds_framework2026}.
 
 \subsection{Comunicação}
 
-Finalização do artefato e comunicação dos resultados. Nesta fase, consolidar-se-ão as lições aprendidas sobre o comportamento da IA frente a diferentes caligrafias e condições de imagem, contribuindo para a literatura de tecnologia educacional com dados reais de performance.
+Os resultados serão comunicados por meio da descrição da arquitetura, do pipeline implementado, das métricas coletadas e da análise comparativa entre o modelo aberto e o modelo proprietário. A conclusão deverá indicar qual abordagem foi mais adequada para o cenário estudado e sob quais critérios.
 
 \section{Procedimentos Metodológicos}
 % ---
@@ -38,146 +38,242 @@ Finalização do artefato e comunicação dos resultados. Nesta fase, consolidar
 Os procedimentos metodológicos adotados incluem:
 
 \begin{itemize}
-    \item \textbf{Revisão Bibliográfica}: Análise sistemática da literatura sobre IA na educação, processamento de documentos e modelos multimodais.
-    \item \textbf{Prototipagem Iterativa}: Desenvolvimento incremental do artefato com ciclos de teste e refinamento.
-    \item \textbf{Experimentação Controlada}: Testes comparativos entre correção manual e automatizada para validação quantitativa.
-    \item \textbf{Avaliação de Usabilidade}: Aplicação de questionários SUS (System Usability Scale) com professores.
-    \item \textbf{Análise de Métricas}: Coleta e análise de dados de acurácia, tempo, custo e satisfação do usuário.
+    \item \textbf{Revisão bibliográfica}: análise de literatura sobre processamento inteligente de documentos, modelos multimodais, arquitetura de sistemas com IA e avaliação de artefatos.
+    \item \textbf{Prototipagem iterativa}: desenvolvimento incremental do aplicativo, backend e provedores, com testes de integração a cada ciclo.
+    \item \textbf{Definição do padrão-ouro}: validação manual das respostas presentes nas provas para estabelecer a referência de comparação.
+    \item \textbf{Experimentação comparativa}: processamento do mesmo conjunto de imagens pelo modelo aberto e pelo modelo proprietário.
+    \item \textbf{Análise de métricas}: coleta de acurácia, taxa de JSON válido, latência, custo estimado, robustez, taxa de intervenção humana e erros associados a caligrafia, layout manuscrito irregular, rasuras e marcações ambíguas.
+    \item \textbf{Análise arquitetural}: discussão dos impactos de infraestrutura, manutenção, privacidade, dependência de fornecedor e substituição de modelos.
 \end{itemize}
 
 % ---
 \chapter{Desenvolvimento e Experimento}
 % ---
 
-Este capítulo descreve o desenvolvimento do artefato tecnológico e o desenho experimental utilizado para validar sua eficácia no contexto de correção de provas objetivas.
+Este capítulo descreve o storyboard do aplicativo, a arquitetura proposta, o pipeline de extração e o desenho experimental usado para comparar os provedores multimodais.
+
+\section{Storyboard do Aplicativo}
+
+O storyboard descreve o fluxo de interação do usuário com o sistema e explicita entradas, processamento e saídas. A entrada é uma prova objetiva manuscrita completa, e não apenas um formulário impresso com campos de resposta marcados. O aplicativo móvel atua como interface de captura e visualização, enquanto o processamento de IA ocorre no backend e nos provedores externos ao dispositivo.
+
+\subsection{Entradas}
+
+As entradas principais do sistema são:
+
+\begin{itemize}
+    \item imagem de uma prova objetiva manuscrita capturada por smartphone;
+    \item metadados da turma, prova ou lote de processamento;
+    \item provedor de IA selecionado: modelo aberto em servidor próprio ou modelo proprietário via API externa.
+\end{itemize}
+
+\subsection{Processamento}
+
+Após a captura, o aplicativo envia a imagem ao backend. O backend registra a submissão, aplica validações iniciais, seleciona o provedor configurado e aciona o \textit{ModelAdapter}. A requisição é processada pelo modelo aberto ou pelo modelo proprietário, conforme a configuração. O modelo deve extrair os elementos estruturais da prova, incluindo identificação do respondente, questões, alternativas disponíveis, resposta marcada, rasuras e ambiguidades visuais. A resposta bruta é normalizada para o JSON padronizado. Em seguida, o validador realiza validação estrutural e semântica, verificando campos obrigatórios, tipos de dados, consistência entre questões e alternativas, níveis de confiança e inconsistências.
+
+Quando a resposta é válida e possui confiança suficiente, o resultado é persistido no banco de dados. Quando há baixa confiança, rasura, ambiguidade visual ou JSON inválido, o item é direcionado para a tela de validação humana.
+
+\subsection{Saídas}
+
+As saídas do sistema são:
+
+\begin{itemize}
+    \item identificação do respondente, quando reconhecida;
+    \item questões identificadas;
+    \item alternativas detectadas;
+    \item respostas extraídas;
+    \item indicação de confiança por item ou por prova;
+    \item lista de inconsistências que exigem revisão;
+    \item resultado final validado;
+    \item métricas de execução usadas no experimento comparativo.
+\end{itemize}
 
 % ---
 \section{Arquitetura da Solução}
 
-A solução proposta rompe com a tradição dos "formulários de bolinha". O professor segue um fluxo de trabalho intuitivo, desenhado para minimizar o esforço de configuração inicial.
+A arquitetura da solução foi organizada para permitir substituição e comparação de provedores de IA sem alterar o fluxo principal do sistema. A Figura TODO deverá apresentar o diagrama da arquitetura com seus componentes e relações. TODO: inserir figura da arquitetura.
 
-\subsection{Arquitetura de Software e Hardware}
+\subsection{Componentes}
 
-O sistema operará em um modelo de cliente-servidor em nuvem, conforme ilustrado na arquitetura:
+Os componentes principais são:
 
 \begin{itemize}
-    \item \textbf{Hardware}: Smartphones convencionais com câmera mínima de 8MP e acesso à internet. O processamento pesado de IA ocorre nos servidores da Google via API, não exigindo hardware caro do usuário final.
-
-    \item \textbf{Backend (Django)}: Gerencia o ciclo de vida do exame. Uma funcionalidade central é o "Compilador Semântico", que trata a entrada do professor (gabarito mestre) para garantir que a IA compreenda exatamente quais são as chaves de resposta. O Django também gerencia autenticação, autorização e persistência de dados.
-
-    \item \textbf{Frontend (Expo)}: Focado na experiência de captura. Implementa guias visuais para ajudar o professor a enquadrar a prova, embora o Gemini 3.1 Flash possua alta tolerância a inclinações. A interface será projetada seguindo princípios de design centrado no usuário, priorizando simplicidade e eficiência.
+    \item \textbf{App móvel}: captura imagens de provas objetivas manuscritas, permite selecionar ou visualizar o provedor configurado, envia provas ao backend e apresenta os resultados.
+    \item \textbf{Backend}: recebe as imagens, cria registros de submissão, coordena o pipeline, chama o adaptador de modelos, persiste resultados e disponibiliza APIs para consulta.
+    \item \textbf{ModelAdapter}: define uma interface comum para todos os provedores de IA, encapsulando diferenças de autenticação, payload, prompt, resposta e tratamento de erro.
+    \item \textbf{OpenModelProvider}: chama o modelo multimodal aberto hospedado em servidor próprio e exposto como API interna ou controlada pelo projeto.
+    \item \textbf{ClosedModelProvider}: chama o modelo multimodal proprietário acessado por API externa.
+    \item \textbf{Validador de JSON}: verifica se a resposta do provedor segue o esquema padronizado e identifica inconsistências estruturais e semânticas.
+    \item \textbf{Banco de dados}: armazena imagens ou referências às imagens, respostas brutas, respostas normalizadas, métricas, status de validação e resultado final.
+    \item \textbf{Tela de validação humana}: apresenta casos ambíguos ou inválidos para correção manual e registra a decisão final.
 \end{itemize}
 
-\subsection{O Fluxo da Inteligência Artificial}
+\subsection{Fluxo do Pipeline}
 
-A integração com o Gemini 3.1 Flash utiliza técnicas avançadas de engenharia de prompt e configuração de modelo:
+O pipeline de extração será composto pelas seguintes etapas:
 
 \begin{enumerate}
-    \item \textbf{Leitura do Gabarito Mestre}: O professor sobe um PDF ou tira foto da prova gabaritada. A IA extrai as respostas e gera um "Gabarito Digital" em JSON.
-
-    \item \textbf{Processamento Multimodal}: Para cada prova de aluno, a imagem é enviada com um prompt que contém o Gabarito Digital. A IA é instruída a:
-    \begin{itemize}
-        \item Identificar o nome no topo da folha (usando OCR de manuscrito).
-        \item Mapear as alternativas marcadas para cada número de questão.
-        \item Comparar as marcações com o gabarito.
-    \end{itemize}
-
-    \item \textbf{Geração de Saída Estruturada}: Utilizando a funcionalidade de ``Controlled Generation'' do Gemini \cite{firebase_structured_output2026}, o modelo retorna um objeto JSON com o formato: \texttt{\{"aluno": "João Silva", "respostas": [ \{"a": 1, "b": "3", "c": "2"\}, ... ], "confianca": 0.98 \}}.
-
-    \item \textbf{Tratamento de Incertezas}: Se o nível de confiança da IA for baixo (devido a rasuras ou imagem borrada), o sistema sinaliza para o professor. Estudos indicam que modelos de IA ainda podem alucinar em campos em branco ou caligrafias extremas \cite{iaeducacao2026}, tornando a interface de correção manual um componente crítico do artefato.
+    \item captura da imagem de uma prova objetiva manuscrita pelo aplicativo móvel;
+    \item envio da imagem e dos metadados ao backend;
+    \item seleção do provedor de IA conforme configuração;
+    \item preparação da requisição padronizada pelo \textit{ModelAdapter};
+    \item execução da inferência pelo \textit{OpenModelProvider} ou \textit{ClosedModelProvider};
+    \item extração dos elementos estruturais da prova;
+    \item normalização da resposta bruta para o esquema JSON do sistema;
+    \item validação estrutural e semântica do JSON;
+    \item persistência do resultado e das métricas;
+    \item encaminhamento para validação humana quando necessário;
+    \item consolidação do resultado final para visualização no aplicativo.
 \end{enumerate}
 
-\section{O Experimento}
+\subsection{Contrato de Saída}
 
-O coração deste TCC é o experimento prático. Não basta a teoria de que a IA funciona; é preciso medir seu desempenho em condições reais.
+O contrato de saída deverá conter uma estrutura semelhante à apresentada no Código \ref{cod:json-saida}. O exemplo é ilustrativo e será refinado durante a implementação.
+
+\begin{lstlisting}[caption={Exemplo de saída padronizada em JSON},label={cod:json-saida},language=Java]
+{
+  "submission_id": "sub-001",
+  "student_identifier": "nome reconhecido ou null",
+  "questions": [
+    {
+      "question": 1,
+      "detected_alternatives": ["A", "B", "C", "D"],
+      "selected_option": "A",
+      "confidence": 0.91,
+      "visual_ambiguities": [],
+      "requires_human_review": false
+    }
+  ],
+  "overall_confidence": 0.88,
+  "validation_errors": []
+}
+\end{lstlisting}
+
+\section{Experimento Comparativo}
+
+O experimento tem como finalidade comparar o desempenho técnico e operacional do modelo aberto hospedado em servidor próprio e do modelo proprietário via API externa.
 
 \subsection{Desenho Experimental}
 
-O experimento será realizado em duas fases:
+O experimento será realizado em três etapas:
 
 \begin{enumerate}
-    \item \textbf{Laboratório}: Utilização de datasets de provas sintéticas com diferentes tipos de rasuras e qualidades de impressão para estressar o modelo Gemini e ajustar os prompts.
-
-    \item \textbf{Campo}: Teste com os orientadores (2 professores). Eles utilizarão o aplicativo para corrigir exames reais de suas disciplinas. Cada orientador processará um lote de no mínimo 50 provas de turmas de graduação e técnico.
+    \item \textbf{Preparação do conjunto de testes}: seleção ou produção de provas objetivas manuscritas, com variações de caligrafia, layout, iluminação, enquadramento, marcações e rasuras.
+    \item \textbf{Construção do padrão-ouro}: leitura manual das provas para registrar a resposta correta de cada questão e os casos ambíguos.
+    \item \textbf{Processamento comparativo}: envio das mesmas imagens aos dois provedores, usando o mesmo prompt-base, o mesmo esquema JSON e as mesmas métricas.
 \end{enumerate}
 
-\subsection{Hardware e Software do Teste}
+\subsection{Cenários Avaliados}
+
+Serão considerados, no mínimo, os seguintes cenários:
 
 \begin{itemize}
-    \item \textbf{Hardware}: Smartphones (1 iPhone, 1 Android de gama média).
-    \item \textbf{Software}: Versão beta do aplicativo instalada via Expo Go.
-    \item \textbf{Padrão de Comparação}: As mesmas provas serão corrigidas manualmente pelos professores para servir como base de comparação de tempo e acerto.
+    \item provas com enunciados, numeração e alternativas manuscritas;
+    \item provas com marcações de resposta claras;
+    \item provas com marcações fracas ou incompletas;
+    \item provas com rasuras;
+    \item provas com layout manuscrito irregular;
+    \item imagens com inclinação;
+    \item imagens com sombras ou baixa iluminação;
+    \item campos de identificação manuscritos.
 \end{itemize}
 
-\subsection{Cronograma de Execução}
+\subsection{Métricas de Avaliação}
 
-O experimento será planejado para ocorrer no penúltimo bimestre do projeto de TCC:
+A avaliação do artefato será quantitativa e qualitativa, focando nas seguintes dimensões:
 
 \begin{itemize}
-    \item \textbf{Semana 1}: Coleta do material (provas físicas) e correção manual (estabelecimento do benchmark).
-    \item \textbf{Semana 2}: Processamento das provas via aplicativo e registro dos tempos e erros de extração da IA.
-    \item \textbf{Semana 3}: Entrevistas de usabilidade com os orientadores e aplicação do questionário SUS.
-    \item \textbf{Semana 4}: Consolidação estatística dos dados e geração das tabelas comparativas.
+    \item \textbf{Acurácia de identificação das questões}: proporção de questões reconhecidas corretamente em relação ao padrão-ouro.
+    \item \textbf{Acurácia de identificação das alternativas}: proporção de alternativas disponíveis detectadas corretamente.
+    \item \textbf{Acurácia de extração da resposta marcada}: proporção de respostas escolhidas identificadas corretamente.
+    \item \textbf{Acurácia de reconhecimento da identificação manuscrita}: proporção de identificações de respondentes reconhecidas corretamente quando houver campo legível.
+    \item \textbf{Acurácia por prova}: proporção de provas com todos os elementos estruturais necessários extraídos corretamente.
+    \item \textbf{Taxa de JSON válido}: proporção de respostas que atendem ao esquema definido sem reparo manual.
+    \item \textbf{Latência}: tempo entre envio da imagem e retorno da resposta normalizada.
+    \item \textbf{Custo operacional}: custo estimado por prova processada em cada provedor.
+    \item \textbf{Taxa de erro por caligrafia ilegível}: proporção de erros associados à impossibilidade de leitura do texto manuscrito.
+    \item \textbf{Taxa de erro por layout manuscrito irregular}: proporção de erros associados à organização visual da prova.
+    \item \textbf{Taxa de casos enviados para validação humana}: proporção de provas ou questões encaminhadas para revisão.
+    \item \textbf{Tipos de erro}: classificação dos erros por marcação ambígua, rasura, campo ausente, questão não identificada, alternativa incorreta, identificação manuscrita incorreta, JSON inválido ou falha de provedor.
 \end{itemize}
 
-\section{Métricas de Avaliação: O que vai ser medido?}
+\subsection{Tabela Comparativa Planejada}
 
-A avaliação do artefato é quantitativa e qualitativa, focando em quatro dimensões principais:
-
-\subsection{Acurácia e Precisão}
-
-Acurácia da correção (número de questões classificadas corretamente vs. padrão-ouro manual) e precisão no reconhecimento de nomes manuscritos \cite{google_ml_classification2026}. Esta métrica é fundamental para validar a confiabilidade do sistema em contexto real de uso.
-
-\subsection{Eficiência Temporal}
-
-Tempo total para corrigir um lote de 50 provas via aplicativo vs. tempo manual cronometrado. Esta comparação demonstra o ganho de produtividade proporcionado pela automação.
-
-\subsection{Usabilidade}
-
-Utilizando a escala SUS para medir se os professores consideram o sistema fácil de operar. A escala SUS (System Usability Scale) é um questionário padronizado amplamente utilizado para avaliação de usabilidade de sistemas.
-
-\subsection{Viabilidade Econômica}
-
-Análise do custo das chamadas de API em relação ao volume de provas, garantindo que o sistema seja sustentável financeiramente para uma escola ou professor autônomo.
-
-\chapter{Expectativas de Conclusão e Resultados Esperados}
-
-Ao final deste trabalho, espera-se entregar um artefato funcional e um relatório detalhado que comprove a viabilidade da IA Generativa como substituta superior aos métodos tradicionais de correção.
-
-\section{Contribuição Científica e Prática}
-
-A principal conclusão esperada é que o uso do Gemini 3.1 Flash permite uma economia de tempo de pelo menos 80\% em relação à correção manual, mantendo uma acurácia global superior a 95\%. Espera-se demonstrar que a flexibilidade da IA para ler diferentes layouts de prova elimina a maior barreira de adoção de tecnologias de automação nas escolas brasileiras.
-
-\section{Tabela Comparativa Projetada}
-
-Um dos resultados centrais será a tabela de desempenho, comparando o novo artefato com as alternativas existentes:
+Os resultados serão organizados conforme a Tabela \ref{tab:comparacao-provedores}. Os valores serão preenchidos após a execução do experimento.
 
 \begin{table}[htb]
 \centering
-\caption{Comparação de Métodos de Correção de Provas}
-\label{tab:comparacao-metodos}
+\caption{Comparação experimental entre provedores multimodais}
+\label{tab:comparacao-provedores}
 \small
-\begin{tabular}{|p{3.5cm}|p{3cm}|p{3cm}|p{3cm}|}
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
 \hline
-\textbf{Métrica} & \textbf{Correção Manual} & \textbf{OMR Tradicional} & \textbf{Aplicativo IA} \\
+\textbf{Métrica} & \textbf{Modelo aberto em servidor próprio} & \textbf{Modelo proprietário via API externa} \\
 \hline
-Tempo (50 provas) & 150-200 min & 15-20 min & 10-15 min \\
+Acurácia de questões & A preencher & A preencher \\
 \hline
-Flexibilidade de Layout & Alta & Nula (Template) & Alta (Qualquer) \\
+Acurácia de alternativas & A preencher & A preencher \\
 \hline
-Custo de Hardware & R\$ 0,00 & Alto (Scanner) & R\$ 0,00 (Celular) \\
+Acurácia de respostas & A preencher & A preencher \\
 \hline
-Reconhecimento de Nomes & Manual & Não realiza & Automático (OCR) \\
+Identificação manuscrita & A preencher & A preencher \\
 \hline
-Tratamento de Rasuras & Julgamento Humano & Frequentemente Erra & Sinalização p/ Validação \\
+Taxa de JSON válido & A preencher & A preencher \\
 \hline
-Feedback ao Aluno & Dias/Semanas & Horas & Instantâneo \\
+Latência média & A preencher & A preencher \\
+\hline
+Custo por prova & A preencher & A preencher \\
+\hline
+Validação humana & A preencher & A preencher \\
+\hline
+Erros por caligrafia & A preencher & A preencher \\
+\hline
+Erros por layout & A preencher & A preencher \\
+\hline
+Falhas de provedor & A preencher & A preencher \\
+\hline
+Observações arquiteturais & A preencher & A preencher \\
 \hline
 \end{tabular}
 \end{table}
 
-Além dos ganhos de produtividade, o projeto visa concluir que a ``Soberania Docente'' é mantida e até fortalecida, pois o professor deixa de ser um ``conferidor de gabaritos'' para se tornar um ``validador de resultados'', tendo acesso imediato a estatísticas de desempenho da turma (ex: quais questões tiveram maior índice de erro), o que permite uma intervenção pedagógica imediata.
+\subsection{Critério de Análise}
 
-\section{Impacto Esperado}
+O modelo tecnicamente mais adequado não será definido apenas pela maior acurácia. A análise considerará o equilíbrio entre qualidade da extração estruturada, validade da saída JSON, custo, latência, robustez frente a manuscritos e layouts irregulares, controle operacional, privacidade, facilidade de manutenção e quantidade de revisão humana necessária.
 
-Espera-se que o artefato desenvolvido demonstre que a Inteligência Artificial, quando aplicada com rigor metodológico (DSR) e focada em problemas reais do cotidiano escolar, deixa de ser um mito tecnológico para se tornar um aliado indispensável da educação pública e privada no Brasil. A democratização do acesso à automação de alta performance pode transformar significativamente a rotina de milhares de educadores brasileiros, devolvendo-lhes o que têm de mais precioso: o tempo para ensinar.
+\section{Cronograma de Execução do Experimento}
+
+O experimento será planejado em quatro etapas:
+
+\begin{itemize}
+    \item \textbf{Etapa 1}: preparação das provas, definição do esquema JSON e implementação dos provedores.
+    \item \textbf{Etapa 2}: criação do padrão-ouro manual e configuração do ambiente do modelo aberto.
+    \item \textbf{Etapa 3}: execução dos testes com ambos os provedores e coleta das métricas.
+    \item \textbf{Etapa 4}: análise dos resultados, classificação dos erros e discussão arquitetural.
+\end{itemize}
+
+\chapter{Expectativas de Conclusão e Resultados Esperados}
+
+Ao final deste trabalho, espera-se entregar um artefato funcional e uma avaliação comparativa fundamentada sobre duas estratégias de uso de modelos multimodais para extração estruturada de informações em provas objetivas manuscritas.
+
+\section{Contribuição Científica e Prática}
+
+A contribuição esperada é demonstrar como uma arquitetura plugável permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
+
+O resultado final deverá indicar qual abordagem foi mais adequada ao cenário avaliado. Caso o modelo aberto apresente acurácia suficiente e custos menores, a infraestrutura própria poderá ser considerada vantajosa apesar da complexidade operacional. Caso o modelo proprietário apresente maior estabilidade, menor latência ou menor taxa de intervenção humana, a API externa poderá ser mais adequada mesmo com dependência de fornecedor. Também é possível que os resultados apontem para uma estratégia híbrida, na qual cada provedor seja usado em cenários distintos.
+
+\section{Resultados Esperados}
+
+Os resultados esperados são:
+
+\begin{itemize}
+    \item definição de um pipeline reprodutível para extração estruturada de informações em provas objetivas manuscritas;
+    \item implementação de uma arquitetura com provedores de IA substituíveis por configuração;
+    \item comparação quantitativa entre modelo aberto e modelo proprietário;
+    \item identificação dos principais tipos de erro na extração multimodal de elementos manuscritos;
+    \item avaliação da utilidade do validador de JSON e da tela de validação humana;
+    \item discussão sobre qual abordagem técnica se mostrou mais adequada para o sistema proposto.
+\end{itemize}
+
+\section{Limites da Conclusão Esperada}
+
+Não se pretende concluir genericamente que modelos multimodais substituem métodos tradicionais em todos os contextos. A conclusão deverá se restringir ao conjunto de provas, modelos, infraestrutura, prompts, métricas e condições experimentais definidos neste trabalho. Generalizações dependerão de novos experimentos com outros formatos de prova, outros modelos e maior diversidade de condições de captura.

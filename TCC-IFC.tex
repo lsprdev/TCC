@@ -19,6 +19,7 @@
 \usepackage[alf]{abntex2cite}	 % Citações padrão ABNT
 \usepackage{lipsum}            % Pode ser removido no final
 \usepackage{listings}
+\Urlmuskip=0mu plus 3mu\relax
 
 % Índice remissivo (necessário para \printindex)
 \usepackage{makeidx}
@@ -230,7 +231,11 @@
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
+\begingroup
+\small
+\raggedright
 \bibliography{referencias}
+\endgroup
 
 % ----------------------------------------------------------
 % Glossário
@@ -249,4 +254,3 @@
 
 \end{document}
     stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
-

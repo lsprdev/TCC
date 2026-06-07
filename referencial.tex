@@ -1,64 +1,43 @@
 \chapter{Referencial Teórico}
 
-Este capítulo apresenta os principais conceitos e referências que fundamentam este trabalho, incluindo a revisão bibliográfica sobre Inteligência Artificial na educação e o estado da arte dos modelos multimodais para processamento de documentos.
+Este capítulo apresenta os conceitos que fundamentam o trabalho sob a perspectiva de Sistemas de Informação. O foco recai sobre processamento inteligente de documentos, modelos multimodais, arquiteturas de integração com provedores de IA, validação de saídas estruturadas e avaliação experimental de artefatos computacionais.
 
-\section{Inteligência Artificial na Educação}
+\section{Processamento de Documentos Manuscritos}
 
-A utilização de IA na educação não é um conceito novo, mas a transição para a IA Generativa Multimodal representa uma mudança de paradigma \cite{iaeducacao2026}. Trabalhos anteriores focaram em sistemas de tutoria inteligente e avaliações automatizadas baseadas em regras. No entanto, a literatura recente começa a explorar o impacto da IA especificamente na transformação dos métodos tradicionais no ensino superior e básico \cite{impactoiaavaliacao2025}.
+O processamento de documentos manuscritos envolve a conversão de um artefato físico, sujeito a variações de escrita, captura, organização visual e marcação, em registros digitais que possam ser armazenados e utilizados por um sistema. Em provas objetivas manuscritas, a extração de informação exige reconhecer identificação do respondente, enunciados, numeração das questões, alternativas disponíveis, marcações de resposta, rasuras e ambiguidades visuais. A dificuldade aumenta quando a captura ocorre por fotografia, pois o sistema passa a lidar com inclinação, sombras, reflexos, baixa resolução, cortes parciais, caligrafias distintas e layout manuscrito irregular. O reconhecimento de manuscritos, tanto em cenários on-line quanto off-line, é um problema consolidado na área de análise de padrões e documentos \cite{plamondon2000handwriting,rassul2025handwritten}.
 
-A Inteligência Artificial Generativa difere das abordagens tradicionais de IA por sua capacidade de criar conteúdo novo e interpretar dados não estruturados \cite{blueprismgenai2026}. Enquanto sistemas de IA tradicional dependem de regras predefinidas e templates fixos, a IA Generativa pode adaptar-se a diferentes contextos e formatos, tornando-a especialmente adequada para aplicações educacionais onde a variabilidade é uma constante \cite{googlecloudgenai2026a}.
+Soluções tradicionais baseadas em Reconhecimento Óptico de Marcas (OMR) tendem a funcionar melhor quando há um formulário padronizado e condições controladas de digitalização. Técnicas de OCR, como o Tesseract, e abordagens recentes de OMR, incluindo modelos leves e processamento com câmeras de smartphone, mostram diferentes caminhos para digitalização de documentos e marcações \cite{smith2007tesseract,mondal2023omrnet,hafeez2024omrsmartphone}. Já abordagens baseadas em entendimento de documentos podem interpretar simultaneamente texto, layout e imagem, reduzindo a dependência de templates rígidos \cite{xu2020layoutlm,kim2022donut}. Essa flexibilidade, entretanto, precisa ser avaliada empiricamente antes de ser incorporada a um sistema de informação, especialmente quando o documento é manuscrito e visualmente heterogêneo.
 
-O impacto da IA na avaliação educacional tem sido objeto de estudos recentes, que apontam tanto as oportunidades quanto os desafios desta tecnologia \cite{impactoiaavaliacao2025}. A possibilidade de automatizar tarefas repetitivas permite que os educadores dediquem mais tempo às atividades pedagógicas de maior valor, como o desenvolvimento de estratégias de ensino personalizadas e o atendimento individualizado aos alunos \cite{iaeducacao2026}. No entanto, é importante ressaltar que a IA na avaliação educacional não substitui o professor, mas sim o auxilia em suas tarefas, sendo fundamental considerar a formação continuada dos professores no uso dessas ferramentas \cite{iaeducacao2026}.
+\section{Modelos Multimodais}
 
-\section{Trabalhos Relacionados}
+Modelos multimodais de linguagem combinam processamento textual com interpretação visual, permitindo que uma imagem seja fornecida junto de uma instrução textual. No contexto deste trabalho, o modelo recebe a imagem da prova objetiva manuscrita e uma especificação do formato de saída esperado, retornando dados estruturados sobre questões identificadas, alternativas detectadas, respostas marcadas, identificação do respondente, rasuras, ambiguidades visuais e grau de confiança. Tarefas como VQA em documentos, pré-treinamento com texto e layout, e entendimento de documentos sem OCR indicam a relevância dos modelos multimodais para esse tipo de dado visual \cite{mathew2021docvqa,xu2020layoutlm,kim2022donut}.
 
-Diversos trabalhos têm sido desenvolvidos na área de automação de correção de provas, cada um com abordagens e limitações distintas:
+Apesar do potencial técnico, a resposta de um modelo multimodal não deve ser tratada automaticamente como dado válido. Como esses modelos são probabilísticos, o sistema precisa considerar respostas incompletas, inconsistentes ou incompatíveis com o esquema esperado. Por isso, a arquitetura proposta incorpora validação de JSON, registro de incertezas e revisão humana para casos que não atendem aos critérios de qualidade.
 
-\subsection{Sistemas Comerciais e Acadêmicos}
+\section{Modelos Abertos e Modelos Proprietários}
 
-\textbf{Minha Prova:} Um sistema de automatização que foca na correção de gabaritos padrão. A limitação de muitos sistemas desse tipo é a exigência de um formato fixo de folha de respostas, o que restringe a flexibilidade do professor na elaboração das avaliações \cite{silva_minhaprova_2018}.
+A comparação entre modelos abertos hospedados em infraestrutura própria e modelos proprietários acessados por API externa é relevante para decisões de arquitetura. Um modelo aberto pode oferecer maior controle sobre ambiente, versionamento, política de dados e execução, mas pode exigir maior capacidade de infraestrutura, configuração e manutenção. Um modelo proprietário pode simplificar a integração inicial e oferecer infraestrutura gerenciada, mas introduz dependência de fornecedor, custos por uso e menor controle sobre o funcionamento interno do serviço.
 
-\textbf{Aprendizado de Máquina para Gabaritos:} Estudos realizados na Unicamp exploraram o uso de técnicas de visão computacional clássica para automatizar a correção, validando que a IA é uma solução viável para o segmento acadêmico. No entanto, esses estudos identificaram que a robustez contra diferentes condições de captura de imagem ainda era um desafio significativo \cite{aprendizadomaquina2026}.
+Neste trabalho, esses dois arranjos são tratados como provedores de IA distintos. O \textit{OpenModelProvider} representa o modelo multimodal aberto hospedado em servidor próprio e exposto como API. O \textit{ClosedModelProvider} representa o modelo multimodal proprietário consumido por API externa. Ambos são acessados pelo backend por meio do mesmo \textit{ModelAdapter}, o que permite comparar resultados sob o mesmo contrato de entrada e saída. Essa separação é relevante para discutir governança, dependência de fornecedores, transparência e riscos associados à adoção de sistemas baseados em IA \cite{solaiman2023gradient,bommasani2023transparency,ntia2024openweights,nist2023airmf}.
 
-\textbf{Avalia: sistema de corre{\c{c}}{\~a}o automatizada de atividades escolares utilizando reconhecimento {\'o}ptico de caracteres e intelig{\^e}ncia artificial:} Este trabalho propõe um sistema de correção automatizada utilizando OCR e IA, focado em atividades escolares. Embora seja uma contribuição importante para a área, o sistema ainda depende de uma estrutura de prova relativamente rígida e não aborda completamente a variabilidade das condições de captura de imagem em ambientes escolares \cite{oliveira2024avalia}.
+\section{Arquiteturas Plugáveis em Sistemas de Informação}
 
-\textbf{Sistema de Geração e Correção via Ollama (IFG):} Um trabalho recente no IFG detalha uma arquitetura que utiliza o Ollama para execução local de modelos de linguagem, integrando RAG (Retrieval-Augmented Generation) para garantir que as questões sejam ancoradas em conteúdos de referência \cite{almeida2025estudo}. Esta abordagem é robusta para a geração de provas, mas a execução local pode exigir hardware de servidor que muitos professores não possuem, justificando a escolha por uma API em nuvem como a do Gemini neste projeto.
+Arquiteturas plugáveis buscam separar a regra de negócio das implementações concretas de componentes substituíveis. No caso deste trabalho, o componente substituível é o provedor de IA. A aplicação não deve depender diretamente de uma API específica, pois isso dificultaria a comparação experimental e a manutenção do sistema quando novos modelos forem testados.
 
-\section{O Papel do Gemini 3.1 Flash no Estado da Arte}
+A camada \textit{ModelAdapter} funciona como fronteira técnica entre o pipeline de extração e os provedores. Ela recebe uma requisição padronizada, chama o provedor configurado, interpreta a resposta bruta e retorna uma estrutura compatível com o esquema esperado pelo sistema. Essa separação permite alternar provedores por configuração, registrar métricas de execução e manter a mesma tela de validação humana para ambos os modelos.
 
-O lançamento da série Gemini 3 em meados de 2025 e sua atualização para a versão 3.1 em fevereiro de 2026 marcaram um ponto de inflexão na capacidade de processamento de documentos \cite{geminiapi_releasenotes2026a}. O modelo Gemini 3.1 Flash, especificamente a arquitetura otimizada, foi projetado para velocidade e volume, suportando até 1 milhão de tokens de contexto e apresentando uma latência de ``Time to First Token'' significativamente menor que seus predecessores \cite{googlecloud_gemini2_2026b}.
+\section{Saída Estruturada e Validação Humana}
 
-Em benchmarks especializados em Inteligência de Documentos (IDP), como o OmniDoc e o IDP Leaderboard, o Gemini 3.1 Flash demonstrou ser um dos modelos mais eficientes para a extração de texto em layouts ``messy'' (desorganizados ou degradados), superando em muitos casos modelos mais caros na extração pura de dados de tabelas e formulários \cite{googlecloud_gemini2_2026b}. Essa capacidade é crucial para o sucesso deste projeto, pois as provas capturadas em ambiente escolar raramente possuem iluminação perfeita ou alinhamento impecável.
+Em um sistema transacional, uma resposta textual livre produzida por IA não é suficiente. O resultado precisa ser convertido em uma estrutura previsível, validada contra regras formais e persistida com rastreabilidade. Por isso, o trabalho adota uma saída em JSON contendo, no mínimo, identificador da submissão, respostas extraídas, campos de confiança, erros de validação e indicação de revisão humana.
 
-\subsection{Comparação de Modelos}
+A validação humana é tratada como parte do pipeline, e não como uma etapa externa. Quando o modelo retorna baixa confiança, resposta ausente, alternativa ambígua ou JSON inválido, o sistema apresenta o caso em uma tela de validação. A correção feita pelo usuário é armazenada junto do resultado original, permitindo comparar a saída do modelo com o resultado final validado. Essa abordagem se alinha a recomendações de interação humano-IA, auditoria algorítmica e gestão de riscos em sistemas baseados em IA \cite{amershi2019humanai,raji2020audit,nist2023airmf}.
 
-A escolha do modelo adequado para processamento de documentos envolve a análise de múltiplos fatores, incluindo performance em tarefas visuais, capacidade de extração de dados e custo operacional. A tabela abaixo apresenta uma comparação entre os principais modelos disponíveis:
+\section{Design Science Research e Avaliação de Artefatos}
 
-\begin{table}[htb]
-\centering
-\caption{Comparação de Modelos de IA para Processamento de Documentos}
-\label{tab:comparacao-modelos}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Modelo} & \textbf{Ranking IDP} & \textbf{Visual QA} & \textbf{OmniDoc} & \textbf{Custo/1M Tokens} \\
-\hline
-Gemini 3.1 Pro & \#1 & 85.0 & 89.6 & \$1.25 \\
-\hline
-Gemini 3.1 Flash & \#7 & 60.0 & 90.1 & \$0.10 \\
-\hline
-GPT-4 & \#2 & 78.0 & 87.2 & Variável \\
-\hline
-\end{tabular}
-\end{table}
+A metodologia Design Science Research (DSR) é adequada para este trabalho por orientar a construção e avaliação de artefatos voltados à solução de problemas em Sistemas de Informação \cite{sposito2024design}. O artefato proposto não é apenas uma interface de usuário, mas uma arquitetura operacional composta por aplicativo, backend, adaptadores, provedores, banco de dados e mecanismos de validação.
 
-A escolha pelo Gemini 3.1 Flash justifica-se pela análise do custo-benefício: embora o modelo Pro lidere em raciocínio visual complexo (Visual QA), o modelo Flash apresenta a maior pontuação em extração de documentos (OmniDoc Score: 90.1), custando uma fração do preço (\$0.10 vs \$1.25 por milhão de tokens). Isso torna a solução economicamente viável para o uso diário em escolas, permitindo que professores processem centenas de provas sem custos proibitivos \cite{nanonets_idp_leaderboard2026}.
-
-\section{IA Generativa vs. IA Tradicional}
-
-A diferença fundamental entre IA Generativa e IA Tradicional reside na capacidade de lidar com dados não estruturados \cite{googlecloudgenai2026a}. Sistemas OMR tradicionais requerem templates rígidos e marcações precisas, enquanto modelos de IA Generativa podem interpretar imagens em diversos formatos, ângulos e condições de iluminação \cite{blueprismgenai2026}. Esta flexibilidade é especialmente relevante no contexto educacional, onde professores muitas vezes não têm acesso a equipamentos especializados de digitalização.
-
-Os LLMs multimodais, como o Gemini 3.1 Flash, combinam capacidades de processamento de linguagem natural com visão computacional, permitindo não apenas extrair dados de imagens, mas também compreender o contexto e a semântica das informações apresentadas \cite{googlecloud_gemini2026d}. Essa característica possibilita o reconhecimento de alternativas marcadas mesmo em provas com caligrafias variadas, rasuras ou formatações não padronizadas.
+A avaliação do artefato será conduzida de forma experimental e comparativa, observando métricas técnicas e operacionais. O Framework for Evaluation in Design Science (FEDS) apoia a definição de avaliações formativas e somativas ao longo do ciclo de desenvolvimento \cite{feds_framework2026}. Neste trabalho, a avaliação final deverá indicar qual abordagem técnica se mostrou mais adequada para o problema definido, considerando não apenas acurácia, mas também custo, latência, taxa de saída válida e necessidade de intervenção humana.
 
 \section{Síntese do Referencial}
 
-O referencial teórico apresentado demonstra que a automação da correção de provas é um campo em evolução, com diversas abordagens sendo exploradas tanto no meio acadêmico quanto comercial. A convergência entre visão computacional avançada e LLMs multimodais representa o estado da arte atual, oferecendo soluções mais flexíveis e acessíveis do que as tecnologias predecessoras. Este trabalho se posiciona nesta fronteira tecnológica, propondo uma solução que combina acessibilidade, precisão e usabilidade para o contexto educacional brasileiro.
+O referencial teórico sustenta que a contribuição deste trabalho está na integração entre modelos multimodais e sistemas de informação, com ênfase em arquitetura plugável, extração estruturada de documento manuscrito, padronização de saída, validação humana e avaliação comparativa. A aplicação em provas objetivas manuscritas oferece um caso concreto para medir o comportamento dos modelos em documentos físicos e visualmente heterogêneos, mas o foco da pesquisa permanece na decisão técnica entre diferentes estratégias de provisão de IA.
