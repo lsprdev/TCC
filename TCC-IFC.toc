@@ -40,17 +40,16 @@
 \contentsline {subsection}{\numberline {4.1.1}Entradas}{21}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Processamento}{21}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Saídas}{22}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Arquitetura da Solução}{22}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Componentes}{22}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Fluxo do Pipeline}{23}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Contrato de Saída}{23}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Experimento Comparativo}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Desenho Experimental}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Cenários Avaliados}{24}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Métricas de Avaliação}{25}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Tabela Comparativa Planejada}{26}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Critério de Análise}{26}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Cronograma de Execução do Experimento}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.1.4}Componentes}{22}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Fluxo do Pipeline}{23}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Contrato de Saída}{23}{subsection.4.1.6}%
+\contentsline {section}{\numberline {4.2}Experimento Comparativo}{24}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Desenho Experimental}{24}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Cenários Avaliados}{24}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Métricas de Avaliação}{24}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Tabela Comparativa Planejada}{25}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Critério de Análise}{25}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Cronograma de Execução do Experimento}{26}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativas de Conclusão e Resultados Esperados}}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Contribuição Científica e Prática}{27}{section.5.1}%

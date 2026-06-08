@@ -22,7 +22,7 @@ Neste trabalho, esses dois arranjos são tratados como provedores de IA distinto
 
 \section{Arquiteturas Plugáveis em Sistemas de Informação}
 
-Arquiteturas plugáveis buscam separar a regra de negócio das implementações concretas de componentes substituíveis. No caso deste trabalho, o componente substituível é o provedor de IA. A aplicação não deve depender diretamente de uma API específica, pois isso dificultaria a comparação experimental e a manutenção do sistema quando novos modelos forem testados.
+Arquiteturas modulares buscam separar a regra de negócio das implementações concretas de componentes substituíveis. No caso deste trabalho, o componente substituível é o provedor de IA. A aplicação não deve depender diretamente de uma API específica, pois isso dificultaria a comparação experimental e a manutenção do sistema quando novos modelos forem testados.
 
 A camada \textit{ModelAdapter} funciona como fronteira técnica entre o pipeline de extração e os provedores. Ela recebe uma requisição padronizada, chama o provedor configurado, interpreta a resposta bruta e retorna uma estrutura compatível com o esquema esperado pelo sistema. Essa separação permite alternar provedores por configuração, registrar métricas de execução e manter a mesma tela de validação humana para ambos os modelos.
 
@@ -40,4 +40,4 @@ A avaliação do artefato será conduzida de forma experimental e comparativa, o
 
 \section{Síntese do Referencial}
 
-O referencial teórico sustenta que a contribuição deste trabalho está na integração entre modelos multimodais e sistemas de informação, com ênfase em arquitetura plugável, extração estruturada de documento manuscrito, padronização de saída, validação humana e avaliação comparativa. A aplicação em provas objetivas manuscritas oferece um caso concreto para medir o comportamento dos modelos em documentos físicos e visualmente heterogêneos, mas o foco da pesquisa permanece na decisão técnica entre diferentes estratégias de provisão de IA.
+O referencial teórico sustenta que a contribuição deste trabalho está na integração entre modelos multimodais e sistemas de informação, com ênfase em arquitetura modular, extração estruturada de documento manuscrito, padronização de saída, validação humana e avaliação comparativa. A aplicação em provas objetivas manuscritas oferece um caso concreto para medir o comportamento dos modelos em documentos físicos e visualmente heterogêneos, mas o foco da pesquisa permanece na decisão técnica entre diferentes estratégias de provisão de IA.

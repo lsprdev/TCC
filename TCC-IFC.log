@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  7 JUN 2026 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  7 JUN 2026 22:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,7 +1012,7 @@ Cap\'{\i }tulo 4.
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-34.
+29.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1023,9 +1023,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [23] [24]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 208.
+(Font)              <10.95> on input line 203.
 
-Underfull \hbox (badness 1571) in paragraph at lines 210--210
+Underfull \hbox (badness 1571) in paragraph at lines 205--205
 []|\T1/lmr/bx/n/10.95 (+20) Modelo aberto em
  []
 
@@ -1055,13 +1055,13 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20642 strings out of 469006
- 332969 string characters out of 5454813
- 1167426 words of memory out of 5000000
- 48593 multiletter control sequences out of 15000+600000
+ 20640 strings out of 469006
+ 332952 string characters out of 5454813
+ 1197038 words of memory out of 5000000
+ 48592 multiletter control sequences out of 15000+600000
  732154 words of font info for 221 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 99i,13n,107p,1578b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1576b,1519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/te
@@ -1074,10 +1074,10 @@ texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026basic/texmf
 s/type1/public/lm/lmss8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
 1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/p
 ublic/lm/lmtt10.pfb>
-Output written on TCC-IFC.pdf (35 pages, 404646 bytes).
+Output written on TCC-IFC.pdf (35 pages, 403779 bytes).
 PDF statistics:
- 793 PDF objects out of 1000 (max. 8388607)
- 722 compressed objects within 8 object streams
- 177 named destinations out of 1000 (max. 500000)
- 62513 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 788 PDF objects out of 1000 (max. 8388607)
+ 717 compressed objects within 8 object streams
+ 176 named destinations out of 1000 (max. 500000)
+ 62505 words of extra memory for PDF output out of 74296 (max. 10000000)
 

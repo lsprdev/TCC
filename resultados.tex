@@ -87,11 +87,6 @@ As saídas do sistema são:
     \item métricas de execução usadas no experimento comparativo.
 \end{itemize}
 
-% ---
-\section{Arquitetura da Solução}
-
-A arquitetura da solução foi organizada para permitir substituição e comparação de provedores de IA sem alterar o fluxo principal do sistema. A Figura TODO deverá apresentar o diagrama da arquitetura com seus componentes e relações. TODO: inserir figura da arquitetura.
-
 \subsection{Componentes}
 
 Os componentes principais são:
@@ -257,7 +252,7 @@ Ao final deste trabalho, espera-se entregar um artefato funcional e uma avaliaç
 
 \section{Contribuição Científica e Prática}
 
-A contribuição esperada é demonstrar como uma arquitetura plugável permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
+A contribuição esperada é demonstrar como uma arquitetura modular permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
 
 O resultado final deverá indicar qual abordagem foi mais adequada ao cenário avaliado. Caso o modelo aberto apresente acurácia suficiente e custos menores, a infraestrutura própria poderá ser considerada vantajosa apesar da complexidade operacional. Caso o modelo proprietário apresente maior estabilidade, menor latência ou menor taxa de intervenção humana, a API externa poderá ser mais adequada mesmo com dependência de fornecedor. Também é possível que os resultados apontem para uma estratégia híbrida, na qual cada provedor seja usado em cenários distintos.
 

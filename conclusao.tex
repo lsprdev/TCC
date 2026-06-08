@@ -4,7 +4,7 @@
 \chapter{Conclusão}
 % ---
 
-Este trabalho propõe o desenvolvimento e a avaliação de uma arquitetura plugável para extração estruturada de informações em provas objetivas manuscritas. O foco da pesquisa está na comparação entre dois arranjos técnicos de uso de modelos multimodais: um modelo aberto hospedado em servidor próprio e exposto como API, e um modelo proprietário acessado por API externa. O aplicativo móvel é tratado como interface de captura e visualização, não como ambiente de execução dos modelos.
+Este trabalho propõe o desenvolvimento e a avaliação de uma arquitetura modular para extração estruturada de informações em provas objetivas manuscritas. O foco da pesquisa está na comparação entre dois arranjos técnicos de uso de modelos multimodais: um modelo aberto hospedado em servidor próprio e exposto como API, e um modelo proprietário acessado por API externa. O aplicativo móvel é tratado como interface de captura e visualização, não como ambiente de execução dos modelos.
 
 \section{Síntese dos Resultados Esperados}
 
@@ -44,7 +44,7 @@ Este trabalho pretende contribuir para Sistemas de Informação em múltiplas di
 \subsection{Contribuição Técnica}
 
 \begin{itemize}
-    \item arquitetura plugável com \textit{ModelAdapter}, \textit{OpenModelProvider} e \textit{ClosedModelProvider};
+    \item arquitetura modular com \textit{ModelAdapter}, \textit{OpenModelProvider} e \textit{ClosedModelProvider};
     \item pipeline de extração estruturada de documento manuscrito com normalização de resposta e validação de esquema;
     \item tela de validação humana integrada ao fluxo de persistência;
     \item conjunto de métricas para comparar acurácia, latência, custo, robustez e intervenção humana entre provedores multimodais;

@@ -10,7 +10,7 @@ O desafio técnico, portanto, não é apenas detectar marcações em um formulá
 
 Modelos voltados ao entendimento de documentos visuais passaram a combinar informação textual, visual e de layout para tarefas como extração de informação e resposta visual sobre documentos. Trabalhos como LayoutLM, DocVQA e Donut evidenciam a relevância desse campo para documentos visualmente ricos e não estruturados \cite{xu2020layoutlm,mathew2021docvqa,kim2022donut}. Entretanto, a adoção desses modelos em sistemas reais envolve decisões arquiteturais que não se limitam à escolha do modelo com maior acurácia. Em um sistema de informação, também importam custo, latência, dependência de fornecedor, privacidade, possibilidade de auditoria, padronização de saída, tratamento de erros, integração com banco de dados e desenho de fluxos de validação.
 
-Neste trabalho, o aplicativo móvel não executa modelos de IA localmente. Sua função é capturar a imagem da prova objetiva manuscrita, enviar a imagem ao backend e apresentar os resultados ao usuário. O processamento de IA ocorre fora do dispositivo móvel, por meio de dois tipos de provedores: um modelo multimodal aberto hospedado em servidor próprio e exposto como API, e um modelo multimodal proprietário acessado por API externa. A contribuição técnica está na arquitetura plugável que permite alternar esses provedores, no pipeline de extração estruturada de documento manuscrito, na padronização da saída em JSON, na validação humana e na comparação experimental entre as abordagens.
+Neste trabalho, o aplicativo móvel não executa modelos de IA localmente. Sua função é capturar a imagem da prova objetiva manuscrita, enviar a imagem ao backend e apresentar os resultados ao usuário. O processamento de IA ocorre fora do dispositivo móvel, por meio de dois tipos de provedores: um modelo multimodal aberto hospedado em servidor próprio e exposto como API, e um modelo multimodal proprietário acessado por API externa. A contribuição técnica está na arquitetura modular que permite alternar esses provedores, no pipeline de extração estruturada de documento manuscrito, na padronização da saída em JSON, na validação humana e na comparação experimental entre as abordagens.
 
 \section{Tema e Delimitação}\label{tema}
 
@@ -23,14 +23,14 @@ O escopo técnico define o uso de três pilares fundamentais:
 \begin{enumerate}
     \item \textbf{Aplicativo móvel}: interface para captura das imagens das provas, seleção do provedor de IA e visualização dos resultados retornados pelo backend.
     \item \textbf{Backend e orquestração}: serviço responsável por autenticação, armazenamento, acionamento do pipeline de extração, persistência dos resultados e exposição de APIs para o aplicativo.
-    \item \textbf{Camada plugável de IA}: componente \textit{ModelAdapter} que normaliza a comunicação com um \textit{OpenModelProvider}, hospedado em servidor próprio, e um \textit{ClosedModelProvider}, acessado por API externa.
+    \item \textbf{Camada modular de IA}: componente \textit{ModelAdapter} que normaliza a comunicação com um \textit{OpenModelProvider}, hospedado em servidor próprio, e um \textit{ClosedModelProvider}, acessado por API externa.
 \end{enumerate}
 
 O sistema deverá produzir uma saída padronizada, em JSON, contendo identificação da prova, identificação do respondente quando disponível, questões identificadas, alternativas detectadas, respostas extraídas, nível de confiança, rasuras ou ambiguidades visuais e itens que exigem validação humana. Essa padronização permite comparar modelos diferentes sob o mesmo contrato de dados e evita que cada provedor imponha diretamente seu formato de resposta ao restante do sistema.
 
 \section{Problema}\label{problema}
 
-O problema de pesquisa deste trabalho pode ser formulado da seguinte maneira: como projetar e avaliar, no contexto de Sistemas de Informação, uma arquitetura plugável para extração estruturada de informações em provas objetivas manuscritas, permitindo comparar modelos multimodais abertos hospedados em infraestrutura própria e modelos multimodais proprietários acessados por API externa?
+O problema de pesquisa deste trabalho pode ser formulado da seguinte maneira: como projetar e avaliar, no contexto de Sistemas de Informação, uma arquitetura modular para extração estruturada de informações em provas objetivas manuscritas, permitindo comparar modelos multimodais abertos hospedados em infraestrutura própria e modelos multimodais proprietários acessados por API externa?
 
 A questão central não é apenas automatizar uma atividade de correção, mas investigar como diferentes estratégias de provisão de IA afetam um sistema que precisa transformar imagens de documentos físicos em registros estruturados. Em particular, o trabalho considera quatro subproblemas técnicos:
 
@@ -56,13 +56,13 @@ A justificativa deste trabalho está na necessidade de compreender como modelos 
 
 Do ponto de vista técnico, comparar um modelo aberto hospedado em servidor próprio com um modelo proprietário via API externa permite observar trade-offs relevantes para Sistemas de Informação: controle operacional, privacidade, custo por processamento, latência, dependência de terceiros, facilidade de manutenção, acurácia de extração e estabilidade do formato de saída. A literatura sobre abertura de modelos, transparência e disponibilidade de pesos indica que essas decisões envolvem graus distintos de controle, visibilidade e responsabilidade operacional \cite{solaiman2023gradient,bommasani2023transparency,ntia2024openweights}.
 
-A arquitetura plugável proposta permite que o sistema não dependa rigidamente de um único fornecedor. Essa característica é relevante porque modelos multimodais evoluem rapidamente, custos mudam e APIs podem ser alteradas. Ao encapsular a chamada aos modelos em um \textit{ModelAdapter}, o trabalho investiga uma forma de tornar o sistema mais substituível, testável e comparável.
+A arquitetura modular proposta permite que o sistema não dependa rigidamente de um único fornecedor. Essa característica é relevante porque modelos multimodais evoluem rapidamente, custos mudam e APIs podem ser alteradas. Ao encapsular a chamada aos modelos em um \textit{ModelAdapter}, o trabalho investiga uma forma de tornar o sistema mais substituível, testável e comparável.
 
 Além disso, a padronização da saída em JSON e o uso de um validador de esquema contribuem para transformar uma resposta probabilística em um dado operacional que pode ser armazenado, auditado e revisado. Essa transição entre inferência de IA e dado persistente é uma questão central para a integração de IA em sistemas de informação, pois envolve confiabilidade, documentação do comportamento do modelo, auditoria e interação humana nos casos de incerteza \cite{nist2023airmf,raji2020audit,amershi2019humanai,mitchell2019modelcards}.
 
 \subsection{Objetivo geral}\label{objger}
 
-O objetivo geral deste trabalho é projetar, implementar e avaliar uma arquitetura plugável para extração estruturada de respostas em provas objetivas manuscritas, comparando experimentalmente um modelo multimodal aberto hospedado em servidor próprio e um modelo multimodal proprietário acessado por API externa.
+O objetivo geral deste trabalho é projetar, implementar e avaliar uma arquitetura modular para extração estruturada de respostas em provas objetivas manuscritas, comparando experimentalmente um modelo multimodal aberto hospedado em servidor próprio e um modelo multimodal proprietário acessado por API externa.
 
 \subsection{Objetivos específicos}\label{objesp}
 
@@ -84,6 +84,6 @@ Para alcançar o objetivo geral, os seguintes objetivos específicos foram delin
 
 \section{Organização do trabalho}\label{orgtra}
 
-A introdução termina com a apresentação dos demais capítulos do trabalho. O capítulo 2 apresenta o referencial teórico, incluindo processamento inteligente de documentos, modelos multimodais, arquiteturas com provedores plugáveis e validação humana. O capítulo 3 descreve a metodologia adotada e o desenho experimental comparativo. O capítulo 4 apresenta o desenvolvimento do artefato, o storyboard do aplicativo, a arquitetura da solução e as métricas de avaliação. O capítulo 5 discute os resultados esperados. Por fim, a conclusão apresenta as considerações finais, as contribuições técnicas e as limitações do estudo.
+A introdução termina com a apresentação dos demais capítulos do trabalho. O capítulo 2 apresenta o referencial teórico, incluindo processamento inteligente de documentos, modelos multimodais, arquiteturas com provedores modulares e validação humana. O capítulo 3 descreve a metodologia adotada e o desenho experimental comparativo. O capítulo 4 apresenta o desenvolvimento do artefato, o storyboard do aplicativo, a arquitetura da solução e as métricas de avaliação. O capítulo 5 discute os resultados esperados. Por fim, a conclusão apresenta as considerações finais, as contribuições técnicas e as limitações do estudo.
 
 Este trabalho segue as normas estabelecidas pela ABNT \cite{NBR14724:2011}, conforme orientações do modelo canônico \cite{abntex2modelo}.
