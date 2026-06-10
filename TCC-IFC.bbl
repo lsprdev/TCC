@@ -32,29 +32,11 @@
   apresenta{\c c}\~ao.
 Rio de Janeiro, 2011. 15~p.}
 
-\bibitem[{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}
-  2024]{anpd2024agentes}
-\abntrefinfo{{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}}{{Autoridade
-  Nacional de Prote{\c c}{\~a}o de Dados}}{2024}
-{{Autoridade Nacional de Prote{\c c}{\~a}o de Dados}. \emph{Guia orientativo
-  para defini{\c c}{\~o}es dos agentes de tratamento de dados pessoais e do
-  encarregado}. 2024.
-Acesso em: 7 jun. 2026.
-Dispon{\'\i}vel em: \url{https://www.gov.br/anpd/}.}
-
 \bibitem[Bommasani et al. 2023]{bommasani2023transparency}
 \abntrefinfo{Bommasani et al.}{BOMMASANI et al.}{2023}
 {BOMMASANI, R. et al. The foundation model transparency index.
 \emph{arXiv preprint arXiv:2310.12941}, 2023.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2310.12941}.}
-
-\bibitem[{Brasil} 2018]{brasil2018lgpd}
-\abntrefinfo{{Brasil}}{{Brasil}}{2018}
-{{Brasil}. \emph{Lei n{\textordmasculine} 13.709, de 14 de agosto de 2018: Lei
-  Geral de Prote{\c c}{\~a}o de Dados Pessoais}. 2018.
-Acesso em: 7 jun. 2026.
-Dispon{\'\i}vel em:
-  \url{https://www.planalto.gov.br/ccivil\_03/\_ato2015-2018/2018/lei/L13709compilado.htm}.}
 
 \bibitem[Fisteus, Pardo e Garc{\'i}a 2013]{fisteus2013eyegrade}
 \abntrefinfo{Fisteus, Pardo e Garc{\'i}a}{FISTEUS; PARDO; GARC{\'I}A}{2013}
@@ -68,20 +50,6 @@ Dispon{\'\i}vel em:
 {HAFEEZ, Q. et al. An enhanced fault tolerance algorithm for optical mark
   recognition using smartphone cameras.
 \emph{IEEE Access}, v.~12, p. 121305--121319, 2024.}
-
-\bibitem[Hevner et al. 2004]{hevner2004designscience}
-\abntrefinfo{Hevner et al.}{HEVNER et al.}{2004}
-{HEVNER, A.~R. et al. Design science in information systems research.
-\emph{MIS Quarterly}, v.~28, n.~1, p. 75--105, 2004.}
-
-\bibitem[{International Organization for Standardization} 2011]{iso25010}
-\abntrefinfo{{International Organization for Standardization}}{{International
-  Organization for Standardization}}{2011}
-{{International Organization for Standardization}. \emph{ISO/IEC 25010:2011
-  Systems and software engineering -- Systems and software Quality Requirements
-  and Evaluation (SQuaRE) -- System and software quality models}. 2011.
-Acesso em: 7 jun. 2026.
-Dispon{\'\i}vel em: \url{https://www.iso.org/standard/35733.html}.}
 
 \bibitem[Kim et al. 2022]{kim2022donut}
 \abntrefinfo{Kim et al.}{KIM et al.}{2022}
@@ -143,13 +111,6 @@ Monografia (Trabalho de Conclus{\~a}o de Curso) --- Universidade Estadual
   Paulista, Bauru, 2024.
 Dispon{\'\i}vel em:
   \url{https://repositorio.unesp.br/server/api/core/bitstreams/45e3e419-5bd7-4b02-9f93-580883012154/content}.}
-
-\bibitem[Peffers et al. 2007]{peffers2007dsrm}
-\abntrefinfo{Peffers et al.}{PEFFERS et al.}{2007}
-{PEFFERS, K. et al. A design science research methodology for information
-  systems research.
-\emph{Journal of Management Information Systems}, v.~24, n.~3, p. 45--77,
-  2007.}
 
 \bibitem[Plamondon e Srihari 2000]{plamondon2000handwriting}
 \abntrefinfo{Plamondon e Srihari}{PLAMONDON; SRIHARI}{2000}

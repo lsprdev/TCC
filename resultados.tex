@@ -1,128 +1,79 @@
 % ---
-% primeiro capitulo de Resultados
+% Metodologia e proposta experimental
 % ---
 \chapter{Metodologia}
-% ---
 
-A condução deste trabalho segue a metodologia Design Science Research (DSR), pois o estudo envolve a construção e avaliação de um artefato técnico para um problema de Sistemas de Informação \cite{sposito2024design}. O artefato será avaliado por meio de um experimento comparativo entre dois arranjos de provisão de IA: um modelo multimodal aberto hospedado em infraestrutura própria e um modelo multimodal proprietário acessado por API externa.
-
-% ---
-\section{O Ciclo DSR}
-% ---
-
-O ciclo iterativo da DSR para este projeto será estruturado em cinco fases:
-
-\subsection{Identificação do Problema e Motivação}
-
-O problema é definido como a extração confiável de respostas em provas objetivas manuscritas a partir de imagens capturadas por dispositivo móvel. A motivação técnica está na necessidade de comparar provedores multimodais diferentes sob uma mesma arquitetura, evitando que o sistema fique dependente de um único modelo ou fornecedor.
-
-\subsection{Definição dos Objetivos da Solução}
-
-A solução deverá permitir captura da imagem, envio ao backend, seleção do provedor de IA, extração multimodal, validação de JSON, persistência e revisão humana. O objetivo da avaliação será comparar as abordagens técnica e operacionalmente, usando o mesmo conjunto de provas e o mesmo esquema de saída.
-
-\subsection{Design e Desenvolvimento}
-
-O artefato será composto por aplicativo móvel, backend, banco de dados, \textit{ModelAdapter}, \textit{OpenModelProvider}, \textit{ClosedModelProvider}, validador de JSON e tela de validação humana. O aplicativo móvel não executará modelos localmente; ele apenas capturará imagens e exibirá resultados. O backend será responsável por orquestrar o fluxo e registrar métricas de execução.
-
-\subsection{Demonstração e Avaliação}
-
-O protótipo será avaliado com lotes de provas objetivas manuscritas. Cada imagem será processada pelos dois provedores, preservando as mesmas condições de entrada. O resultado de cada modelo será comparado com um padrão-ouro definido por validação manual. A avaliação seguirá uma abordagem formativa durante o desenvolvimento e uma avaliação somativa ao final, alinhada ao FEDS \cite{feds_framework2026}.
-
-\subsection{Comunicação}
-
-Os resultados serão comunicados por meio da descrição da arquitetura, do fluxo implementado, das métricas coletadas e da análise comparativa entre o modelo aberto e o modelo proprietário. A conclusão deverá indicar qual abordagem foi mais adequada para o cenário estudado e sob quais critérios.
+A condução deste trabalho segue a metodologia Design Science Research (DSR), pois envolve a construção e avaliação de um artefato técnico para um problema de Sistemas de Informação \cite{sposito2024design}. O artefato será um sistema de extração estruturada de informações em provas objetivas manuscritas, avaliado por meio de um experimento comparativo entre dois arranjos de provisão de IA: um modelo multimodal aberto hospedado em servidor próprio e um modelo multimodal proprietário acessado por API externa.
 
 \section{Procedimentos Metodológicos}
-% ---
 
-Os procedimentos metodológicos adotados incluem:
-
-\begin{itemize}
-    \item \textbf{Revisão bibliográfica}: análise de literatura sobre processamento inteligente de documentos, modelos multimodais, arquitetura de sistemas com IA e avaliação de artefatos.
-    \item \textbf{Prototipagem iterativa}: desenvolvimento incremental do aplicativo, backend e provedores, com testes de integração a cada ciclo.
-    \item \textbf{Definição do padrão-ouro}: validação manual das respostas presentes nas provas para estabelecer a referência de comparação.
-    \item \textbf{Experimentação comparativa}: processamento do mesmo conjunto de imagens pelo modelo aberto e pelo modelo proprietário.
-    \item \textbf{Análise de métricas}: coleta de acurácia, taxa de JSON válido, latência, custo estimado, robustez, taxa de intervenção humana e erros associados a caligrafia, leiaute manuscrito irregular, rasuras e marcações ambíguas.
-    \item \textbf{Análise arquitetural}: discussão dos impactos de infraestrutura, manutenção, privacidade, dependência de fornecedor e substituição de modelos.
-\end{itemize}
-
-% ---
-\chapter{Desenvolvimento e Experimento}
-% ---
-
-Este capítulo descreve o storyboard do aplicativo, a arquitetura proposta, o fluxo de extração e o desenho experimental usado para comparar os provedores multimodais.
-
-\section{Storyboard do Aplicativo}
-
-O storyboard descreve o fluxo de interação do usuário com o sistema e explicita entradas, processamento e saídas. A entrada é uma prova objetiva manuscrita completa, e não apenas um formulário impresso com campos de resposta marcados. O aplicativo móvel atua como interface de captura e visualização, enquanto o processamento de IA ocorre no backend e nos provedores externos ao dispositivo.
-
-\subsection{Entradas}
-
-As entradas principais do sistema são:
-
-\begin{itemize}
-    \item imagem de uma prova objetiva manuscrita capturada por smartphone;
-    \item metadados da turma, prova ou lote de processamento;
-    \item provedor de IA selecionado: modelo aberto em servidor próprio ou modelo proprietário via API externa.
-\end{itemize}
-
-\subsection{Processamento}
-
-Após a captura, o aplicativo envia a imagem ao backend. O backend registra a submissão, aplica validações iniciais, seleciona o provedor configurado e aciona o \textit{ModelAdapter}. A requisição é processada pelo modelo aberto ou pelo modelo proprietário, conforme a configuração. O modelo deve extrair os elementos estruturais da prova, incluindo identificação do aluno, questões, alternativas disponíveis, resposta marcada, rasuras e ambiguidades visuais. A resposta bruta é normalizada para o JSON padronizado. Em seguida, o validador realiza validação estrutural e semântica, verificando campos obrigatórios, tipos de dados, consistência entre questões e alternativas, níveis de confiança e inconsistências.
-
-Quando a resposta é válida e possui confiança suficiente, o resultado é persistido no banco de dados. Quando há baixa confiança, rasura, ambiguidade visual ou JSON inválido, o item é direcionado para a tela de validação humana.
-
-\subsection{Saídas}
-
-As saídas do sistema são:
-
-\begin{itemize}
-    \item identificação do aluno, quando reconhecida;
-    \item questões identificadas;
-    \item alternativas detectadas;
-    \item respostas extraídas;
-    \item indicação de confiança por item ou por prova;
-    \item lista de inconsistências que exigem revisão;
-    \item resultado final validado;
-    \item métricas de execução usadas no experimento comparativo.
-\end{itemize}
-
-\subsection{Componentes}
-
-Os componentes principais são:
-
-\begin{itemize}
-    \item \textbf{App móvel}: captura imagens de provas objetivas manuscritas, permite selecionar ou visualizar o provedor configurado, envia provas ao backend e apresenta os resultados.
-    \item \textbf{Backend}: recebe as imagens, cria registros de submissão, coordena o fluxo, chama o adaptador de modelos, persiste resultados e disponibiliza APIs para consulta.
-    \item \textbf{ModelAdapter}: define uma interface comum para todos os provedores de IA, encapsulando diferenças de autenticação, payload, prompt, resposta e tratamento de erro.
-    \item \textbf{OpenModelProvider}: chama o modelo multimodal aberto hospedado em servidor próprio e exposto como API interna ou controlada pelo projeto.
-    \item \textbf{ClosedModelProvider}: chama o modelo multimodal proprietário acessado por API externa.
-    \item \textbf{Validador de JSON}: verifica se a resposta do provedor segue o esquema padronizado e identifica inconsistências estruturais e semânticas.
-    \item \textbf{Banco de dados}: armazena imagens ou referências às imagens, respostas brutas, respostas normalizadas, métricas, status de validação e resultado final.
-    \item \textbf{Tela de validação humana}: apresenta casos ambíguos ou inválidos para correção manual e registra a decisão final.
-\end{itemize}
-
-\subsection{Fluxo de Extração}
-
-O fluxo de extração será composto pelas seguintes etapas:
+Os procedimentos metodológicos serão organizados em cinco etapas:
 
 \begin{enumerate}
-    \item captura da imagem de uma prova objetiva manuscrita pelo aplicativo móvel;
-    \item envio da imagem e dos metadados ao backend;
-    \item seleção do provedor de IA conforme configuração;
-    \item preparação da requisição padronizada pelo \textit{ModelAdapter};
-    \item execução da inferência pelo \textit{OpenModelProvider} ou \textit{ClosedModelProvider};
-    \item extração dos elementos estruturais da prova;
-    \item normalização da resposta bruta para o esquema JSON do sistema;
-    \item validação estrutural e semântica do JSON;
-    \item persistência do resultado e das métricas;
-    \item encaminhamento para validação humana quando necessário;
-    \item consolidação do resultado final para visualização no aplicativo.
+    \item revisão bibliográfica sobre processamento de documentos manuscritos, modelos multimodais, OMR, arquiteturas plugáveis, validação humana e avaliação de artefatos;
+    \item projeto e implementação do artefato, incluindo aplicativo móvel, backend, adaptador de modelos, provedores de IA, validador de JSON e persistência dos resultados;
+    \item preparação do conjunto de testes, composto por imagens de provas objetivas manuscritas capturadas por smartphone;
+    \item construção do padrão-ouro por validação manual das respostas e dos elementos estruturais das provas;
+    \item execução do experimento comparativo, coleta das métricas e análise dos resultados.
 \end{enumerate}
 
-\subsection{Contrato de Saída}
+\section{Recursos Necessários}
 
-O contrato de saída deverá conter uma estrutura semelhante à apresentada no Código \ref{cod:json-saida}. O exemplo é ilustrativo e será refinado durante a implementação.
+O experimento exigirá recursos de hardware e software. Como hardware, será utilizado um smartphone para captura das imagens, um computador de desenvolvimento e um servidor ou estação com capacidade suficiente para hospedar o modelo multimodal aberto. Como software, serão necessários aplicativo móvel, backend, banco de dados, validador de JSON, serviço de inferência para o modelo aberto e acesso a uma API externa de modelo multimodal proprietário.
+
+O aplicativo móvel terá função limitada à captura das imagens e visualização dos resultados. O processamento ocorrerá no backend e nos provedores de IA. O servidor próprio será utilizado para executar o modelo aberto, enquanto o provedor proprietário será acessado pela internet por meio de API.
+
+\section{Desenho do Experimento}
+
+O experimento será realizado em ambiente controlado de desenvolvimento e teste, com imagens de provas objetivas manuscritas capturadas por smartphone. As mesmas imagens serão enviadas aos dois provedores, usando o mesmo prompt-base, o mesmo contrato JSON e as mesmas métricas. A comparação será feita em relação a um padrão-ouro preenchido manualmente.
+
+Serão consideradas provas com variações de caligrafia, iluminação, enquadramento, inclinação, rasuras, marcações ambíguas e leiaute manuscrito irregular. A quantidade final de imagens será definida na fase de preparação do experimento, buscando volume suficiente para permitir comparação entre os provedores sem transformar o projeto em uma avaliação estatística ampla.
+
+O trabalho será executado em quatro etapas principais:
+
+\begin{itemize}
+    \item \textbf{Etapa 1}: definição do esquema JSON, preparação das provas e implementação inicial do fluxo de captura e backend.
+    \item \textbf{Etapa 2}: configuração do modelo aberto, integração da API proprietária e criação do padrão-ouro manual.
+    \item \textbf{Etapa 3}: execução dos testes com ambos os provedores e coleta das métricas.
+    \item \textbf{Etapa 4}: análise comparativa, discussão dos erros e redação dos resultados.
+\end{itemize}
+
+\section{Métricas de Avaliação}
+
+As principais métricas do experimento serão:
+
+\begin{itemize}
+    \item acurácia na identificação das questões, alternativas e respostas marcadas;
+    \item acurácia no reconhecimento da identificação manuscrita do aluno, quando houver;
+    \item taxa de respostas em JSON válido;
+    \item latência média por prova processada;
+    \item custo operacional estimado por prova;
+    \item taxa de casos enviados para validação humana;
+    \item tipos de erro observados, como rasura, marcação ambígua, caligrafia ilegível, questão não identificada, JSON inválido ou falha de provedor.
+\end{itemize}
+
+O modelo mais adequado não será definido apenas pela maior acurácia. A análise considerará o equilíbrio entre qualidade da extração, validade da saída estruturada, custo, latência, robustez, privacidade, controle operacional e necessidade de intervenção humana.
+
+\chapter{Proposta de Solução e Experimento}
+
+A solução proposta consiste em uma arquitetura plugável para comparar provedores multimodais sob o mesmo fluxo de entrada e saída. O aplicativo móvel captura a imagem da prova e apresenta o resultado; o backend registra a submissão, seleciona o provedor de IA, aciona o \textit{ModelAdapter}, valida a resposta em JSON e persiste o resultado. Quando houver baixa confiança, ambiguidade ou erro estrutural, o caso será encaminhado para validação humana.
+
+\section{Arquitetura Proposta}
+
+A arquitetura será composta pelos seguintes elementos principais:
+
+\begin{itemize}
+    \item \textbf{App móvel}: captura imagens de provas objetivas manuscritas e exibe os resultados.
+    \item \textbf{Backend}: orquestra o fluxo de processamento, armazena dados e expõe APIs para o aplicativo.
+    \item \textbf{ModelAdapter}: define uma interface comum para comunicação com os provedores de IA.
+    \item \textbf{OpenModelProvider}: integra o modelo multimodal aberto hospedado em servidor próprio.
+    \item \textbf{ClosedModelProvider}: integra o modelo multimodal proprietário acessado por API externa.
+    \item \textbf{Validador e banco de dados}: validam o contrato JSON, armazenam resultados, métricas e decisões de validação humana.
+\end{itemize}
+
+\section{Contrato de Saída}
+
+O contrato de saída será padronizado em JSON para permitir comparação entre provedores. O exemplo do Código \ref{cod:json-saida} ilustra a estrutura esperada, que poderá ser refinada durante a implementação.
 
 \begin{lstlisting}[caption={Exemplo de saída padronizada em JSON},label={cod:json-saida},language=Java]
 {
@@ -143,55 +94,7 @@ O contrato de saída deverá conter uma estrutura semelhante à apresentada no C
 }
 \end{lstlisting}
 
-\section{Experimento Comparativo}
-
-O experimento tem como finalidade comparar o desempenho técnico e operacional do modelo aberto hospedado em servidor próprio e do modelo proprietário via API externa.
-
-\subsection{Desenho Experimental}
-
-O experimento será realizado em três etapas:
-
-\begin{enumerate}
-    \item \textbf{Preparação do conjunto de testes}: seleção ou produção de provas objetivas manuscritas, com variações de caligrafia, leiaute, iluminação, enquadramento, marcações e rasuras.
-    \item \textbf{Construção do padrão-ouro}: leitura manual das provas para registrar a resposta correta de cada questão e os casos ambíguos.
-    \item \textbf{Processamento comparativo}: envio das mesmas imagens aos dois provedores, usando o mesmo prompt-base, o mesmo esquema JSON e as mesmas métricas.
-\end{enumerate}
-
-\subsection{Cenários Avaliados}
-
-Serão considerados, no mínimo, os seguintes cenários:
-
-\begin{itemize}
-    \item provas com enunciados, numeração e alternativas manuscritas;
-    \item provas com marcações de resposta claras;
-    \item provas com marcações fracas ou incompletas;
-    \item provas com rasuras;
-    \item provas com leiaute manuscrito irregular;
-    \item imagens com inclinação;
-    \item imagens com sombras ou baixa iluminação;
-    \item campos de identificação manuscritos.
-\end{itemize}
-
-\subsection{Métricas de Avaliação}
-
-A avaliação do artefato será quantitativa e qualitativa, focando nas seguintes dimensões:
-
-\begin{itemize}
-    \item \textbf{Acurácia de identificação das questões}: proporção de questões reconhecidas corretamente em relação ao padrão-ouro.
-    \item \textbf{Acurácia de identificação das alternativas}: proporção de alternativas disponíveis detectadas corretamente.
-    \item \textbf{Acurácia de extração da resposta marcada}: proporção de respostas escolhidas identificadas corretamente.
-    \item \textbf{Acurácia de reconhecimento da identificação manuscrita}: proporção de identificações de alunos reconhecidas corretamente quando houver campo legível.
-    \item \textbf{Acurácia por prova}: proporção de provas com todos os elementos estruturais necessários extraídos corretamente.
-    \item \textbf{Taxa de JSON válido}: proporção de respostas que atendem ao esquema definido sem reparo manual.
-    \item \textbf{Latência}: tempo entre envio da imagem e retorno da resposta normalizada.
-    \item \textbf{Custo operacional}: custo estimado por prova processada em cada provedor.
-    \item \textbf{Taxa de erro por caligrafia ilegível}: proporção de erros associados à impossibilidade de leitura do texto manuscrito.
-    \item \textbf{Taxa de erro por leiaute manuscrito irregular}: proporção de erros associados à organização visual da prova.
-    \item \textbf{Taxa de casos enviados para validação humana}: proporção de provas ou questões encaminhadas para revisão.
-    \item \textbf{Tipos de erro}: classificação dos erros por marcação ambígua, rasura, campo ausente, questão não identificada, alternativa incorreta, identificação manuscrita incorreta, JSON inválido ou falha de provedor.
-\end{itemize}
-
-\subsection{Tabela Comparativa Planejada}
+\section{Tabela Comparativa Planejada}
 
 Os resultados serão organizados conforme a Tabela \ref{tab:comparacao-provedores}. Os valores serão preenchidos após a execução do experimento.
 
@@ -204,11 +107,7 @@ Os resultados serão organizados conforme a Tabela \ref{tab:comparacao-provedore
 \hline
 \textbf{Métrica} & \textbf{Modelo aberto em servidor próprio} & \textbf{Modelo proprietário via API externa} \\
 \hline
-Acurácia de questões & A preencher & A preencher \\
-\hline
-Acurácia de alternativas & A preencher & A preencher \\
-\hline
-Acurácia de respostas & A preencher & A preencher \\
+Acurácia de extração & A preencher & A preencher \\
 \hline
 Identificação manuscrita & A preencher & A preencher \\
 \hline
@@ -220,55 +119,15 @@ Custo por prova & A preencher & A preencher \\
 \hline
 Validação humana & A preencher & A preencher \\
 \hline
-Erros por caligrafia & A preencher & A preencher \\
-\hline
-Erros por leiaute & A preencher & A preencher \\
-\hline
-Falhas de provedor & A preencher & A preencher \\
+Tipos de erro & A preencher & A preencher \\
 \hline
 Observações arquiteturais & A preencher & A preencher \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Critério de Análise}
+\chapter{Expectativa de Conclusão}
 
-O modelo tecnicamente mais adequado não será definido apenas pela maior acurácia. A análise considerará o equilíbrio entre qualidade da extração estruturada, validade da saída JSON, custo, latência, robustez frente a manuscritos e leiautes irregulares, controle operacional, privacidade, facilidade de manutenção e quantidade de revisão humana necessária.
+Ao final do trabalho, espera-se concluir qual abordagem técnica se mostrou mais adequada para a extração estruturada de informações em provas objetivas manuscritas no cenário avaliado. A conclusão poderá favorecer o modelo aberto, o modelo proprietário ou uma estratégia híbrida, conforme os resultados de acurácia, validade do JSON, latência, custo, robustez, privacidade, controle operacional e necessidade de validação humana.
 
-\section{Cronograma de Execução do Experimento}
-
-O experimento será planejado em quatro etapas:
-
-\begin{itemize}
-    \item \textbf{Etapa 1}: preparação das provas, definição do esquema JSON e implementação dos provedores.
-    \item \textbf{Etapa 2}: criação do padrão-ouro manual e configuração do ambiente do modelo aberto.
-    \item \textbf{Etapa 3}: execução dos testes com ambos os provedores e coleta das métricas.
-    \item \textbf{Etapa 4}: análise dos resultados, classificação dos erros e discussão arquitetural.
-\end{itemize}
-
-\chapter{Expectativas de Conclusão e Resultados Esperados}
-
-Ao final deste trabalho, espera-se entregar um artefato funcional e uma avaliação comparativa fundamentada sobre duas estratégias de uso de modelos multimodais para extração estruturada de informações em provas objetivas manuscritas.
-
-\section{Contribuição Científica e Prática}
-
-A contribuição esperada é demonstrar como uma arquitetura plugável permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
-
-O resultado final deverá indicar qual abordagem foi mais adequada ao cenário avaliado. Caso o modelo aberto apresente acurácia suficiente e custos menores, a infraestrutura própria poderá ser considerada vantajosa apesar da complexidade operacional. Caso o modelo proprietário apresente maior estabilidade, menor latência ou menor taxa de intervenção humana, a API externa poderá ser mais adequada mesmo com dependência de fornecedor. Também é possível que os resultados apontem para uma estratégia híbrida, na qual cada provedor seja usado em cenários distintos.
-
-\section{Resultados Esperados}
-
-Os resultados esperados são:
-
-\begin{itemize}
-    \item definição de um fluxo reprodutível para extração estruturada de informações em provas objetivas manuscritas;
-    \item implementação de uma arquitetura com provedores de IA substituíveis por configuração;
-    \item comparação quantitativa entre modelo aberto e modelo proprietário;
-    \item identificação dos principais tipos de erro na extração multimodal de elementos manuscritos;
-    \item avaliação da utilidade do validador de JSON e da tela de validação humana;
-    \item discussão sobre qual abordagem técnica se mostrou mais adequada para o sistema proposto.
-\end{itemize}
-
-\section{Limites da Conclusão Esperada}
-
-Não se pretende concluir genericamente que modelos multimodais substituem métodos tradicionais em todos os contextos. A conclusão deverá se restringir ao conjunto de provas, modelos, infraestrutura, prompts, métricas e condições experimentais definidos neste trabalho. Generalizações dependerão de novos experimentos com outros formatos de prova, outros modelos e maior diversidade de condições de captura.
+Não se pretende concluir que modelos multimodais substituem métodos tradicionais em todos os contextos. A conclusão será limitada ao conjunto de provas, modelos, infraestrutura, prompts, métricas e condições de captura utilizados no experimento. A contribuição esperada é uma análise comparativa técnica, com uma tabela de resultados e discussão dos principais trade-offs para Sistemas de Informação.

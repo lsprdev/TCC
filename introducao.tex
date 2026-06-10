@@ -32,23 +32,9 @@ O sistema deverá produzir uma saída padronizada, em JSON, contendo identifica�
 
 O problema de pesquisa deste trabalho pode ser formulado da seguinte maneira: como projetar e avaliar, no contexto de Sistemas de Informação, uma arquitetura plugável para extração estruturada de informações em provas objetivas manuscritas, permitindo comparar modelos multimodais abertos hospedados em infraestrutura própria e modelos multimodais proprietários acessados por API externa?
 
-A questão central não é apenas automatizar uma atividade de correção, mas investigar como diferentes estratégias de provisão de IA afetam um sistema que precisa transformar imagens de documentos físicos em registros estruturados. Em particular, o trabalho considera quatro subproblemas técnicos:
+A questão central não é apenas automatizar uma atividade de correção, mas investigar como diferentes estratégias de provisão de IA afetam um sistema que precisa transformar imagens de documentos físicos em registros estruturados. As imagens das provas podem conter sombras, inclinação, baixa resolução, enunciados escritos à mão, alternativas manuscritas, marcações ambíguas e rasuras. O sistema, portanto, precisa extrair elementos estruturais sem assumir que a captura ocorreu em condições ideais ou que o documento segue um formulário rígido.
 
-\subsection{Extração Confiável de Dados Visuais}
-
-As imagens das provas podem conter sombras, inclinação, borrões, baixa resolução, campos manuscritos, enunciados escritos à mão, alternativas manuscritas, marcações ambíguas e rasuras. O sistema precisa extrair elementos estruturais da avaliação sem assumir que a imagem terá condições ideais de captura, que o texto estará impresso ou que o usuário utilizará um scanner dedicado. O reconhecimento de manuscritos apresenta desafios próprios de variabilidade de escrita e qualidade de aquisição \cite{plamondon2000handwriting,rassul2025handwritten}, enquanto o entendimento de documentos requer o uso combinado de texto, imagem e leiaute \cite{xu2020layoutlm,mathew2021docvqa,kim2022donut}.
-
-\subsection{Comparabilidade entre Provedores}
-
-Modelos abertos e proprietários podem retornar respostas em formatos distintos, possuir níveis diferentes de controle sobre prompts, custos, latência e disponibilidade. Sem uma camada de adaptação, a comparação entre provedores tende a ficar acoplada à implementação específica de cada API. O problema técnico consiste em isolar essas diferenças por meio de um contrato comum de entrada e saída.
-
-\subsection{Padronização e Validação da Saída}
-
-Como a saída do modelo será usada por um sistema transacional, ela precisa ser validada antes de ser persistida. O JSON retornado deve obedecer a um esquema previamente definido, conter campos obrigatórios, representar incertezas e permitir auditoria posterior. Respostas incompletas, inválidas ou incompatíveis com o esquema devem ser encaminhadas para tratamento automático ou validação humana.
-
-\subsection{Interação Humana no Controle de Qualidade}
-
-Mesmo com modelos multimodais, casos de baixa confiança ou respostas ambíguas devem ser apresentados ao usuário em uma tela de validação humana. Essa etapa é parte do sistema de informação, pois define como a decisão automatizada é revisada, corrigida, registrada e utilizada no resultado final.
+Além da extração visual, o problema envolve comparabilidade entre provedores e confiabilidade da saída. Modelos abertos e proprietários podem retornar respostas em formatos distintos, com custos, latências, controles e limitações diferentes. Por isso, a comparação exige um contrato comum de entrada e saída, validação do JSON produzido e encaminhamento de casos ambíguos para revisão humana.
 
 \section{Justificativa}\label{justificativa}
 
@@ -58,7 +44,9 @@ Do ponto de vista técnico, comparar um modelo aberto hospedado em servidor pró
 
 A arquitetura plugável proposta permite que o sistema não dependa rigidamente de um único fornecedor. Essa característica é relevante porque modelos multimodais evoluem rapidamente, custos mudam e APIs podem ser alteradas. Ao encapsular a chamada aos modelos em um \textit{ModelAdapter}, o trabalho investiga uma forma de tornar o sistema mais substituível, testável e comparável.
 
-Além disso, a padronização da saída em JSON e o uso de um validador de esquema contribuem para transformar uma resposta probabilística em um dado operacional que pode ser armazenado, auditado e revisado. Essa transição entre inferência de IA e dado persistente é uma questão central para a integração de IA em sistemas de informação, pois envolve confiabilidade, documentação do comportamento do modelo, auditoria e interação humana nos casos de incerteza \cite{nist2023airmf,raji2020audit,amershi2019humanai,mitchell2019modelcards}.
+Além disso, a padronização da saída em JSON e o uso de um validador de esquema contribuem para transformar uma resposta probabilística em um dado operacional que pode ser armazenado, auditado e revisado. Essa transição entre inferência de IA e dado persistente é uma questão central para a integração de IA em sistemas de informação \cite{nist2023airmf,raji2020audit,amershi2019humanai,mitchell2019modelcards}.
+
+\section{Objetivos}
 
 \subsection{Objetivo geral}\label{objger}
 
@@ -69,21 +57,16 @@ O objetivo geral deste trabalho é projetar, implementar e avaliar uma arquitetu
 Para alcançar o objetivo geral, os seguintes objetivos específicos foram delineados:
 
 \begin{itemize}
-    \item Definir o fluxo de entrada, processamento, validação e saída para imagens de provas objetivas manuscritas capturadas por aplicativo móvel.
-    \item Projetar uma arquitetura com aplicativo móvel, backend, \textit{ModelAdapter}, \textit{OpenModelProvider}, \textit{ClosedModelProvider}, validador de JSON, banco de dados e tela de validação humana.
-    \item Implementar um contrato padronizado de saída em JSON para representar elementos estruturais extraídos, respostas marcadas, confiança, inconsistências e necessidade de revisão humana.
-    \item Extrair elementos estruturais de documentos manuscritos, incluindo identificação de questões, alternativas disponíveis e respostas marcadas.
-    \item Reconhecer a identificação manuscrita do aluno quando possível.
-    \item Tratar rasuras, ambiguidades visuais e casos de baixa confiança por meio de validação humana.
-    \item Integrar um modelo multimodal aberto hospedado em servidor próprio e exposto como API.
-    \item Integrar um modelo multimodal proprietário acessado por API externa.
-    \item Permitir a configuração do provedor de IA utilizado pelo sistema, sem alterar o fluxo principal do aplicativo.
-    \item Conduzir um experimento comparativo entre os provedores, utilizando o mesmo conjunto de provas, o mesmo esquema de saída e as mesmas métricas de avaliação.
-    \item Analisar acurácia, taxa de JSON válido, latência, custo operacional, robustez, taxa de intervenção humana e implicações arquiteturais de cada abordagem.
+    \item Definir o fluxo de captura, processamento, validação e apresentação dos resultados para provas objetivas manuscritas.
+    \item Projetar uma arquitetura com aplicativo móvel, backend, \textit{ModelAdapter}, provedores de IA, validador de JSON, banco de dados e validação humana.
+    \item Implementar um contrato padronizado de saída em JSON para representar questões, alternativas, respostas, confiança, inconsistências e necessidade de revisão.
+    \item Integrar um modelo multimodal aberto hospedado em servidor próprio e um modelo multimodal proprietário acessado por API externa.
+    \item Conduzir um experimento comparativo com o mesmo conjunto de provas, o mesmo esquema de saída e as mesmas métricas.
+    \item Analisar acurácia, taxa de JSON válido, latência, custo operacional, robustez, intervenção humana e implicações arquiteturais de cada abordagem.
 \end{itemize}
 
 \section{Organização do trabalho}\label{orgtra}
 
-A introdução termina com a apresentação dos demais capítulos do trabalho. O capítulo 2 apresenta o referencial teórico, incluindo processamento inteligente de documentos, modelos multimodais, arquiteturas com provedores plugáveis e validação humana. O capítulo 3 descreve a metodologia adotada e o desenho experimental comparativo. O capítulo 4 apresenta o desenvolvimento do artefato, o storyboard do aplicativo, a arquitetura da solução e as métricas de avaliação. O capítulo 5 discute os resultados esperados. Por fim, a conclusão apresenta as considerações finais, as contribuições técnicas e as limitações do estudo.
+A introdução termina com a apresentação dos demais capítulos do trabalho. O capítulo 2 apresenta o referencial teórico, incluindo processamento de documentos manuscritos, modelos multimodais, arquiteturas com provedores plugáveis, validação humana e trabalhos relacionados. O capítulo 3 descreve a metodologia, os recursos necessários e o desenho experimental. O capítulo 4 apresenta a solução proposta e a tabela comparativa planejada. O capítulo 5 discute a expectativa de conclusão. Por fim, a conclusão retoma a proposta e delimita o tipo de resultado esperado.
 
 Este trabalho segue as normas estabelecidas pela ABNT \cite{NBR14724:2011}, conforme orientações do modelo canônico \cite{abntex2modelo}.
