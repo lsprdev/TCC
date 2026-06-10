@@ -5,6 +5,14 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Almeida et al. 2025]{almeida2025geracao}
+\abntrefinfo{Almeida et al.}{ALMEIDA et al.}{2025}
+{ALMEIDA, D. et al. Estudo e desenvolvimento de um sistema para gera{\c
+  c}{\~a}o e corre{\c c}{\~a}o autom{\'a}tica de provas utilizando
+  intelig{\^e}ncia artificial. In:  \emph{Anais do Semin{\'a}rio de Inicia{\c
+  c}{\~a}o Cient{\'i}fica e Tecnol{\'o}gica do IFG}. [S.l.: s.n.], 2025. v.~18,
+  n.~1.}
+
 \bibitem[Amershi et al. 2019]{amershi2019humanai}
 \abntrefinfo{Amershi et al.}{AMERSHI et al.}{2019}
 {AMERSHI, S. et al. Guidelines for human-ai interaction. In:  \emph{Proceedings
@@ -48,6 +56,13 @@ Acesso em: 7 jun. 2026.
 Dispon{\'\i}vel em:
   \url{https://www.planalto.gov.br/ccivil\_03/\_ato2015-2018/2018/lei/L13709compilado.htm}.}
 
+\bibitem[Fisteus, Pardo e Garc{\'i}a 2013]{fisteus2013eyegrade}
+\abntrefinfo{Fisteus, Pardo e Garc{\'i}a}{FISTEUS; PARDO; GARC{\'I}A}{2013}
+{FISTEUS, J.~A.; PARDO, A.; GARC{\'I}A, N.~F. Grading multiple choice exams
+  with low-cost and portable computer-vision techniques.
+\emph{Journal of Science Education and Technology}, v.~22, n.~4, p. 560--571,
+  2013.}
+
 \bibitem[Hafeez et al. 2024]{hafeez2024omrsmartphone}
 \abntrefinfo{Hafeez et al.}{HAFEEZ et al.}{2024}
 {HAFEEZ, Q. et al. An enhanced fault tolerance algorithm for optical mark
@@ -73,6 +88,12 @@ Dispon{\'\i}vel em: \url{https://www.iso.org/standard/35733.html}.}
 {KIM, G. et al. Ocr-free document understanding transformer. In:
   \emph{European Conference on Computer Vision}. [S.l.: s.n.], 2022. p.
   498--517.}
+
+\bibitem[Li 2024]{li2024handwritingmllm}
+\abntrefinfo{Li}{LI}{2024}
+{LI, L. Handwriting recognition in historical documents with multimodal llm.
+\emph{arXiv preprint arXiv:2410.24034}, 2024.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2410.24034}.}
 
 \bibitem[Mathew, Karatzas e Jawahar 2021]{mathew2021docvqa}
 \abntrefinfo{Mathew, Karatzas e Jawahar}{MATHEW; KARATZAS; JAWAHAR}{2021}
@@ -112,6 +133,17 @@ Dispon{\'\i}vel em: \url{https://www.iso.org/standard/35733.html}.}
 [S.l.], 2024. Dispon{\'\i}vel em:
   \url{https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf}.}
 
+\bibitem[Oliveira e Silva 2024]{oliveira2024avalia}
+\abntrefinfo{Oliveira e Silva}{OLIVEIRA; SILVA}{2024}
+{OLIVEIRA, A. P.~d.; SILVA, G. S. V.~d.
+\emph{Avalia: sistema de corre{\c c}{\~a}o automatizada de atividades escolares
+  utilizando reconhecimento {\'o}ptico de caracteres e intelig{\^e}ncia
+  artificial}.
+Monografia (Trabalho de Conclus{\~a}o de Curso) --- Universidade Estadual
+  Paulista, Bauru, 2024.
+Dispon{\'\i}vel em:
+  \url{https://repositorio.unesp.br/server/api/core/bitstreams/45e3e419-5bd7-4b02-9f93-580883012154/content}.}
+
 \bibitem[Peffers et al. 2007]{peffers2007dsrm}
 \abntrefinfo{Peffers et al.}{PEFFERS et al.}{2007}
 {PEFFERS, K. et al. A design science research methodology for information
@@ -140,6 +172,13 @@ Dispon{\'\i}vel em: \url{https://www.iso.org/standard/35733.html}.}
 \emph{arXiv preprint arXiv:2507.06275}, 2025.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2507.06275}.}
 
+\bibitem[Silva 2019]{silva2019minhaprova}
+\abntrefinfo{Silva}{SILVA}{2019}
+{SILVA, T. d.~S.
+\emph{Minha Prova: Automatizando o processo avaliativo nas escolas}.
+Monografia (Trabalho de Conclus{\~a}o de Curso) --- Universidade Federal Rural
+  de Pernambuco, Recife, 2019.}
+
 \bibitem[Smith 2007]{smith2007tesseract}
 \abntrefinfo{Smith}{SMITH}{2007}
 {SMITH, R. An overview of the tesseract ocr engine. In:  \emph{Proceedings of
@@ -167,11 +206,32 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2507.06275}.}
 \emph{European journal of information systems}, Taylor \& Francis, v.~25, n.~1,
   p. 77--89, 2016.}
 
+\bibitem[Wang et al. 2024]{docllm2024}
+\abntrefinfo{Wang et al.}{WANG et al.}{2024}
+{WANG, D. et al. Docllm: A layout-aware generative language model for
+  multimodal document understanding.
+\emph{arXiv preprint arXiv:2401.00908}, 2024.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2401.00908}.}
+
 \bibitem[Xu et al. 2020]{xu2020layoutlm}
 \abntrefinfo{Xu et al.}{XU et al.}{2020}
 {XU, Y. et al. Layoutlm: Pre-training of text and layout for document image
   understanding. In:  \emph{Proceedings of the 26th ACM SIGKDD International
   Conference on Knowledge Discovery and Data Mining}. [S.l.: s.n.], 2020. p.
   1192--1200.}
+
+\bibitem[Zampirolli et al. 2015]{zampirolli2015android}
+\abntrefinfo{Zampirolli et al.}{ZAMPIROLLI et al.}{2015}
+{ZAMPIROLLI, F. d.~A. et al. Automatic correction of multiple-choice tests on
+  android devices. In:  \emph{Workshop de Vis{\~a}o Computacional}. S{\~a}o
+  Carlos, Brasil: [s.n.], 2015.}
+
+\bibitem[Zampirolli, Quilici-Gonzalez e Neves 2013]{zampirolli2013automatic}
+\abntrefinfo{Zampirolli, Quilici-Gonzalez e Neves}{ZAMPIROLLI;
+  QUILICI-GONZALEZ; NEVES}{2013}
+{ZAMPIROLLI, F. d.~A.; QUILICI-GONZALEZ, J.~A.; NEVES, R. P. d.~O. Automatic
+  correction of multiple-choice tests using digital cameras and image
+  processing. In:  \emph{Workshop de Vis{\~a}o Computacional}. Rio de Janeiro,
+  Brasil: [s.n.], 2013.}
 
 \end{thebibliography}
