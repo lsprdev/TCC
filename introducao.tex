@@ -4,7 +4,7 @@
 
 \section{Contextualização}\label{contexto}
 
-O processamento de documentos manuscritos continua sendo um problema relevante para Sistemas de Informação, especialmente quando a entrada é capturada em papel, por câmera de dispositivo móvel, e precisa ser transformada em dados estruturados confiáveis. Neste trabalho, o termo provas objetivas manuscritas refere-se a avaliações em papel cuja estrutura objetiva é preservada, mas cujos elementos visuais podem estar escritos manualmente, incluindo identificação do aluno, enunciados, numeração das questões, alternativas e marcações de resposta.
+O processamento de documentos manuscritos continua sendo um problema relevante para Sistemas de Informação, especialmente quando a entrada é capturada em papel, por câmera de dispositivo móvel, e precisa ser transformada em dados estruturados confiáveis.
 
 O desafio técnico, portanto, não é apenas detectar marcações em um formulário impresso. A proposta envolve extrair dados estruturados de um documento manuscrito, no qual a informação de interesse pode aparecer em textos escritos à mão, marcações de resposta, rasuras, campos de identificação, leiautes irregulares e variações de iluminação, enquadramento e qualidade da imagem. Esse cenário torna o problema diferente de uma simples digitalização, pois exige um fluxo capaz de receber uma imagem não padronizada, identificar elementos estruturais, representar o resultado em formato computável e permitir validação humana quando houver incerteza.
 
@@ -16,7 +16,7 @@ Neste trabalho, o aplicativo móvel não executa modelos de IA localmente. Sua f
 
 O tema central deste Trabalho de Conclusão de Curso (TCC) é a avaliação comparativa de modelos multimodais aplicados à extração estruturada de informações em provas objetivas manuscritas. O trabalho está delimitado à construção e avaliação de um sistema de informação composto por aplicativo móvel, backend, camada de integração com modelos, APIs de modelos multimodais, validador de saída estruturada, banco de dados e interface de validação humana.
 
-O escopo contempla provas objetivas em papel, redigidas manualmente, nas quais enunciados, alternativas, identificação do aluno e marcações de resposta podem estar escritos à mão. Embora a prova seja manuscrita, o trabalho não busca corrigir semanticamente questões dissertativas. O foco permanece em avaliações objetivas, nas quais o sistema deve identificar elementos estruturais, como número da questão, alternativas disponíveis, alternativa escolhida, identificação do aluno, rasuras e ambiguidades visuais. Geração automática de provas, recomendação pedagógica e análise subjetiva de respostas ficam fora do escopo. A avaliação não tem como foco demonstrar que um aplicativo foi desenvolvido, mas verificar como modelos multimodais com diferentes graus de abertura se comportam na extração estruturada de informações quando acessados por APIs hospedadas.
+O escopo contempla provas objetivas em papel, redigidas manualmente, nas quais enunciados, alternativas, identificação do aluno e marcações de resposta podem estar escritos à mão. Embora a prova seja manuscrita, o trabalho não busca corrigir semanticamente questões dissertativas. O foco permanece em avaliações objetivas, nas quais o sistema deve identificar elementos estruturais, como número da questão, alternativas disponíveis, alternativa escolhida, identificação do aluno, rasuras e ambiguidades visuais. Geração automática de provas, recomendação pedagógica e análise subjetiva de respostas ficam fora do escopo. A avaliação não tem como foco demonstrar que um aplicativo foi desenvolvido, mas verificar como modelos multimodais com diferentes graus de abertura se comportam na extração estruturada de informações quando acessados por APIs.
 
 O escopo técnico define o uso de três pilares fundamentais:
 
@@ -30,7 +30,7 @@ O sistema deverá produzir uma saída padronizada, em JSON, contendo identifica�
 
 \section{Problema}\label{problema}
 
-O problema de pesquisa deste trabalho pode ser formulado da seguinte maneira: como modelos multimodais abertos e proprietários, acessados por APIs hospedadas, diferem na extração estruturada de informações em provas objetivas manuscritas, considerando acurácia, validade da saída JSON, latência, custo, robustez e necessidade de validação humana?
+O problema de pesquisa deste trabalho pode ser formulado da seguinte maneira: como modelos multimodais abertos e proprietários, acessados por APIs, diferem na extração estruturada de informações em provas objetivas manuscritas, considerando acurácia, validade da saída JSON, latência, custo, robustez e necessidade de validação humana?
 
 A questão central não é apenas automatizar uma atividade de correção, mas investigar como diferentes estratégias de provisão de IA afetam um sistema que precisa transformar imagens de documentos físicos em registros estruturados. As imagens das provas podem conter sombras, inclinação, baixa resolução, enunciados escritos à mão, alternativas manuscritas, marcações ambíguas e rasuras. O sistema, portanto, precisa extrair elementos estruturais sem assumir que a captura ocorreu em condições ideais ou que o documento segue um formulário rígido.
 
@@ -40,7 +40,7 @@ Além da extração visual, o problema envolve comparabilidade entre provedores 
 
 A justificativa deste trabalho está na necessidade de compreender como modelos multimodais podem ser integrados a sistemas de informação que processam documentos físicos manuscritos. Embora a aplicação escolhida esteja situada no contexto de provas objetivas, a contribuição principal não é pedagógica. O foco está na avaliação comparativa dos modelos, na extração estruturada de elementos visuais manuscritos, na normalização de dados gerados por IA, na validação de resultados e na mensuração técnica do comportamento de cada abordagem.
 
-Do ponto de vista técnico, comparar um modelo multimodal aberto e um modelo multimodal proprietário, ambos acessados por APIs hospedadas, permite observar diferenças relevantes para Sistemas de Informação sem introduzir a variável de hospedagem local do modelo. A análise passa a se concentrar no comportamento dos modelos diante da mesma tarefa, do mesmo conjunto de imagens, do mesmo prompt-base e do mesmo contrato de saída. Dessa forma, o trabalho busca avaliar se o grau de abertura do modelo, sua documentação, seu custo, sua latência e sua robustez produzem diferenças relevantes na extração estruturada de documentos manuscritos \cite{solaiman2023gradient,bommasani2023transparency,ntia2024openweights}.
+Do ponto de vista técnico, comparar um modelo multimodal aberto e um modelo multimodal proprietário, ambos acessados por APIs, permite observar diferenças relevantes para Sistemas de Informação sem introduzir a variável de hospedagem local do modelo. A análise passa a se concentrar no comportamento dos modelos diante da mesma tarefa, do mesmo conjunto de imagens, do mesmo prompt-base e do mesmo contrato de saída. Dessa forma, o trabalho busca avaliar se o grau de abertura do modelo, sua documentação, seu custo, sua latência e sua robustez produzem diferenças relevantes na extração estruturada de documentos manuscritos \cite{solaiman2023gradient,bommasani2023transparency,ntia2024openweights}.
 
 O uso de um fluxo padronizado é necessário para que a comparação seja justa. Ao encapsular a chamada aos modelos em uma camada de integração, o trabalho busca reduzir diferenças externas ao experimento, mantendo equivalentes a imagem enviada, o prompt-base, o contrato JSON esperado e as métricas coletadas.
 
@@ -50,7 +50,7 @@ Além disso, a padronização da saída em JSON e o uso de um validador de esque
 
 \subsection{Objetivo geral}\label{objger}
 
-O objetivo geral deste trabalho é avaliar comparativamente o desempenho de modelos multimodais abertos e proprietários, acessados por APIs hospedadas, na extração estruturada de informações em provas objetivas manuscritas.
+O objetivo geral deste trabalho é avaliar comparativamente o desempenho de modelos multimodais abertos e proprietários, acessados por APIs, na extração estruturada de informações em provas objetivas manuscritas.
 
 \subsection{Objetivos específicos}\label{objesp}
 

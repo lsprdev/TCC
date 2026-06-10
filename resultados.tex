@@ -3,7 +3,7 @@
 % ---
 \chapter{Metodologia}
 
-A condução deste trabalho segue a metodologia Design Science Research (DSR), pois envolve a construção e avaliação de um artefato técnico para um problema de Sistemas de Informação \cite{sposito2024design}. O artefato será um sistema de extração estruturada de informações em provas objetivas manuscritas, avaliado por meio de um experimento comparativo entre dois modelos multimodais acessados por APIs hospedadas: um modelo aberto e um modelo proprietário.
+A condução deste trabalho segue a metodologia Design Science Research (DSR), pois envolve a construção e avaliação de um artefato técnico para um problema de Sistemas de Informação \cite{sposito2024design}. O artefato será um sistema de extração estruturada de informações em provas objetivas manuscritas, avaliado por meio de um experimento comparativo entre dois modelos multimodais acessados por APIs: um modelo aberto e um modelo proprietário.
 
 \section{Procedimentos Metodológicos}
 
@@ -21,7 +21,7 @@ Os procedimentos metodológicos serão organizados em cinco etapas:
 
 O experimento exigirá recursos de hardware e software. Como hardware, será utilizado um smartphone para captura das imagens e um computador de desenvolvimento. Como software, serão necessários aplicativo móvel, backend, banco de dados, validador de JSON e acesso às APIs dos modelos multimodais avaliados.
 
-O aplicativo móvel terá função limitada à captura das imagens e visualização dos resultados. O processamento ocorrerá no backend e nas APIs hospedadas dos modelos, não no dispositivo móvel. Como ambos os modelos serão acessados como serviços externos, a análise de privacidade considerará as implicações do envio de imagens e metadados para APIs hospedadas.
+O aplicativo móvel terá função limitada à captura das imagens e visualização dos resultados. O processamento ocorrerá no backend e nas APIs dos modelos, não no dispositivo móvel. Como ambos os modelos serão acessados como serviços externos, a análise de privacidade considerará as implicações do envio de imagens e metadados para APIs hospedadas.
 
 \section{Desenho do Experimento}
 
@@ -130,6 +130,6 @@ Observações técnicas & A preencher & A preencher \\
 
 \chapter{Expectativa de Conclusão}
 
-Ao final do trabalho, espera-se concluir qual abordagem técnica se mostrou mais adequada para a extração estruturada de informações em provas objetivas manuscritas no cenário avaliado. A conclusão poderá favorecer o modelo aberto, o modelo proprietário ou uma estratégia híbrida, conforme os resultados de acurácia, validade do JSON, latência, custo, robustez, implicações de privacidade em APIs hospedadas e necessidade de validação humana.
+Ao final do trabalho, espera-se concluir qual abordagem técnica se mostrou mais adequada para a extração estruturada de informações em provas objetivas manuscritas no cenário avaliado. A conclusão poderá favorecer o modelo aberto, o modelo proprietário ou uma estratégia híbrida, conforme os resultados de acurácia, validade do JSON, latência, custo, robustez, implicações de privacidade em APIs e necessidade de validação humana.
 
 Não se pretende concluir que modelos multimodais substituem métodos tradicionais em todos os contextos. A conclusão será limitada ao conjunto de provas, modelos, APIs, prompts, métricas e condições de captura utilizados no experimento. A contribuição esperada é uma análise comparativa técnica, com uma tabela de resultados e discussão dos principais trade-offs para Sistemas de Informação.
