@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  7 JUN 2026 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.21)  9 JUN 2026 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -987,7 +987,7 @@ Cap\'{\i }tulo 1.
 
 ]
 Package babel Info: 'brazil' activates 'portuges' shorthands.
-(babel)             Reported on input line 31.
+(babel)             Reported on input line 34.
  [10] [11] [12]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
 2.
@@ -1055,13 +1055,13 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20640 strings out of 469006
- 332952 string characters out of 5454813
- 1197038 words of memory out of 5000000
+ 20642 strings out of 469006
+ 332974 string characters out of 5454813
+ 1197037 words of memory out of 5000000
  48592 multiletter control sequences out of 15000+600000
- 732154 words of font info for 221 fonts, out of 8000000 for 9000
+ 732251 words of font info for 222 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 99i,12n,107p,1576b,1519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1569b,1519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/te
@@ -1074,7 +1074,7 @@ texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026basic/texmf
 s/type1/public/lm/lmss8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
 1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/p
 ublic/lm/lmtt10.pfb>
-Output written on TCC-IFC.pdf (35 pages, 403779 bytes).
+Output written on TCC-IFC.pdf (35 pages, 403498 bytes).
 PDF statistics:
  788 PDF objects out of 1000 (max. 8388607)
  717 compressed objects within 8 object streams

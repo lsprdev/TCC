@@ -4,11 +4,11 @@
 \chapter{Conclusão}
 % ---
 
-Este trabalho propõe o desenvolvimento e a avaliação de uma arquitetura modular para extração estruturada de informações em provas objetivas manuscritas. O foco da pesquisa está na comparação entre dois arranjos técnicos de uso de modelos multimodais: um modelo aberto hospedado em servidor próprio e exposto como API, e um modelo proprietário acessado por API externa. O aplicativo móvel é tratado como interface de captura e visualização, não como ambiente de execução dos modelos.
+Este trabalho propõe o desenvolvimento e a avaliação de uma arquitetura plugável para extração estruturada de informações em provas objetivas manuscritas. O foco da pesquisa está na comparação entre dois arranjos técnicos de uso de modelos multimodais: um modelo aberto hospedado em servidor próprio e exposto como API, e um modelo proprietário acessado por API externa. O aplicativo móvel é tratado como interface de captura e visualização, não como ambiente de execução dos modelos.
 
 \section{Síntese dos Resultados Esperados}
 
-Espera-se que o artefato permita comparar os provedores sob o mesmo fluxo de entrada, processamento, validação e saída. A análise deverá considerar acurácia de identificação de questões, alternativas, respostas marcadas e identificação manuscrita do respondente, além de taxa de JSON válido, latência, custo operacional, robustez, taxa de intervenção humana, estabilidade da integração e implicações arquiteturais. Assim, a conclusão esperada não será apenas a afirmação de que o sistema foi construído, mas a identificação fundamentada da abordagem técnica mais adequada ao cenário estudado.
+Espera-se que o artefato permita comparar os provedores sob o mesmo fluxo de entrada, processamento, validação e saída. A análise deverá considerar acurácia de identificação de questões, alternativas, respostas marcadas e identificação manuscrita do aluno, além de taxa de JSON válido, latência, custo operacional, robustez, taxa de intervenção humana, estabilidade da integração e implicações arquiteturais. Assim, a conclusão esperada não será apenas a afirmação de que o sistema foi construído, mas a identificação fundamentada da abordagem técnica mais adequada ao cenário estudado.
 
 O resultado poderá favorecer o modelo aberto, o modelo proprietário ou uma estratégia híbrida. Essa decisão dependerá dos dados coletados no experimento. Por exemplo, um modelo aberto pode ser mais adequado quando controle de infraestrutura, custo recorrente e privacidade forem prioritários. Um modelo proprietário pode ser mais adequado quando estabilidade operacional, menor esforço de manutenção ou maior acurácia forem predominantes. Os critérios de avaliação serão definidos considerando gestão de riscos em IA, qualidade de sistemas e princípios de avaliação de artefatos em Design Science Research \cite{nist2023airmf,iso25010,hevner2004designscience,peffers2007dsrm}.
 
@@ -44,8 +44,8 @@ Este trabalho pretende contribuir para Sistemas de Informação em múltiplas di
 \subsection{Contribuição Técnica}
 
 \begin{itemize}
-    \item arquitetura modular com \textit{ModelAdapter}, \textit{OpenModelProvider} e \textit{ClosedModelProvider};
-    \item pipeline de extração estruturada de documento manuscrito com normalização de resposta e validação de esquema;
+    \item arquitetura plugável com \textit{ModelAdapter}, \textit{OpenModelProvider} e \textit{ClosedModelProvider};
+    \item Fluxo de extração estruturada de documento manuscrito com normalização de resposta e validação de esquema;
     \item tela de validação humana integrada ao fluxo de persistência;
     \item conjunto de métricas para comparar acurácia, latência, custo, robustez e intervenção humana entre provedores multimodais;
     \item base para substituição futura de modelos sem reescrever o aplicativo móvel ou o backend.
@@ -74,11 +74,11 @@ Trabalhos futuros podem incluir mais modelos abertos e proprietários, bem como 
 
 \subsection{Avaliação com Diferentes Formatos de Documento}
 
-Outra possibilidade é aplicar o mesmo pipeline a outros documentos manuscritos, como formulários administrativos, listas de presença ou questionários de pesquisa. Isso ajudaria a avaliar a generalidade da arquitetura fora do contexto de provas objetivas manuscritas.
+Outra possibilidade é aplicar o mesmo fluxo a outros documentos manuscritos, como formulários administrativos, listas de presença ou questionários de pesquisa. Isso ajudaria a avaliar a generalidade da arquitetura fora do contexto de provas objetivas manuscritas.
 
-\subsection{Otimização do Pipeline}
+\subsection{Otimização do Fluxo}
 
-O pipeline poderá ser otimizado com pré-processamento de imagem, compressão controlada, detecção automática de baixa qualidade, filas assíncronas e estratégias de repetição quando o provedor retornar erro ou JSON inválido.
+O Fluxo poderá ser otimizado com pré-processamento de imagem, compressão controlada, detecção automática de baixa qualidade, filas assíncronas e estratégias de repetição quando o provedor retornar erro ou JSON inválido.
 
 \subsection{Expansão da Validação Humana}
 

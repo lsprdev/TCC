@@ -22,7 +22,7 @@ A solução deverá permitir captura da imagem, envio ao backend, seleção do p
 
 \subsection{Design e Desenvolvimento}
 
-O artefato será composto por aplicativo móvel, backend, banco de dados, \textit{ModelAdapter}, \textit{OpenModelProvider}, \textit{ClosedModelProvider}, validador de JSON e tela de validação humana. O aplicativo móvel não executará modelos localmente; ele apenas capturará imagens e exibirá resultados. O backend será responsável por orquestrar o pipeline e registrar métricas de execução.
+O artefato será composto por aplicativo móvel, backend, banco de dados, \textit{ModelAdapter}, \textit{OpenModelProvider}, \textit{ClosedModelProvider}, validador de JSON e tela de validação humana. O aplicativo móvel não executará modelos localmente; ele apenas capturará imagens e exibirá resultados. O backend será responsável por orquestrar o fluxo e registrar métricas de execução.
 
 \subsection{Demonstração e Avaliação}
 
@@ -30,7 +30,7 @@ O protótipo será avaliado com lotes de provas objetivas manuscritas. Cada imag
 
 \subsection{Comunicação}
 
-Os resultados serão comunicados por meio da descrição da arquitetura, do pipeline implementado, das métricas coletadas e da análise comparativa entre o modelo aberto e o modelo proprietário. A conclusão deverá indicar qual abordagem foi mais adequada para o cenário estudado e sob quais critérios.
+Os resultados serão comunicados por meio da descrição da arquitetura, do fluxo implementado, das métricas coletadas e da análise comparativa entre o modelo aberto e o modelo proprietário. A conclusão deverá indicar qual abordagem foi mais adequada para o cenário estudado e sob quais critérios.
 
 \section{Procedimentos Metodológicos}
 % ---
@@ -42,7 +42,7 @@ Os procedimentos metodológicos adotados incluem:
     \item \textbf{Prototipagem iterativa}: desenvolvimento incremental do aplicativo, backend e provedores, com testes de integração a cada ciclo.
     \item \textbf{Definição do padrão-ouro}: validação manual das respostas presentes nas provas para estabelecer a referência de comparação.
     \item \textbf{Experimentação comparativa}: processamento do mesmo conjunto de imagens pelo modelo aberto e pelo modelo proprietário.
-    \item \textbf{Análise de métricas}: coleta de acurácia, taxa de JSON válido, latência, custo estimado, robustez, taxa de intervenção humana e erros associados a caligrafia, layout manuscrito irregular, rasuras e marcações ambíguas.
+    \item \textbf{Análise de métricas}: coleta de acurácia, taxa de JSON válido, latência, custo estimado, robustez, taxa de intervenção humana e erros associados a caligrafia, leiaute manuscrito irregular, rasuras e marcações ambíguas.
     \item \textbf{Análise arquitetural}: discussão dos impactos de infraestrutura, manutenção, privacidade, dependência de fornecedor e substituição de modelos.
 \end{itemize}
 
@@ -50,7 +50,7 @@ Os procedimentos metodológicos adotados incluem:
 \chapter{Desenvolvimento e Experimento}
 % ---
 
-Este capítulo descreve o storyboard do aplicativo, a arquitetura proposta, o pipeline de extração e o desenho experimental usado para comparar os provedores multimodais.
+Este capítulo descreve o storyboard do aplicativo, a arquitetura proposta, o fluxo de extração e o desenho experimental usado para comparar os provedores multimodais.
 
 \section{Storyboard do Aplicativo}
 
@@ -68,7 +68,7 @@ As entradas principais do sistema são:
 
 \subsection{Processamento}
 
-Após a captura, o aplicativo envia a imagem ao backend. O backend registra a submissão, aplica validações iniciais, seleciona o provedor configurado e aciona o \textit{ModelAdapter}. A requisição é processada pelo modelo aberto ou pelo modelo proprietário, conforme a configuração. O modelo deve extrair os elementos estruturais da prova, incluindo identificação do respondente, questões, alternativas disponíveis, resposta marcada, rasuras e ambiguidades visuais. A resposta bruta é normalizada para o JSON padronizado. Em seguida, o validador realiza validação estrutural e semântica, verificando campos obrigatórios, tipos de dados, consistência entre questões e alternativas, níveis de confiança e inconsistências.
+Após a captura, o aplicativo envia a imagem ao backend. O backend registra a submissão, aplica validações iniciais, seleciona o provedor configurado e aciona o \textit{ModelAdapter}. A requisição é processada pelo modelo aberto ou pelo modelo proprietário, conforme a configuração. O modelo deve extrair os elementos estruturais da prova, incluindo identificação do aluno, questões, alternativas disponíveis, resposta marcada, rasuras e ambiguidades visuais. A resposta bruta é normalizada para o JSON padronizado. Em seguida, o validador realiza validação estrutural e semântica, verificando campos obrigatórios, tipos de dados, consistência entre questões e alternativas, níveis de confiança e inconsistências.
 
 Quando a resposta é válida e possui confiança suficiente, o resultado é persistido no banco de dados. Quando há baixa confiança, rasura, ambiguidade visual ou JSON inválido, o item é direcionado para a tela de validação humana.
 
@@ -77,7 +77,7 @@ Quando a resposta é válida e possui confiança suficiente, o resultado é pers
 As saídas do sistema são:
 
 \begin{itemize}
-    \item identificação do respondente, quando reconhecida;
+    \item identificação do aluno, quando reconhecida;
     \item questões identificadas;
     \item alternativas detectadas;
     \item respostas extraídas;
@@ -93,7 +93,7 @@ Os componentes principais são:
 
 \begin{itemize}
     \item \textbf{App móvel}: captura imagens de provas objetivas manuscritas, permite selecionar ou visualizar o provedor configurado, envia provas ao backend e apresenta os resultados.
-    \item \textbf{Backend}: recebe as imagens, cria registros de submissão, coordena o pipeline, chama o adaptador de modelos, persiste resultados e disponibiliza APIs para consulta.
+    \item \textbf{Backend}: recebe as imagens, cria registros de submissão, coordena o fluxo, chama o adaptador de modelos, persiste resultados e disponibiliza APIs para consulta.
     \item \textbf{ModelAdapter}: define uma interface comum para todos os provedores de IA, encapsulando diferenças de autenticação, payload, prompt, resposta e tratamento de erro.
     \item \textbf{OpenModelProvider}: chama o modelo multimodal aberto hospedado em servidor próprio e exposto como API interna ou controlada pelo projeto.
     \item \textbf{ClosedModelProvider}: chama o modelo multimodal proprietário acessado por API externa.
@@ -102,9 +102,9 @@ Os componentes principais são:
     \item \textbf{Tela de validação humana}: apresenta casos ambíguos ou inválidos para correção manual e registra a decisão final.
 \end{itemize}
 
-\subsection{Fluxo do Pipeline}
+\subsection{Fluxo de Extração}
 
-O pipeline de extração será composto pelas seguintes etapas:
+O fluxo de extração será composto pelas seguintes etapas:
 
 \begin{enumerate}
     \item captura da imagem de uma prova objetiva manuscrita pelo aplicativo móvel;
@@ -152,7 +152,7 @@ O experimento tem como finalidade comparar o desempenho técnico e operacional d
 O experimento será realizado em três etapas:
 
 \begin{enumerate}
-    \item \textbf{Preparação do conjunto de testes}: seleção ou produção de provas objetivas manuscritas, com variações de caligrafia, layout, iluminação, enquadramento, marcações e rasuras.
+    \item \textbf{Preparação do conjunto de testes}: seleção ou produção de provas objetivas manuscritas, com variações de caligrafia, leiaute, iluminação, enquadramento, marcações e rasuras.
     \item \textbf{Construção do padrão-ouro}: leitura manual das provas para registrar a resposta correta de cada questão e os casos ambíguos.
     \item \textbf{Processamento comparativo}: envio das mesmas imagens aos dois provedores, usando o mesmo prompt-base, o mesmo esquema JSON e as mesmas métricas.
 \end{enumerate}
@@ -166,7 +166,7 @@ Serão considerados, no mínimo, os seguintes cenários:
     \item provas com marcações de resposta claras;
     \item provas com marcações fracas ou incompletas;
     \item provas com rasuras;
-    \item provas com layout manuscrito irregular;
+    \item provas com leiaute manuscrito irregular;
     \item imagens com inclinação;
     \item imagens com sombras ou baixa iluminação;
     \item campos de identificação manuscritos.
@@ -180,13 +180,13 @@ A avaliação do artefato será quantitativa e qualitativa, focando nas seguinte
     \item \textbf{Acurácia de identificação das questões}: proporção de questões reconhecidas corretamente em relação ao padrão-ouro.
     \item \textbf{Acurácia de identificação das alternativas}: proporção de alternativas disponíveis detectadas corretamente.
     \item \textbf{Acurácia de extração da resposta marcada}: proporção de respostas escolhidas identificadas corretamente.
-    \item \textbf{Acurácia de reconhecimento da identificação manuscrita}: proporção de identificações de respondentes reconhecidas corretamente quando houver campo legível.
+    \item \textbf{Acurácia de reconhecimento da identificação manuscrita}: proporção de identificações de alunos reconhecidas corretamente quando houver campo legível.
     \item \textbf{Acurácia por prova}: proporção de provas com todos os elementos estruturais necessários extraídos corretamente.
     \item \textbf{Taxa de JSON válido}: proporção de respostas que atendem ao esquema definido sem reparo manual.
     \item \textbf{Latência}: tempo entre envio da imagem e retorno da resposta normalizada.
     \item \textbf{Custo operacional}: custo estimado por prova processada em cada provedor.
     \item \textbf{Taxa de erro por caligrafia ilegível}: proporção de erros associados à impossibilidade de leitura do texto manuscrito.
-    \item \textbf{Taxa de erro por layout manuscrito irregular}: proporção de erros associados à organização visual da prova.
+    \item \textbf{Taxa de erro por leiaute manuscrito irregular}: proporção de erros associados à organização visual da prova.
     \item \textbf{Taxa de casos enviados para validação humana}: proporção de provas ou questões encaminhadas para revisão.
     \item \textbf{Tipos de erro}: classificação dos erros por marcação ambígua, rasura, campo ausente, questão não identificada, alternativa incorreta, identificação manuscrita incorreta, JSON inválido ou falha de provedor.
 \end{itemize}
@@ -222,7 +222,7 @@ Validação humana & A preencher & A preencher \\
 \hline
 Erros por caligrafia & A preencher & A preencher \\
 \hline
-Erros por layout & A preencher & A preencher \\
+Erros por leiaute & A preencher & A preencher \\
 \hline
 Falhas de provedor & A preencher & A preencher \\
 \hline
@@ -233,7 +233,7 @@ Observações arquiteturais & A preencher & A preencher \\
 
 \subsection{Critério de Análise}
 
-O modelo tecnicamente mais adequado não será definido apenas pela maior acurácia. A análise considerará o equilíbrio entre qualidade da extração estruturada, validade da saída JSON, custo, latência, robustez frente a manuscritos e layouts irregulares, controle operacional, privacidade, facilidade de manutenção e quantidade de revisão humana necessária.
+O modelo tecnicamente mais adequado não será definido apenas pela maior acurácia. A análise considerará o equilíbrio entre qualidade da extração estruturada, validade da saída JSON, custo, latência, robustez frente a manuscritos e leiautes irregulares, controle operacional, privacidade, facilidade de manutenção e quantidade de revisão humana necessária.
 
 \section{Cronograma de Execução do Experimento}
 
@@ -252,7 +252,7 @@ Ao final deste trabalho, espera-se entregar um artefato funcional e uma avaliaç
 
 \section{Contribuição Científica e Prática}
 
-A contribuição esperada é demonstrar como uma arquitetura modular permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
+A contribuição esperada é demonstrar como uma arquitetura plugável permite avaliar provedores de IA sob condições equivalentes, mantendo o restante do sistema estável. Espera-se também identificar limitações práticas de cada abordagem, especialmente em relação à extração estruturada de documento manuscrito, confiabilidade da saída JSON, custo de operação, controle sobre infraestrutura, robustez e necessidade de validação humana.
 
 O resultado final deverá indicar qual abordagem foi mais adequada ao cenário avaliado. Caso o modelo aberto apresente acurácia suficiente e custos menores, a infraestrutura própria poderá ser considerada vantajosa apesar da complexidade operacional. Caso o modelo proprietário apresente maior estabilidade, menor latência ou menor taxa de intervenção humana, a API externa poderá ser mais adequada mesmo com dependência de fornecedor. Também é possível que os resultados apontem para uma estratégia híbrida, na qual cada provedor seja usado em cenários distintos.
 
@@ -261,7 +261,7 @@ O resultado final deverá indicar qual abordagem foi mais adequada ao cenário a
 Os resultados esperados são:
 
 \begin{itemize}
-    \item definição de um pipeline reprodutível para extração estruturada de informações em provas objetivas manuscritas;
+    \item definição de um fluxo reprodutível para extração estruturada de informações em provas objetivas manuscritas;
     \item implementação de uma arquitetura com provedores de IA substituíveis por configuração;
     \item comparação quantitativa entre modelo aberto e modelo proprietário;
     \item identificação dos principais tipos de erro na extração multimodal de elementos manuscritos;
