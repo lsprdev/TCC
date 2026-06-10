@@ -19,19 +19,6 @@
   of the 2019 CHI Conference on Human Factors in Computing Systems}. [S.l.:
   s.n.], 2019. p. 1--13.}
 
-\bibitem[Araujo 2015]{abntex2modelo}
-\abntrefinfo{Araujo}{ARAUJO}{2015}
-{ARAUJO, L.~C. \emph{Modelo Can{\^o}nico de Trabalho Acad{\^e}mico com
-  abnTeX2}.
-[S.l.], 2015. Dispon{\'\i}vel em: \url{http://www.abntex.net.br/}.}
-
-\bibitem[Associa{\c c}\~ao Brasileira de Normas T\'ecnicas 2011]{NBR14724:2011}
-\abntrefinfo{ABNT}{ABNT}{2011}
-{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. \emph{{NBR} 14724}:
-  Informa{\c c}\~ao e documenta{\c c}\~ao --- trabalhos acad\^emicos ---
-  apresenta{\c c}\~ao.
-Rio de Janeiro, 2011. 15~p.}
-
 \bibitem[Bommasani et al. 2023]{bommasani2023transparency}
 \abntrefinfo{Bommasani et al.}{BOMMASANI et al.}{2023}
 {BOMMASANI, R. et al. The foundation model transparency index.
@@ -44,6 +31,25 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2310.12941}.}
   with low-cost and portable computer-vision techniques.
 \emph{Journal of Science Education and Technology}, v.~22, n.~4, p. 560--571,
   2013.}
+
+\bibitem[{Google AI for Developers} 2026]{google2026geminiapi}
+\abntrefinfo{{Google AI for Developers}}{{Google AI for Developers}}{2026a}
+{{Google AI for Developers}. \emph{Gemini API documentation}. 2026.
+Acesso em: 10 jun. 2026.
+Dispon{\'\i}vel em: \url{https://ai.google.dev/gemini-api/docs}.}
+
+\bibitem[{Google AI for Developers} 2026]{google2026gemma}
+\abntrefinfo{{Google AI for Developers}}{{Google AI for Developers}}{2026b}
+{{Google AI for Developers}. \emph{Gemma models overview}. 2026.
+Acesso em: 10 jun. 2026.
+Dispon{\'\i}vel em: \url{https://ai.google.dev/gemma/docs}.}
+
+\bibitem[{Google AI for Developers} 2026]{google2026gemmageminiapi}
+\abntrefinfo{{Google AI for Developers}}{{Google AI for Developers}}{2026c}
+{{Google AI for Developers}. \emph{Use Gemma with the Gemini API}. 2026.
+Acesso em: 10 jun. 2026.
+Dispon{\'\i}vel em:
+  \url{https://ai.google.dev/gemma/docs/core/gemma\_on\_gemini\_api}.}
 
 \bibitem[Hafeez et al. 2024]{hafeez2024omrsmartphone}
 \abntrefinfo{Hafeez et al.}{HAFEEZ et al.}{2024}

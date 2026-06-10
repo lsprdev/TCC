@@ -12,34 +12,33 @@
 \contentsline {section}{\numberline {1.5}Objetivos}{11}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Objetivo geral}{11}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Objetivos específicos}{11}{subsection.1.5.2}%
-\contentsline {section}{\numberline {1.6}Organização do trabalho}{12}{section.1.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Processamento de Documentos Manuscritos}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Modelos Multimodais}{13}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Modelos Abertos e Modelos Proprietários}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Arquiteturas Plugáveis em Sistemas de Informação}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Saída Estruturada e Validação Humana}{15}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Design Science Research e Avaliação de Artefatos}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Trabalhos Relacionados}{16}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Síntese do Referencial}{17}{section.2.8}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Processamento de Documentos Manuscritos}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Modelos Multimodais}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Modelos Abertos e Modelos Proprietários}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Padronização de Entrada e Saída para Comparação de Modelos}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Saída Estruturada e Validação Humana}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Design Science Research e Avaliação de Artefatos}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Trabalhos Relacionados}{15}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Síntese do Referencial}{16}{section.2.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Procedimentos Metodológicos}{18}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Recursos Necessários}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Desenho do Experimento}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Métricas de Avaliação}{19}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Procedimentos Metodológicos}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Recursos Necessários}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Desenho do Experimento}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Métricas de Avaliação}{18}{section.3.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Proposta de Solução e Experimento}}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Arquitetura Proposta}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Contrato de Saída}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Tabela Comparativa Planejada}{22}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Fluxo Experimental e Comparação dos Modelos}}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Componentes do Fluxo}{20}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Contrato de Saída}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Tabela Comparativa Planejada}{21}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativa de Conclusão}}{23}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Expectativa de Conclusão}}{22}{chapter.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{24}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{23}{chapter.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{25}{section*.13}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{24}{section*.13}%
 \vspace {\cftbeforechapterskip }
